@@ -130,4 +130,3 @@ A très bientôt !
 ## 99. Le mot de la fin
 
 Que tu sois moussaillon(ne), pirate, corsaire ou membre du staff, nous sommes preneurs de ton avis, tes suggestions, etc. N'hésite donc pas à nous aborder (et pas saborder, hein...) sur Discord pour nous donner ton avis, ta vision, des idées, etc !
->>>>>>> e59af0c3ad9e9e58f2f7e76f9383ee4d7c5d5381
