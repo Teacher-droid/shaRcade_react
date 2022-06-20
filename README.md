@@ -1,5 +1,10 @@
 ### Lien vers le repo du [backend](https://github.com/LoisKOUNINEF/shaRcade_rails)
 
+### Lien vers le repo du [front](https://github.com/Teacher-droid/shaRcade_react)
+
+### Lien vers le repo de [base](https://github.com/LoisKOUNINEF/shaRcade)
+
+
 ## 1. Présentation
 - Notre projet consisterait en une plateforme sociale de centralisation de scores de petits jeux / casual games.
 - L'objectif serait d'avoir des comptes joueurs, des comptes producteurs de jeux et 1 compte admin.
