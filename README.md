@@ -117,6 +117,8 @@ En plus de finaliser les fonctionnalités et le look du MVP de la semaine n°1, 
 Ca y est ! En ce jour saint du jeudi 9 juin 2022, avant que ne sonnent 16 heures, **Denis PASIN** (a.k.a. **_Zaratan_**) a solennellement accepté d'être notre mentor. Rôle qu'il assurera - avec élégance et prestance - depuis sa retraite estivale canadienne et etats-unienne !
 Comme quoi, croiser les doigts :four_leaf_clover: et prier :pray: nous a porté chance :wink: !
 
+
+
 ## 8. Contacts
 
 Si tu es emballé(e) par ce projet, notre état d'esprit, et que tu aimes transmettre tes connaissances, n'hésites pas à envoyer un MP sur Discord à l'un(e) d'entre nous
