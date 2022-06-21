@@ -115,7 +115,7 @@ En plus de finaliser les fonctionnalités et le look du MVP de la semaine n°1, 
 ## 7. Notre mentor
 
 Ca y est !<br>
-En ce jour saint du jeudi 9 juin 2022, avant que ne sonnent 16 heures, **Denis PASIN** (a.k.a. **_Zaratan_**) <a href="https://github.com/zaratan"><img src="https://i.imgur.com/JQOw9qt.png" width="10%" border-radius="30%" /></a><br>a solennellement accepté d'être notre mentor. Rôle qu'il assurera - avec élégance et prestance - depuis sa retraite estivale canadienne et etats-unienne !
+En ce jour saint du jeudi 9 juin 2022, avant que ne sonnent 16 heures, **Denis PASIN** (a.k.a. **_Zaratan_**) <a href="https://github.com/zaratan"><img src="https://i.imgur.com/JQOw9qt.png" width="10%"; border-radius="30%" /></a><br>a solennellement accepté d'être notre mentor. Rôle qu'il assurera - avec élégance et prestance - depuis sa retraite estivale canadienne et etats-unienne !
 Comme quoi, croiser les doigts :four_leaf_clover: et prier :pray: nous a porté chance :wink: !
 
 
