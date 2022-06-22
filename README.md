@@ -1,9 +1,5 @@
 ### Lien vers le repo du [backend](https://github.com/LoisKOUNINEF/shaRcade_rails)
 
-### Lien vers le repo du [front](https://github.com/Teacher-droid/shaRcade_react)
-
-### Lien vers le repo de [base](https://github.com/LoisKOUNINEF/shaRcade)
-
 # ShaRcade! (nom non-définitif :wink:)
 
 ## 1. Présentation
@@ -118,8 +114,6 @@ Ca y est !<br>
 En ce jour saint du jeudi 9 juin 2022, avant que ne sonnent 16 heures, **Denis PASIN** (a.k.a. **_Zaratan_**) <a href="https://github.com/zaratan"><img src="https://i.imgur.com/JQOw9qt.png" width="10%" border-radius="100%" /></a><br>a solennellement accepté d'être notre mentor. Rôle qu'il assurera - avec élégance et prestance - depuis sa retraite estivale canadienne et etats-unienne !
 Comme quoi, croiser les doigts :four_leaf_clover: et prier :pray: nous a porté chance :wink: !
 
-
-
 ## 8. Contacts
 
 Si tu es emballé(e) par ce projet, notre état d'esprit, et que tu aimes transmettre tes connaissances, n'hésites pas à envoyer un MP sur Discord à l'un(e) d'entre nous
@@ -132,4 +126,5 @@ A très bientôt !
 
 ## 99. Le mot de la fin
 
-Que tu sois moussaillon(ne), pirate, corsaire ou membre du staff, nous sommes preneurs de ton avis, tes suggestions, etc. N'hésite donc pas à nous aborder (et pas saborder, hein...) sur Discord pour nous donner ton avis, ta vision, des idées, etc !
+Que tu sois moussaillon(ne), pirate, corsaire ou membre du staff, nous sommes preneurs de ton avis, tes suggestions, etc. N'hésite donc pas à nous aborder (et pas saborder, hein...) sur Discord pour nous donner ton avis, ta vision, des idées, etc !  
+
