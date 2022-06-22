@@ -1,25 +1,34 @@
+import React from 'react';
 import 'bootstrap';
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import GamesIndex from './components/GamesIndex/GamesIndex';
+import GameShow from './components/GameShow/GameShow';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
+import Footer from './components/Footer/Footer';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/games" element={<GamesIndex />} />
+        <Route path="/games/:gameId" element={<GameShow />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        {/*  <Route path="/addgame" element={<NewGame />} /> <Route path="/logout" element={<LogOut/>} /> <Route path="/updategame/:gameId" element={<UpdateGame/>} /> <Route path="/deletegame/:gameId" element={<DeleteGame/>} /> */}
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
