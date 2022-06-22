@@ -4,7 +4,7 @@
 
 ## 1. Présentation
 
-Notre projet consiste en une plateforme sociale de centralisation de scores de petits jeux / casual games.
+Notre projet consiste en une plateforme sociale de centralisation de scores de petits jeux / casual games.  
 L'objectif est de disposer de comptes "**joueurs**", de comptes "**éditeurs / producteurs / programmeurs de jeux**" et d'un compte "**admin**".
 Chaque jeu pourra disposer d'une fiche de présentation doublée d'une clé d'API permettant à l'éditeur / au producteur que tout joueur utilisant l'un de ses jeux voit son score stocké sur notre plateforme.
 A cela s'ajoutera une dimension sociale puisqu'on pourra, en tant que membre "joueur", partager ses scores, commenter ceux des autres joueurs, etc.
@@ -110,7 +110,8 @@ En plus de finaliser les fonctionnalités et le look du MVP de la semaine n°1, 
 
 ## 7. Notre mentor
 
-Ca y est ! En ce jour saint du jeudi 9 juin 2022, avant que ne sonnent 16 heures, **Denis PASIN** (a.k.a. **_Zaratan_**) a solennellement accepté d'être notre mentor. Rôle qu'il assurera - avec élégance et prestance - depuis sa retraite estivale canadienne et etats-unienne !
+Ca y est !<br>
+En ce jour saint du jeudi 9 juin 2022, avant que ne sonnent 16 heures, **Denis PASIN** (a.k.a. **_Zaratan_**) <a href="https://github.com/zaratan"><img src="https://i.imgur.com/JQOw9qt.png" width="10%" border-radius="100%" /></a><br>a solennellement accepté d'être notre mentor. Rôle qu'il assurera - avec élégance et prestance - depuis sa retraite estivale canadienne et etats-unienne !
 Comme quoi, croiser les doigts :four_leaf_clover: et prier :pray: nous a porté chance :wink: !
 
 ## 8. Contacts
@@ -125,5 +126,5 @@ A très bientôt !
 
 ## 99. Le mot de la fin
 
-Que tu sois moussaillon(ne), pirate, corsaire ou membre du staff, nous sommes preneurs de ton avis, tes suggestions, etc. N'hésite donc pas à nous aborder (et pas saborder, hein...) sur Discord pour nous donner ton avis, ta vision, des idées, etc !
->>>>>>> e59af0c3ad9e9e58f2f7e76f9383ee4d7c5d5381
+Que tu sois moussaillon(ne), pirate, corsaire ou membre du staff, nous sommes preneurs de ton avis, tes suggestions, etc. N'hésite donc pas à nous aborder (et pas saborder, hein...) sur Discord pour nous donner ton avis, ta vision, des idées, etc !  
+
