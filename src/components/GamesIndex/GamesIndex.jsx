@@ -5,12 +5,11 @@ import './GamesIndex.css'
 
 const GamesIndex = () => {
 
-    const [game, setGame] = useState("");
     const [gameList, setGameList] = useState([]);
 
     // const [gameType, setGameType] = useState("")
-    const [gameTitle, setGameTitle] = useState("")
-    const [gameDescr, setGameDescr] = useState("")
+    // const [gameTitle, setGameTitle] = useState("")
+    // const [gameDescr, setGameDescr] = useState("")
     // const [gameFans, setGameFans] = useState("")
     // const [gameRatings, setGameRatings] = useState("")
     // const [gameImage, setGameImage] = useState("")
@@ -19,12 +18,12 @@ const GamesIndex = () => {
         fetch(API_URL + 'games', {
             method: 'get',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
         })
         .then((response) => response.json())
         .then((response) => {
-            setGame(response);
             setGameList(response);
         })
         .catch((error) => console.log(error));
