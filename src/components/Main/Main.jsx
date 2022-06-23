@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from './components/Hero/Hero';
-import GamesIndex from './components/GamesIndex/GamesIndex';
-import HookCanva from './components/HookCanva/HookCanva';
+import Hero from '../Hero/Hero';
+import GamesIndex from '../GamesIndex/GamesIndex';
+import HookCanva from '../HookCanva/HookCanva';
 import './Main.css';
 
 const Main = () => {
