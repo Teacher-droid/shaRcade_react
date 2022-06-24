@@ -10,9 +10,9 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
-import Footer from './components/Footer/Footer';
-import Profile from './components/Profile/Profile';
 import Logout from './components/Logout/Logout';
+import Footer from './components/Footer/Footer';
+import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 
 
 function App() {
@@ -28,7 +28,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout/>} />
-        <Route path="/profile" element={<Profile/>} />
+        <Route path="/userdashboard" element={<UserDashboard/>} />
+        <Route path="/editordashboard" element={<EditorDashboard/>} />
+        <Route path="/admindashboard" element={<AdminDashboard/>} />
         {/*  
         <Route path="/addgame" element={<NewGame />} /> 
         <Route path="/updategame/:gameId" element={<UpdateGame/>} /> 
