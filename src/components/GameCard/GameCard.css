@@ -1,9 +1,20 @@
+@font-face {
+  font-family: "Karmatic Arcade";
+  src: url("../../assets/fonts/karmatic_arcade.ttf");
+}
+
+@font-face {
+  font-family: "Manaspace";
+  src: url("../../assets/fonts/mana_space.ttf");
+}
+
 .game-card {
   --sc-txt-color: rgb(51,255,51);
   --sc-bg-color: rgb(40,40,40);
   --sc-line-color: rgb(51,255,51);
   --sc-radius: 10px;
   --sc-border-type: double;
+  font-family: "";
   color: var(--sc-txt-color);
   background-color: var(--sc-bg-color);
   width: 18rem;
@@ -11,11 +22,14 @@
   flex-direction: column;
   padding: 0;
   border-radius: var(--sc-radius);
-  border: double 1px var(--sc-line-color);
+  border: double 5px var(--sc-line-color);
   margin: 3px;
 }
 
 .game-card-header {
+  position: relative;
+  top: 0px;
+  left: 0px;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -32,40 +46,58 @@
   border-top-left-radius: var(--sc-radius);
   border-top-right-radius: var(--sc-radius);
   margin: 0;
-  z-index: 666;
 }
 
 .game-favorite {
   position: absolute;
   top: 5px;
-  left: 5px;
-  z-index: 777;
+  left: 10px;
+  color: var(--sc-txt-color);
+  font-size: larger;
 }
 
 .game-feedback {
   position: absolute;
   top: 5px;
-  right: 5px;
-  z-index: 777;
+  right: 10px;
+  color: var(--sc-txt-color);
+  font-size: larger;
 }
 
 .game-card-body {
   display: flex;
   flex-direction: column;
+  padding: 0px 5px 0px 5px;
 } 
 
 .game-card-body.h3 {
+  font-family: "Karmatic Arcade";
   color: var(--sc-txt-color);
 }
 
 .game-card-body.p {
+  font-family: "Manaspace";
   color: var(--sc-txt-color);
+}
+
+.game-card-link {
+  color: var(--sc-txt-color);
+  text-decoration: none;
+  font-style: italic;
+  transition: text-decoration 2s, font-style 2s, font-weight 2s;
+}
+
+.game-card-link:hover {
+  color: var(--sc-txt-color);
+  text-decoration: underline overline;
+  font-style: normal;
+  font-weight: bolder;
 }
 
 .game-card-footer {
   display: flex;
-  flex-direction: column;
-  padding: 0;
+  justify-content: space-between;
+  padding: 0px 10px 0px 10px;
   border: 0;
   border-bottom-left-radius: var(--sc-radius);
   border-bottom-right-radius: var(--sc-radius);

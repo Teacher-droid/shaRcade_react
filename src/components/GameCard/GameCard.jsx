@@ -9,7 +9,8 @@ function GameCard(props) {
   const gameFavoriteIcon = () => {
     // Returns 💖 (heart full) if "current user" favorites includes "props.game"
     // Returns 🤍 (empty heart), elseway
-    return(props.favorite ? <FaHeart /> : <FaRegHeart />);
+    let my_favorite_icon = props.favorite ? <span><FaHeart/></span> : <span><FaRegHeart/></span>;
+    return my_favorite_icon;
   }
 
   const gameFeedbackIcons = (my_avg_game_eval) => {
@@ -52,12 +53,12 @@ function GameCard(props) {
     <div className="game-card">
       <div className="game-card-header">
         <img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>
-        <div className="game-favorite">{gameFavoriteIcon}</div>
+        <div className="game-favorite"><FaHeart/></div>
         <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
       </div>
       <div className="game-card-body">
         <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr.slice(0,49)} <Link to={"/games/" + props.game.id.toString()}>... View more </Link></p>
+        <p>{props.game.game_descr.slice(0,99)} <Link className="game-card-link" to={"/games/" + props.game.id.toString()}> [View more...] </Link></p>
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
