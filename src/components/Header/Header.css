@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Karmatic Arcade";
+    src: url("../../assets/fonts/karmatic_arcade.ttf");
+}
+
+@font-face {
+    font-family: "Manaspace";
+    src: url("../../assets/fonts/mana_space.ttf");
+}
+
 .logo {
 
     height: 9em;
@@ -6,3 +16,36 @@
 }
 
 .icons {}
+
+
+
+.retro {
+
+    --sc-txt-color: rgb(51, 255, 51);
+    --sc-bg-color: rgb(40, 40, 40);
+    --sc-line-color: rgb(51, 255, 51);
+    --sc-radius: 10px;
+    --sc-border-type: double;
+    font-family: "Manaspace";
+    color: var(--sc-txt-color);
+    background-color: var(--sc-bg-color);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-radius: var(--sc-radius);
+    border: double 5px var(--sc-line-color);
+    margin: 3px;
+
+}
+
+
+
+.dg {
+    color: rgb(51, 255, 51);
+
+}
+
+.nav-link {
+    font-family: 'Manaspace', sans-serif;
+    color: rgb(51, 255, 51) !important;
+}
