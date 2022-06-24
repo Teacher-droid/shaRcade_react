@@ -1,0 +1,20 @@
+.admin-dashboard-welcome-banner {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-dashboard-top-container {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.admin-dashboard-middle-container {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
