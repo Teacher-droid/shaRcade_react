@@ -24,7 +24,7 @@ const AdminScoresInfoCard = () => {
       <div className="admin-info-card-body">
         <h5>Scores information:</h5>
         <ul>
-          <li>{stillLoading ? "*loading*" : scoresCount} registered {scoresCount > 1 ? "scores" : "score"}</li>
+          <li>{stillLoading ? "*loading*" : scoresCount} registered {stillLoading ? "*loading*" : (scoresCount > 1 ? "scores" : "score")}</li>
           <li>Greatest hi-scorer of all time: {stillLoading ? "*loading*" : playerWithMostHiScore.firstname} {stillLoading ? "*loading*" : playerWithMostHiScore.lastname}</li>
           <li>Top 3 games with most hi-scores:
             <ul>
