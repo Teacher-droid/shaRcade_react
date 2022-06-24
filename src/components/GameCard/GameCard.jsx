@@ -6,10 +6,10 @@ import { FaHeart, FaRegHeart, FaRegStar, FaStarHalf, FaStar } from "react-icons/
 // Call by "<GameCard game={my_game_var} favorite={true / false} evaluation={0,1,2,3,4 ou 5} fans={my_number_of_fans} feedbacks={my_average_evaluation} />"
 function GameCard(props) {
 
-  const gameFavoriteIcon = () => {
+  const gameFavoriteIcon = (is_favorite) => {
     // Returns 💖 (heart full) if "current user" favorites includes "props.game"
     // Returns 🤍 (empty heart), elseway
-    let my_favorite_icon = props.favorite ? <span><FaHeart/></span> : <span><FaRegHeart/></span>;
+    let my_favorite_icon = is_favorite ? <span><FaHeart/></span> : <span><FaRegHeart/></span>;
     return my_favorite_icon;
   }
 
@@ -36,7 +36,7 @@ function GameCard(props) {
         // Do nothing
         break;
     }
-    return(my_feedback_icons);
+    return my_feedback_icons;
   }
 
   const gameFansCounter = (my_fan_number) => {
@@ -53,12 +53,12 @@ function GameCard(props) {
     <div className="game-card">
       <div className="game-card-header">
         <img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>
-        <div className="game-favorite"><FaHeart/></div>
+        <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
         <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
       </div>
       <div className="game-card-body">
         <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr.slice(0,99)} <Link className="game-card-link" to={"/games/" + props.game.id.toString()}> [View more...] </Link></p>
+        <p>{props.game.game_descr.slice(0,99)}... <Link className="game-card-link" to={"/games/" + props.game.id.toString()}> [View more...] </Link></p>
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>

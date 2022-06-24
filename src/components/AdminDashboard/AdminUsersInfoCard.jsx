@@ -3,19 +3,23 @@ import { Link } from 'react-router-dom';
 
 const AdminUsersInfoCard = () => {
 
-  const [usersCount, setUsersCount] = useState(99);
-  const [playersCount, setPlayersCount] = useState(55);
-  const [editorsCount, setEditorsCount] = useState(33);
-  const [adminsCount, setAdminsCount] = useState(11);
+  const [usersCount, setUsersCount] = useState();
+  const [playersCount, setPlayersCount] = useState();
+  const [editorsCount, setEditorsCount] = useState();
+  const [adminsCount, setAdminsCount] = useState();
 
   useEffect(() => {
     // Initialiser les différents KPIs via des fetchs + calculs + set*Count
-  });
+    setUsersCount(99);
+    setPlayersCount(55);
+    setEditorsCount(33);
+    setAdminsCount(11);
+  }, []);
 
   return (
     <div className="admin-info-card">
       <div className="admin-info-card-header">
-        <h4>Users</h4>
+        <p>USERS</p>
       </div>
       <div className="admin-info-card-body">
         <h5>{usersCount} total users including:</h5>
@@ -26,7 +30,7 @@ const AdminUsersInfoCard = () => {
         </ul>
       </div>
       <div className="admin-info-card-footer">
-        <Link className="admin-info-link" to="#">Manage SharCade users &gt;&gt;</Link>
+        <Link className="admin-info-link" to="/users">&gt; Manage users &lt;</Link>
       </div>
     </div>
   );

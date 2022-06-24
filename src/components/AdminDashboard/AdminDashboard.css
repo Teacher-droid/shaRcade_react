@@ -1,4 +1,4 @@
-/* Admin dashboard general styling */
+/* Admin dashboard - General styling */
 
 @font-face {
   font-family: "Karmatic Arcade";
@@ -8,6 +8,18 @@
 @font-face {
   font-family: "Manaspace";
   src: url("../../assets/fonts/mana_space.ttf");
+}
+
+:root {
+  --sc-txt-color: rgb(51,255,51);
+  --sc-bg-color: rgb(40,40,40);
+  --sc-line-color: rgb(51,255,51);
+  --sc-radius: 10px;
+  --sc-border-type: double;
+  --sc-font-size: 14px;
+  --sc-font-size-small: 10px;
+  --sc-font-size-large: 18px;
+  --sc-font-size-title: 24px;
 }
 
 .admin-dashboard-welcome-banner {
@@ -32,15 +44,11 @@
 }
 
 
-/* Users info card specific styling */
+/* Admin dashboard - Users info card specific styling */
 
 .admin-info-card {
-  --sc-txt-color: rgb(51,255,51);
-  --sc-bg-color: rgb(40,40,40);
-  --sc-line-color: rgb(51,255,51);
-  --sc-radius: 10px;
-  --sc-border-type: double;
   font-family: "Manaspace";
+  font-size: var(--sc-font-size);
   color: var(--sc-txt-color);
   background-color: var(--sc-bg-color);
   width: 20%;
@@ -53,11 +61,11 @@
 }
 
 .admin-info-card-header {
+  font-size: var(--sc-font-size-title);
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 0;
+  align-content: center;
+  padding: 3px;
   border: 0;
   border-top-left-radius: var(--sc-radius);
   border-top-right-radius: var(--sc-radius);
@@ -68,31 +76,39 @@
 .admin-info-card-body {
   display: flex;
   flex-direction: column;
-  padding: 0px 5px 0px 5px;
+  padding: 5px;
 }
 
 .admin-info-card-footer {
   display: flex;
-  justify-content: space-between;
-  padding: 0px 10px 0px 10px;
+  justify-content: center;
+  align-content: center;
+  padding: 3px 10px 3px 10px;
   border: 0;
   border-bottom-left-radius: var(--sc-radius);
   border-bottom-right-radius: var(--sc-radius);
   border-top: solid 1px var(--sc-line-color);;
   margin: 0;
+  color: var(--sc-txt-color);
+  background-color: var(--sc-bg-color);
+  transition: color 1s ease-in-out, background-color 1s ease-in-out;
+}
+
+.admin-info-card-footer:hover {
+  color: var(--sc-bg-color);
+  background-color: var(--sc-txt-color);
 }
 
 .admin-info-link {
-  color: var(--sc-txt-color);
-  background-color: var(--sc-bg-color);
-  text-decoration: underline overline;
-  font-weight: normal;
-  transition: color 3s, background-color 3s, font-weight 3s, ease;
+  background-color: inherit;
+  color: inherit;
+  text-decoration: none;
+  font-style: italic;
 }
 
 .admin-info-link:hover, .admin-info-link:active {
-  color: var(--sc-bg-color);
-  background-color: var(--sc-txt-color);
+  background-color: inherit;
+  color: inherit;
   text-decoration: underline overline;
-  font-weight: bolder;
+  font-style: normal;
 }
