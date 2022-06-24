@@ -7,8 +7,6 @@ import "./Footer.css";
 const Footer = () => {
     return (
         <footer className="footer-container">
-            <section className="footer-subscription">
-            </section>
             <div className="footer-links">
                 <div className="footer-link-wrapper">
                     <div className="footer-link-items">
@@ -47,8 +45,8 @@ const Footer = () => {
             </div>
             <section className="social-media">
                 <div className="social-media-wrap">
-                    <div className="footer-logo ww">
-                        <img className="logo" alt='logo' src={LogoTopDelireMegaGroove} />
+                    <div className="footer-logo-container">
+                        <img className="footer-logo" alt='ShaRcade logo' src={LogoTopDelireMegaGroove} />
                     </div>
                     <small className="website-rights">
                         &copy;  2022 Damian, Jean-Baptiste & Loïs for THP Developer W'22

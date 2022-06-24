@@ -1,4 +1,8 @@
-.logo {
-    height: 100px;
-    width: 100px;
+.header-container {
+    height: 20%;
+    width: 100%;
+}
+
+.header-logo {
+    height: 6rem;
 }

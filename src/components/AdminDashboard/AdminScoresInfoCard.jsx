@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AdminScoresInfoCard = () => {
 
+  const [stillLoading, setStillLoading] = useState(true);
   const [scoresCount, setScoresCount] = useState();
   const [topGamesWithHiScore, setTopGameWithHiScore] = useState({});
   const [playerWithMostHiScore, setPlayerWithMostHiScore] = useState({});
@@ -12,6 +13,7 @@ const AdminScoresInfoCard = () => {
     setScoresCount(666);
     setPlayerWithMostHiScore({firstname: "Loïs", lastname: "KOUNINEF"});
     setTopGameWithHiScore({first: {game: "Flappy Bird", hiscores: "99"}, second: {game: "Candy Crush", hiscores: "66"}, third: {game: "Crazy Pinball",hiscores: "33"}});
+    setStillLoading(false);
   }, []);
 
   return (
@@ -22,13 +24,13 @@ const AdminScoresInfoCard = () => {
       <div className="admin-info-card-body">
         <h5>Scores information:</h5>
         <ul>
-          <li>{scoresCount} registered {scoresCount > 1 ? "scores" : "score"}</li>
-          <li>Greatest hi-scorer of all time: {playerWithMostHiScore.firstname} {playerWithMostHiScore.lastname}</li>
+          <li>{stillLoading ? "*loading*" : scoresCount} registered {scoresCount > 1 ? "scores" : "score"}</li>
+          <li>Greatest hi-scorer of all time: {stillLoading ? "*loading*" : playerWithMostHiScore.firstname} {stillLoading ? "*loading*" : playerWithMostHiScore.lastname}</li>
           <li>Top 3 games with most hi-scores:
             <ul>
-              <li>Title: {topGamesWithHiScore.first.game} - Hi-SCore: {topGamesWithHiScore.first.hiscores}</li>
-              <li>Title: {topGamesWithHiScore.second.game} - Hi-SCore: {topGamesWithHiScore.second.hiscores}</li>
-              <li>Title: {topGamesWithHiScore.third.game} - Hi-SCore: {topGamesWithHiScore.third.hiscores}</li>
+              <li>Title: {stillLoading ? "*loading*" : topGamesWithHiScore.first.game} - Hi-SCore: {stillLoading ? "*loading*" : topGamesWithHiScore.first.hiscores}</li>
+              <li>Title: {stillLoading ? "*loading*" : topGamesWithHiScore.second.game} - Hi-SCore: {stillLoading ? "*loading*" : topGamesWithHiScore.second.hiscores}</li>
+              <li>Title: {stillLoading ? "*loading*" : topGamesWithHiScore.third.game} - Hi-SCore: {stillLoading ? "*loading*" : topGamesWithHiScore.third.hiscores}</li>
             </ul>
           </li>
         </ul>
