@@ -53,11 +53,10 @@
 }
 
 .admin-info-card-header {
-  position: relative;
-  top: 0px;
-  left: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   border: 0;
   border-top-left-radius: var(--sc-radius);
@@ -91,7 +90,7 @@
   transition: color 3s, background-color 3s, font-weight 3s, ease;
 }
 
-.admin-info-link:hover, :active {
+.admin-info-link:hover, .admin-info-link:active {
   color: var(--sc-bg-color);
   background-color: var(--sc-txt-color);
   text-decoration: underline overline;

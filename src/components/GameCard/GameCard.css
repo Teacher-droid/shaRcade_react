@@ -88,7 +88,7 @@
   transition: color 3s, background-color 3s, font-weight 3s, ease;
 }
 
-.game-card-link:hover, :active {
+.game-card-link:hover, .game-card-link:active {
   color: var(--sc-bg-color);
   background-color: var(--sc-txt-color);
   text-decoration: underline overline;
