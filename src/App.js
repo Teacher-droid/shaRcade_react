@@ -13,7 +13,8 @@ import Signup from './components/Signup/Signup';
 import Logout from './components/Logout/Logout';
 import Footer from './components/Footer/Footer';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
-
+import UserDashboard from './components/UserDashboard/UserDashboard';
+import EditorDashboard from './components/EditorDashboard/EditorDashboard';
 
 function App() {
   return (

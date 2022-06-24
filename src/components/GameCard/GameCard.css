@@ -36,7 +36,7 @@
   border: 0;
   border-top-left-radius: var(--sc-radius);
   border-top-right-radius: var(--sc-radius);
-  border-bottom: double 1px var(--sc-line-color);
+  border-bottom: solid 1px var(--sc-line-color);
   margin: 0;
 }
 
@@ -82,15 +82,16 @@
 
 .game-card-link {
   color: var(--sc-txt-color);
-  text-decoration: none;
-  font-style: italic;
-  transition: text-decoration 2s, font-style 2s, font-weight 2s;
+  background-color: var(--sc-bg-color);
+  text-decoration: underline overline;
+  font-weight: normal;
+  transition: color 3s, background-color 3s, font-weight 3s, ease;
 }
 
-.game-card-link:hover {
-  color: var(--sc-txt-color);
+.game-card-link:hover, :active {
+  color: var(--sc-bg-color);
+  background-color: var(--sc-txt-color);
   text-decoration: underline overline;
-  font-style: normal;
   font-weight: bolder;
 }
 
