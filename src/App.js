@@ -11,6 +11,8 @@ import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Footer from './components/Footer/Footer';
+import Profile from './components/Profile/Profile';
+import Logout from './components/Logout/Logout';
 
 
 function App() {
@@ -25,7 +27,13 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        {/*  <Route path="/addgame" element={<NewGame />} /> <Route path="/logout" element={<LogOut/>} /> <Route path="/updategame/:gameId" element={<UpdateGame/>} /> <Route path="/deletegame/:gameId" element={<DeleteGame/>} /> */}
+        <Route path="/logout" element={<Logout/>} />
+        <Route path="/profile" element={<Profile/>} />
+        {/*  
+        <Route path="/addgame" element={<NewGame />} /> 
+        <Route path="/updategame/:gameId" element={<UpdateGame/>} /> 
+        <Route path="/deletegame/:gameId" element={<DeleteGame/>} /> 
+        */}
       </Routes>
       <Footer />
     </BrowserRouter>
