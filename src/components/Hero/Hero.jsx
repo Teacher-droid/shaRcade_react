@@ -7,7 +7,7 @@ import './Hero.css';
 
 const Hero = () => {
     return (
-        <section className='hero-container'>
+        <section className='hero-container retro'>
             <h1 className="App">Just shaRcade it</h1>
             <p className="App">The best of the beast</p>
             <img className="hero-banner" src="https://www.journaldujapon.com/wp-content/uploads/2020/03/Salle-darcade-a-Akihabara-Photo-by-Nicholas-Doherty-on-Unsplash-min.jpg" alt="banner" />
