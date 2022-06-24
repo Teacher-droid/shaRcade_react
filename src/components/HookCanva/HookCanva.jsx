@@ -3,7 +3,7 @@ import './HookCanva.css';
 
 const HookCanva = () => {
     return (
-        <section className="bg-hook">
+        <section className="bg-hook retro">
             <div class="m-auto w-900 text-center padding-top">
                 <h2>Hello I'm HookCanva</h2>
                 <p>My goal is to lead small humans who got astray and didn't sign-up yet <br />Now that you are back to the straight path you know what you've to do<br /> subscribe.</p>
