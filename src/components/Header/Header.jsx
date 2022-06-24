@@ -5,16 +5,16 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <header>
+        <header className="retro" >
             <Navbar>
                 <Container>
                     <Navbar.Brand href="/"> <img className="logo" alt='logo' src={LogoTopDelireMegaGroove} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="/games">Games</Nav.Link>
-                            <Nav.Link href="/about">About</Nav.Link>
-                            <Nav.Link href="/contact">Contact</Nav.Link>
+                        <Nav className="me-auto light">
+                            <Nav.Link href="/games"><p className="dg">Games</p></Nav.Link>
+                            <Nav.Link href="/about"><p className="dg">About</p></Nav.Link>
+                            <Nav.Link href="/contact"><p className="dg">Contact</p></Nav.Link>
                         </Nav>
                         <Form className="d-flex">
                             <FormControl
@@ -26,13 +26,13 @@ const Header = () => {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                         <Nav>
-                            <NavDropdown title="Connection" id="connection-nav-dropdown">
-                                <NavDropdown.Item href="/login">Log In</NavDropdown.Item>
-                                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+                            <NavDropdown title="Connection" id="connection-nav-dropdown" className="retro">
+                                <NavDropdown.Item href="/login"><p className="">Log In</p></NavDropdown.Item>
+                                <NavDropdown.Item href="/signup"><p className="dg">Sign Up</p></NavDropdown.Item>
                             </NavDropdown>
-                            <NavDropdown title="Account" id="account-nav-dropdown">
-                                <NavDropdown.Item href="/user">My profile</NavDropdown.Item>
-                                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+                            <NavDropdown title="Account" id="account-nav-dropdown" className="retro" >
+                                <NavDropdown.Item href="/user"><p className="dg">My profile</p></NavDropdown.Item>
+                                <NavDropdown.Item href="/logout"><p className="dg">Logout</p></NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
