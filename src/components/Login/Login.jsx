@@ -16,8 +16,7 @@ const Login = () => {
     const [password, setPassword] = useState();
     const [authorization, setAuthorization] = useAtom(authorizationAtom);
 
-
-    function onFormSubmit(e){
+    function fetchData(e){
         e.preventDefault();
 
         const data = {
@@ -30,8 +29,7 @@ const Login = () => {
     fetch(API_URL + 'users/sign_in', {
       method: 'post',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
 })
@@ -50,7 +48,7 @@ const Login = () => {
 }
 
 return (
-  <Form onSubmit={onFormSubmit}>
+  <Form onSubmit={fetchData}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
   <Form.Label>Email address</Form.Label>
   <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
