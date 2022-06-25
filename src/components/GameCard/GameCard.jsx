@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './GameCard.css';
 
 
@@ -18,13 +17,12 @@ function GameCard(props) {
   return (
     <div className="game-card">
       <div className="game-card-header">
-        {/*<img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} />*/}
         <div className="game-favorite">{gameFavoriteIcon}</div>
         <div className="game-feedback">{gameFeedbackIcons}</div>
       </div>
       <div className="game-card-body">
         <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr.slice(0,49)} <Link to={"/games/" + props.game.id.toString()}>... View more </Link></p>
+        <p>{props.game.game_descr.slice(0,49)}>... View more </p>
       </div>
       <hr />
       <div className="game-card-footer">
