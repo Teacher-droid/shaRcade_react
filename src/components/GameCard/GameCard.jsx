@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './GameCard.css';
 
 
@@ -14,23 +15,44 @@ function GameCard(props) {
     // Returns ⭐ to ⭐⭐⭐⭐⭐ depending on current user evaluation of "props.game"
   }
 
+  const [viewMore, setViewMore] = useState(false);
+  const linkName = viewMore ? 'View Less << ' : '...View More >> '
+
   return (
     <div className="game-card">
+    <div className="game-card-header">
+    <div className="game-favorite">{gameFavoriteIcon}</div>
+    <div className="game-feedback">{gameFeedbackIcons}</div>
+    </div>
+    <div className="game-card-body">
+    <h3>{props.game.game_title}</h3>
+    <p>{props.game.game_descr.slice(0,49)}><span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
+    </div>
+    <hr />
+    <div className="game-card-footer">
+    </div>
+    <div className="game-fan">***[Insérer ici le nombre de fans du jeu suivi d'un :heart:]**</div>
+    <div className="game-evaluator">**[Insérer la note sous forme d' :star:]**</div>
+    {viewMore &&
+      <div class="modal-bg" onClick={()=>{setViewMore(!viewMore)}}>{linkName}>
+      <div className="game-card modal">
       <div className="game-card-header">
-        <div className="game-favorite">{gameFavoriteIcon}</div>
-        <div className="game-feedback">{gameFeedbackIcons}</div>
+      <div className="game-favorite">{gameFavoriteIcon}</div>
+      <div className="game-feedback">{gameFeedbackIcons}</div>
       </div>
       <div className="game-card-body">
-        <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr.slice(0,49)}>... View more </p>
+      <h3>{props.game.game_title}</h3>
+      <p>{props.game.game_descr.slice(0,49)}<span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
       </div>
       <hr />
       <div className="game-card-footer">
       </div>
       <div className="game-fan">***[Insérer ici le nombre de fans du jeu suivi d'un :heart:]**</div>
       <div className="game-evaluator">**[Insérer la note sous forme d' :star:]**</div>
-    </div>
-  );
+      </div>
+      </div>}
+      </div>
+      );
 }
 
 export default GameCard;

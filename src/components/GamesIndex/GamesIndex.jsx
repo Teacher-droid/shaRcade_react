@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { API_URL } from '../../stores/api_url'
 import GameCard from '../GameCard/GameCard'
-// import GameShow from '../GameShow/GameShow'
 import './GamesIndex.css'
 
 const GamesIndex = () => {
 
     const [gameList, setGameList] = useState([]);
-    // const [selectedGame, setSelectedGame] = useState(null);
 
     useEffect(() => {
         fetch(API_URL + 'games', {
@@ -24,12 +22,11 @@ const GamesIndex = () => {
         .catch((error) => console.log(error));
     }, [])
 
-    const gameCards = gameList.map(game => <GameCard game={game} key={game.id} onCLick={setSelectedGame(game)}/>)
+    const gameCards = gameList.map(game => <GameCard game={game} key={game.id}/>)
 
     return (
         <div>
         {gameCards}
-        {/*<GameShow game={selectedGame} />*/}
         </div>
         )
 }
