@@ -1,0 +1,92 @@
+/* Admin dashboard - General styling */
+
+.admin-dashboard-welcome-banner {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-dashboard-top-container {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.admin-dashboard-middle-container {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Admin dashboard - Users info card specific styling */
+
+.admin-info-card {
+  font-family: "Manaspace";
+  font-size: var(--sc-font-size);
+  color: var(--sc-txt-color);
+  background-color: var(--sc-bg-color);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: var(--sc-radius);
+  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+  margin: 3px;
+}
+
+.admin-info-card-header {
+  font-size: var(--sc-font-size-title);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 3px;
+  border: 0;
+  border-top-left-radius: var(--sc-radius);
+  border-top-right-radius: var(--sc-radius);
+  border-bottom: var(--sc-border-type-int) 1px var(--sc-line-color);
+  margin: 0;
+}
+
+.admin-info-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.admin-info-card-footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 3px 10px 3px 10px;
+  border: 0;
+  border-bottom-left-radius: var(--sc-radius);
+  border-bottom-right-radius: var(--sc-radius);
+  border-top: var(--sc-border-type-int) 1px var(--sc-line-color);;
+  margin: 0;
+  color: var(--sc-txt-color);
+  background-color: var(--sc-bg-color);
+  transition: color 1s ease-in-out, background-color 1s ease-in-out;
+}
+
+.admin-info-card-footer:hover {
+  color: var(--sc-bg-color);
+  background-color: var(--sc-txt-color);
+}
+
+.admin-info-link {
+  background-color: inherit;
+  color: inherit;
+  /* text-decoration: none; */
+  font-style: italic;
+  transition: font-style 1s ease-in-out
+}
+
+.admin-info-link:hover, .admin-info-link:active {
+  background-color: inherit;
+  color: inherit;
+  /* text-decoration: underline overline; */
+  font-style: normal;
+}
