@@ -9,7 +9,7 @@
   padding: 0;
   border-radius: var(--sc-radius);
   border: var(--sc-border-type-ext) 5px var(--sc-line-color);
-  margin: 3px;
+  margin: 0;
 }
 
 .game-card-header {

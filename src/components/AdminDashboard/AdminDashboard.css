@@ -83,7 +83,7 @@
   padding: 3px 10px 3px 10px;
   border: 1px;
   border-bottom-left-radius: 5px; /*var(--sc-radius);*/
-  border-bottom-right-radius: var(--sc-radius);
+  border-bottom-right-radius: 5px; /*var(--sc-radius);*/
   border-top: var(--sc-border-type-int) 1px var(--sc-line-color);;
   margin: 0;
   color: var(--sc-txt-color);
