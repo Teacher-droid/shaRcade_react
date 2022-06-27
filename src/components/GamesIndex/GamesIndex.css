@@ -1,4 +1,6 @@
 .game-list {
+  background-color: var(--sc-bg-color);
+  color: var(--sc-txt-color);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

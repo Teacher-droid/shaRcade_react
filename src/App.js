@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import GamesIndex from './components/GamesIndex/GamesIndex';

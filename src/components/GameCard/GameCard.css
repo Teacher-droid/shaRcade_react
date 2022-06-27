@@ -3,14 +3,13 @@
   font-family: "Manaspace";
   color: var(--sc-txt-color);
   background-color: var(--sc-bg-color);
-  width: 18rem;
   display: flex;
   flex-direction: column;
+  flex: 0 1 calc(25% - 1em);
   padding: 0;
   border-radius: var(--sc-radius);
   border: var(--sc-border-type-ext) 5px var(--sc-line-color);
   margin: 3px;
-  flex: 0 1 calc(25% - 1em);
 }
 
 .game-card-header {
@@ -54,6 +53,7 @@
 .game-card-body {
   display: flex;
   flex-direction: column;
+  height: auto;
   padding: 0px 5px 0px 5px;
 } 
 
@@ -86,6 +86,7 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
+  height: 5%;
   padding: 0px 10px 0px 10px;
   border: 0;
   border-bottom-left-radius: var(--sc-radius);

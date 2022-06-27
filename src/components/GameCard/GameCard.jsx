@@ -51,7 +51,7 @@ function GameCard(props) {
   }
 
 const [viewMore, setViewMore] = useState(false);
-const linkName = viewMore ? 'View Less << ' : '...View More >> ';
+const linkName = viewMore ? 'View Less << ' : 'View More >> ';
 const imageLink = require('../../assets/images/games/' + props.game.image_url) ? require('../../assets/images/games/' + props.game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
 
 const showDetails =
