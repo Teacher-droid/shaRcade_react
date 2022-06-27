@@ -10,8 +10,11 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
+import Logout from './components/Logout/Logout';
 import Footer from './components/Footer/Footer';
-
+import AdminDashboard from './components/AdminDashboard/AdminDashboard';
+import UserDashboard from './components/UserDashboard/UserDashboard';
+import EditorDashboard from './components/EditorDashboard/EditorDashboard';
 
 function App() {
   return (
@@ -25,7 +28,15 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        {/*  <Route path="/addgame" element={<NewGame />} /> <Route path="/logout" element={<LogOut/>} /> <Route path="/updategame/:gameId" element={<UpdateGame/>} /> <Route path="/deletegame/:gameId" element={<DeleteGame/>} /> */}
+        <Route path="/logout" element={<Logout/>} />
+        <Route path="/userdashboard" element={<UserDashboard/>} />
+        <Route path="/editordashboard" element={<EditorDashboard/>} />
+        <Route path="/admindashboard" element={<AdminDashboard/>} />
+        {/*  
+        <Route path="/addgame" element={<NewGame />} /> 
+        <Route path="/updategame/:gameId" element={<UpdateGame/>} /> 
+        <Route path="/deletegame/:gameId" element={<DeleteGame/>} /> 
+        */}
       </Routes>
       <Footer />
     </BrowserRouter>
