@@ -1,19 +1,5 @@
-@font-face {
-  font-family: "Karmatic Arcade";
-  src: url("../../assets/fonts/karmatic_arcade.ttf");
-}
-
-@font-face {
-  font-family: "Manaspace";
-  src: url("../../assets/fonts/mana_space.ttf");
-}
 
 .game-card {
-  --sc-txt-color: rgb(51,255,51);
-  --sc-bg-color: rgb(40,40,40);
-  --sc-line-color: rgb(51,255,51);
-  --sc-radius: 10px;
-  --sc-border-type: double;
   font-family: "Manaspace";
   color: var(--sc-txt-color);
   background-color: var(--sc-bg-color);
@@ -22,8 +8,9 @@
   flex-direction: column;
   padding: 0;
   border-radius: var(--sc-radius);
-  border: double 5px var(--sc-line-color);
+  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
   margin: 3px;
+  flex: 0 1 calc(25% - 1em);
 }
 
 .game-card-header {
@@ -36,7 +23,7 @@
   border: 0;
   border-top-left-radius: var(--sc-radius);
   border-top-right-radius: var(--sc-radius);
-  border-bottom: solid 1px var(--sc-line-color);
+  border-bottom: var(--sc-border-type-int) 1px var(--sc-line-color);
   margin: 0;
 }
 
@@ -103,7 +90,7 @@
   border: 0;
   border-bottom-left-radius: var(--sc-radius);
   border-bottom-right-radius: var(--sc-radius);
-  border-top: double 1px var(--sc-line-color);;
+  border-top: var(--sc-border-type-int) 1px var(--sc-line-color);;
   margin: 0;
 }
 

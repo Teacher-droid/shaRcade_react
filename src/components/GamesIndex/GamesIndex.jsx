@@ -25,7 +25,7 @@ const GamesIndex = () => {
     const gameCards = gameList.map(game => <GameCard game={game} key={game.id}/>)
 
     return (
-        <div>
+        <div className="game-list">
         {gameCards}
         </div>
         )
