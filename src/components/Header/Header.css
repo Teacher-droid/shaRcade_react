@@ -26,7 +26,6 @@
     padding: 0;
     border-radius: var(--sc-radius);
     border: double 5px var(--sc-line-color);
-    margin: 3px;
 }
 
 .dg {
