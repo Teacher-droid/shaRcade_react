@@ -1,5 +1,19 @@
+.side1 {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.side2 {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
 .padding-top {
     padding-top: 3em;
+
 }
 
 .padding-top1 {
