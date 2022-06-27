@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './GameCard.css';
 import { FaHeart, FaRegHeart, FaRegStar, FaStarHalf, FaStar } from "react-icons/fa";
@@ -51,10 +50,11 @@ function GameCard(props) {
   }
 
 const [viewMore, setViewMore] = useState(false);
+const toggleDetails = () => {setViewMore(!viewMore)};
 const linkName = viewMore ? 'View Less << ' : '...View More >> ';
 
 const showDetails =
-  <div class="modal-bg" onClick={()=>{setViewMore(!viewMore)}}>
+  <div class="modal-bg" onClick={toggleDetails}>
     <div className="game-card modal">
       <div className="game-card-header">
         {/*<img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>*/}
@@ -63,7 +63,7 @@ const showDetails =
       </div>
       <div className="game-card-body">
         <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
+        <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
@@ -81,7 +81,7 @@ return (
     </div>
     <div className="game-card-body">
       <h3>{props.game.game_title}</h3>
-      <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
+      <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
     </div>
     <div className="game-card-footer">
       <div className="game-fan">{gameFansCounter(props.fans)}</div>
