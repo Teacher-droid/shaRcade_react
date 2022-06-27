@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './GameCard.css';
 import { FaHeart, FaRegHeart, FaRegStar, FaStarHalf, FaStar } from "react-icons/fa";
 
@@ -18,28 +19,28 @@ function GameCard(props) {
     let my_feedback_icons = <span><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></span>;
     switch (my_avg_game_eval) {
       case 5:
-        my_feedback_icons = <span><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></span>;
-        break;
+      my_feedback_icons = <span><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></span>;
+      break;
       case 4:
-        my_feedback_icons = <span><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/></span>;
-        break;
+      my_feedback_icons = <span><FaStar/><FaStar/><FaStar/><FaStar/><FaRegStar/></span>;
+      break;
       case 3:
-        my_feedback_icons = <span><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/></span>;
-        break;
+      my_feedback_icons = <span><FaStar/><FaStar/><FaStar/><FaRegStar/><FaRegStar/></span>;
+      break;
       case 2:
-        my_feedback_icons = <span><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/></span>;
-        break;
+      my_feedback_icons = <span><FaStar/><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/></span>;
+      break;
       case 1:
-        my_feedback_icons = <span><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></span>;
-        break;
+      my_feedback_icons = <span><FaStar/><FaRegStar/><FaRegStar/><FaRegStar/><FaRegStar/></span>;
+      break;
       default:
         // Do nothing
         break;
+      }
+      return my_feedback_icons;
     }
-    return my_feedback_icons;
-  }
 
-  const gameFansCounter = (my_fan_number) => {
+    const gameFansCounter = (my_fan_number) => {
     // Returns the number of fans for this game, followed by a 💖 icon]**
     return(<span><FaHeart /> {my_fan_number}</span>);
   }
@@ -49,22 +50,45 @@ function GameCard(props) {
     return(<span><FaStar /> {my_eval_number}</span>);
   }
 
-  return (
-    <div className="game-card">
+const [viewMore, setViewMore] = useState(false);
+const linkName = viewMore ? 'View Less << ' : '...View More >> ';
+
+const showDetails =
+  <div class="modal-bg" onClick={()=>{setViewMore(!viewMore)}}>
+    <div className="game-card modal">
       <div className="game-card-header">
-        <img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>
+        {/*<img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>*/}
         <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
         <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
       </div>
       <div className="game-card-body">
         <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr.slice(0,99)}... <Link className="game-card-link" to={"/games/" + props.game.id.toString()}> [View more...] </Link></p>
+        <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
         <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
       </div>
     </div>
+  </div>
+
+return (
+  <div className="game-card">
+    <div className="game-card-header">
+      {/*<img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>*/}
+      <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
+      <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
+    </div>
+    <div className="game-card-body">
+      <h3>{props.game.game_title}</h3>
+      <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
+    </div>
+    <div className="game-card-footer">
+      <div className="game-fan">{gameFansCounter(props.fans)}</div>
+      <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
+    </div>
+    {viewMore && showDetails}
+  </div>
   );
 }
 

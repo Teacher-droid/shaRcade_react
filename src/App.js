@@ -5,7 +5,6 @@ import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import GamesIndex from './components/GamesIndex/GamesIndex';
-import GameShow from './components/GameShow/GameShow';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
@@ -23,7 +22,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/games" element={<GamesIndex />} />
-        <Route path="/games/:gameId" element={<GameShow />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
