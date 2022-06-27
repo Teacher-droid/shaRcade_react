@@ -9,13 +9,15 @@
 }
 
 .game-card {
+  margin: auto;
   font-family: "Manaspace";
   color: var(--sc-txt-color);
   background-color: var(--sc-bg-color);
-  width: 18rem;
+  width: 20rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  text-align: center;
   padding: 0;
   border-radius: var(--sc-radius);
   border: double 5px var(--sc-line-color);
@@ -49,7 +51,7 @@
   position: absolute;
   top: 5px;
   left: 10px;
-  color: var(--sc-txt-color);
+  color: red;
   font-size: larger;
 }
 
@@ -57,7 +59,7 @@
   position: absolute;
   top: 5px;
   right: 10px;
-  color: var(--sc-txt-color);
+  color: yellow;
   font-size: larger;
 }
 
@@ -104,14 +106,6 @@
   margin: 0;
 }
 
-.game-fan {
-  color: var(--sc-txt-color);
-}
-
-.game-evaluator {
-  color: var(--sc-txt-color);
-}
-
 .modal-bg {
   animation: Fade-in .5s ease-in-out;
   display: block;
@@ -133,7 +127,6 @@
   left: 50%;
   border-radius: 2em;
   border: double 5px var(--sc-line-color);
-  margin-bottom: var(--sc-margin);
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -158,18 +151,18 @@
 
 .modal-favorite {
   position: absolute;
-  top: 1em;
-  left: 2em;
-  color: var(--sc-txt-color);
-  font-size: larger;
+  top: 1rem;
+  left: 2rem;
+  color: red;
+  font-size: 2.5rem;
 }
 
 .modal-feedback {
   position: absolute;
-  top: 1em;
-  right: 2em;
-  color: var(--sc-txt-color);
-  font-size: larger;
+  top: 1rem;
+  right: 2rem;
+  color: yellow;
+  font-size: 2.5rem;
 }
 
 .modal-body {
