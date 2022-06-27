@@ -5,7 +5,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <header className='header-container'>
+        <header className='header-container retro'>
             <Navbar>
                 <Container>
                     <Navbar.Brand href="/"> <img className="header-logo" alt='ShaRcade logo' src={LogoTopDelireMegaGroove} /></Navbar.Brand>

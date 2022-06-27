@@ -1,5 +1,5 @@
 .hero-container {
-  color: var(--sc-txt-color); /* JBV 24.06.2022 23h18 : added just to avoid an empty CSS class causing errors */
+  color: var(--sc-txt-color); 
 }
 
 .hero-banner {
