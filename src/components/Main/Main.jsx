@@ -6,9 +6,9 @@ import './Main.css';
 
 const Main = () => {
     return (
-        <main>
-            <Hero />
-            <GamesIndex />
+        <main className='main-container'>
+            <Hero/>
+            <GamesIndex/>
             <HookCanva />
         </main>
     )
