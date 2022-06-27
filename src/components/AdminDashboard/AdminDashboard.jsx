@@ -12,9 +12,12 @@ import './AdminDashboard.css';
 const AdminDashboard = () => {
 
     const [usersList, setUsersList] = useState([]);
-    const [stillLoading, setStillLoading] = useState(true);
+    const [gamesList, setGamesList] = useState([]);
+    const [usersStillLoading, setUsersStillLoading] = useState(true);
+    const [gamesStillLoading, setGamesStillLoading] = useState(true);
 
     useEffect(() => {
+        // Fetching ALL users datat
         fetch(API_URL + 'users/actions', {
             method: 'get',
             headers: {
@@ -22,13 +25,28 @@ const AdminDashboard = () => {
                 'Accept': 'application/json'
             }
         })
-        .then((response) => response.json())
-        .then((response) => {
-            setUsersList(response);
-            setStillLoading(usersList !== []);
+        .then((response_user) => response_user.json())
+        .then((response_user) => {
+            setUsersList(response_user);
+            setUsersStillLoading(false);
         })
         .catch((error) => console.log(error));
-    }, [usersList, stillLoading])
+
+        // Fetching ALL games datat
+        fetch(API_URL + 'games', {
+            method: 'get',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        .then((response_game) => response_game.json())
+        .then((response_game) => {
+            setGamesList(response_game);
+            setGamesStillLoading(false);
+        })
+        .catch((error) => console.log(error));
+    }, [])
 
     return (
         <div className='admin-dashboard-container'>
@@ -43,7 +61,7 @@ const AdminDashboard = () => {
                 <AdminFeedbacksInfoCard/>
             </div>
             <div className="admin-dashboard-middle-container">
-                {stillLoading ? <AdminUsersList usersindex={usersList}/> : null}
+                {usersStillLoading ? <AdminUsersList usersindex={usersList}/> : null}
                 <AdminGameTypesList/>
             </div>
         </div>

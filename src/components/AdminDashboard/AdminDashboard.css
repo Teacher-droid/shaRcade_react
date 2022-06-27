@@ -110,3 +110,22 @@
   /* text-decoration: underline overline; */
   font-style: normal;
 }
+
+/* Users table */
+
+.users-list-container {
+  background-color: inherit;
+  color: inherit;
+}
+
+.users-list-container.th {
+  font-family: "Karmatic Arcade";
+  font-size:larger;
+  font-weight: bold;
+}
+
+.users-list-container.td {
+  font-family: "Manaspace";
+  font-size:small;
+  font-weight:lighter
+}
