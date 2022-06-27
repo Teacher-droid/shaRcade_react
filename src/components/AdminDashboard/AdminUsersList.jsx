@@ -32,7 +32,7 @@ const AdminUsersList = (props) => {
     });  
 
     props.users ? setAdaptiveUserTableContent(myUsersLines) : setAdaptiveUserTableContent(noUserYetLine);
-  }, [props]);
+  });
 
   return (
     <div className='users-list-container'>

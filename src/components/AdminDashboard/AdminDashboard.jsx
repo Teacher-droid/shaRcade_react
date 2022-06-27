@@ -36,7 +36,7 @@ const AdminDashboard = () => {
             setGamesStillLoading(false);
         })
         .catch((error) => console.log(error));
-    }, [usersList, gamesList])
+    });
 
     return (
         <div className='admin-dashboard-container'>

@@ -1,4 +1,9 @@
 .hook-canva-container {
+    background-color: var(--sc-bg-color);
+    color: var(--sc-txt-color);
+    font-family: "Manaspace";
+    border-radius: var(--sc-radius);
+    border: var(--sc-border-type-ext) 5px var(--sc-line-color);
     margin: 5px 0 5px 0;
 }
 
