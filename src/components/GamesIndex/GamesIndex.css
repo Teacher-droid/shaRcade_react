@@ -1,4 +1,5 @@
 .game-list {
+  animation: Fade-in 3s ease-in-out;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

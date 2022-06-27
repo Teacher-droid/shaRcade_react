@@ -113,6 +113,7 @@
 }
 
 .modal-bg {
+  animation: Fade-in .5s ease-in-out;
   display: block;
   top: 0;
   left: 0;
@@ -124,6 +125,7 @@
 }
 
 .modal {
+  animation: Fade-in 1s ease-in-out;
   position: fixed;
   height: 60vh;
   width: 60vw;
