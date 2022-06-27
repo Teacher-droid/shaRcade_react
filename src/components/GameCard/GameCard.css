@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Karmatic Arcade";
+  src: url("../../assets/fonts/karmatic_arcade.ttf");
+}
+
+@font-face {
+  font-family: "Manaspace";
+  src: url("../../assets/fonts/mana_space.ttf");
+}
+
+.game-card {
+  --sc-txt-color: rgb(51,255,51);
+  --sc-bg-color: rgb(40,40,40);
+  --sc-line-color: rgb(51,255,51);
+  --sc-radius: 10px;
+  --sc-border-type: double;
+  font-family: "Manaspace";
+  color: var(--sc-txt-color);
+  background-color: var(--sc-bg-color);
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: var(--sc-radius);
+  border: double 5px var(--sc-line-color);
+  margin: 3px;
+}
+
+.game-card-header {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 0;
+  border-top-left-radius: var(--sc-radius);
+  border-top-right-radius: var(--sc-radius);
+  border-bottom: solid 1px var(--sc-line-color);
+  margin: 0;
+}
+
+.game-card-img {
+  width: 100%;
+  border: 0;
+  border-top-left-radius: var(--sc-radius);
+  border-top-right-radius: var(--sc-radius);
+  margin: 0;
+}
+
+.game-favorite {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  color: var(--sc-txt-color);
+  font-size: larger;
+}
+
+.game-feedback {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: var(--sc-txt-color);
+  font-size: larger;
+}
+
+.game-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px 0px 5px;
+} 
+
+.game-card-body.h3 {
+  font-family: "Karmatic Arcade";
+  color: var(--sc-txt-color);
+}
+
+.game-card-body.p {
+  font-family: "Manaspace";
+  color: var(--sc-txt-color);
+}
+
+.game-card-link {
+  color: var(--sc-txt-color);
+  background-color: var(--sc-bg-color);
+  text-decoration: underline overline;
+  font-weight: normal;
+  transition: color 3s, background-color 3s, font-weight 3s, ease;
+}
+
+.game-card-link:hover, .game-card-link:active {
+  color: var(--sc-bg-color);
+  background-color: var(--sc-txt-color);
+  text-decoration: underline overline;
+  font-weight: bolder;
+}
+
+.game-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0px 10px 0px 10px;
+  border: 0;
+  border-bottom-left-radius: var(--sc-radius);
+  border-bottom-right-radius: var(--sc-radius);
+  border-top: double 1px var(--sc-line-color);;
+  margin: 0;
+}
+
+.game-fan {
+  color: var(--sc-txt-color);
+}
+
+.game-evaluator {
+  color: var(--sc-txt-color);
+}

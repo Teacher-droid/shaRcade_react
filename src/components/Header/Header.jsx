@@ -5,10 +5,10 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <header>
+        <header className='header-container retro'>
             <Navbar>
                 <Container>
-                    <Navbar.Brand href="/"> <img className="logo" alt='logo' src={LogoTopDelireMegaGroove} /></Navbar.Brand>
+                    <Navbar.Brand href="/"> <img className="header-logo" alt='ShaRcade logo' src={LogoTopDelireMegaGroove} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
