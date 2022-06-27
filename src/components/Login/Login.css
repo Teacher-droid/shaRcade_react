@@ -4,10 +4,7 @@
   align-items: center;
   color: var(--sc-txt-color);
   margin-top: var(--sc-margin);
-}
-
-.label {
-  margin-left: 35%;
+  text-align: center;
 }
 
 .field {
@@ -25,5 +22,6 @@
   background-color: var(--sc-txt-color);
   color: var(--sc-bg-color);
   border: 1px solid var(--sc-bg-color);
+  border-radius: var(--sc-radius);
   margin-bottom: var(--sc-margin);
 }
