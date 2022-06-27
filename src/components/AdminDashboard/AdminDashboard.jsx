@@ -17,36 +17,26 @@ const AdminDashboard = () => {
     const [gamesStillLoading, setGamesStillLoading] = useState(true);
 
     useEffect(() => {
-        // Fetching ALL users datat
-        fetch(API_URL + 'users/actions', {
-            method: 'get',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
+        // Fetching ALL users data
+        fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
         .then((response_user) => response_user.json())
         .then((response_user) => {
             setUsersList(response_user);
+            console.log(usersList);
             setUsersStillLoading(false);
         })
         .catch((error) => console.log(error));
 
         // Fetching ALL games datat
-        fetch(API_URL + 'games', {
-            method: 'get',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
+        fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
         .then((response_game) => response_game.json())
         .then((response_game) => {
             setGamesList(response_game);
+            console.log(gamesList);
             setGamesStillLoading(false);
         })
         .catch((error) => console.log(error));
-    }, [])
+    }, [usersList, gamesList])
 
     return (
         <div className='admin-dashboard-container'>
@@ -55,13 +45,13 @@ const AdminDashboard = () => {
             </div>
             <div className="admin-dashboard-info-cards-container">
                 <AdminUsersInfoCard/>
-                <AdminGamesInfoCard/>
+                {usersStillLoading ? <AdminGamesInfoCard gamesinfo={gamesList}/> : "** Still loading **"}
                 <AdminScoresInfoCard/>
                 <AdminFavoritesInfoCard/>
                 <AdminFeedbacksInfoCard/>
             </div>
             <div className="admin-dashboard-middle-container">
-                {usersStillLoading ? <AdminUsersList usersindex={usersList}/> : null}
+                {usersStillLoading ? <AdminUsersList usersindex={usersList}/> : "** Still loading **"}
                 <AdminGameTypesList/>
             </div>
         </div>
