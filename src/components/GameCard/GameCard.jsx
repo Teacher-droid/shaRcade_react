@@ -54,18 +54,16 @@ const toggleDetails = () => {setViewMore(!viewMore)};
 const linkName = viewMore ? 'View Less << ' : '...View More >> ';
 
 const showDetails =
-  <div class="modal-bg" onClick={toggleDetails}>
+  <div className="modal-bg" onClick={toggleDetails}>
     <div className="game-card modal">
-      <div className="game-card-header">
-        {/*<img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>*/}
-        <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
-        <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
-      </div>
-      <div className="game-card-body">
+      <img className="modal-img" src={require('../../assets/images/games/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>
+      <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
+      <div className="modal-feedback">{gameFeedbackIcons(props.evaluation)}</div>
+      <div className="modal-body">
         <h3>{props.game.game_title}</h3>
         <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
-      <div className="game-card-footer">
+      <div className="modal-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
         <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
       </div>
@@ -75,7 +73,7 @@ const showDetails =
 return (
   <div className="game-card">
     <div className="game-card-header">
-      {/*<img className="game-card-img" src={require('../../assets/images/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>*/}
+      <img className="game-card-img" src={require('../../assets/images/games/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>
       <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
       <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
     </div>
