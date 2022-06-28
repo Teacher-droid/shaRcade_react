@@ -1,4 +1,5 @@
 .header-container {
+    background-color: var(--sc-bg-color);
     height: 20%;
     width: 100%;
 }
@@ -26,7 +27,6 @@
     padding: 0;
     border-radius: var(--sc-radius);
     border: double 5px var(--sc-line-color);
-    margin: 3px;
 }
 
 .dg {

@@ -1,5 +1,6 @@
 .footer-container {
   width: 100%;
+  background-color: var(--sc-bg-color);
   background: linear-gradient(149deg,
               var(--sc-txt-color) 0%,
               var(--sc-bg-color) 100%);
