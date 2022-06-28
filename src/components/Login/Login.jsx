@@ -6,6 +6,7 @@ import { API_URL } from '../../stores/api_url';
 import Cookies from 'js-cookie';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import './Login.css';
 
 const Login = () => {
 
@@ -48,23 +49,17 @@ const Login = () => {
 }
 
 return (
-  <Form onSubmit={fetchData}>
+  <Form className="form" onSubmit={fetchData}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
-  <Form.Label>Email address</Form.Label>
-  <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
-  <Form.Text className="text-muted">
-  We'll never share your email with anyone else.
-  </Form.Text>
+  <Form.Label className="label">Email address</Form.Label>
+  <Form.Control className="field" type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
-  <Form.Label>Password</Form.Label>
-  <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+  <Form.Label className="label">Password</Form.Label>
+  <Form.Control className="field" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-  <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
+  <Button className="submit-btn" variant="primary" type="submit">
   Submit
   </Button>
   </Form>

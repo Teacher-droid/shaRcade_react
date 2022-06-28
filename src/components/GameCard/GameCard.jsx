@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './GameCard.css';
 import { FaHeart, FaRegHeart, FaRegStar, FaStarHalf, FaStar } from "react-icons/fa";
@@ -51,22 +50,22 @@ function GameCard(props) {
   }
 
 const [viewMore, setViewMore] = useState(false);
-const linkName = viewMore ? 'View Less << ' : 'View More >> ';
+const toggleDetails = () => {setViewMore(!viewMore)};
+const linkName = viewMore ? 'View Less << ' : '...View More >> ';
 const imageLink = require('../../assets/images/games/' + props.game.image_url) ? require('../../assets/images/games/' + props.game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
 
+
 const showDetails =
-  <div className="modal-bg" onClick={()=>{setViewMore(!viewMore)}}>
+  <div className="modal-bg" onClick={toggleDetails}>
     <div className="game-card modal">
-      <div className="game-card-header">
-        <img className="game-card-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
-        <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
-        <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
-      </div>
-      <div className="game-card-body">
+      <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title} alt={"screenshot of "+props.game.game_title}/>
+      <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
+      <div className="modal-feedback">{gameFeedbackIcons(props.evaluation)}</div>
+      <div className="modal-body">
         <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
+        <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
-      <div className="game-card-footer">
+      <div className="modal-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
         <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
       </div>
@@ -82,7 +81,7 @@ return (
     </div>
     <div className="game-card-body">
       <h3>{props.game.game_title}</h3>
-      <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={()=>{setViewMore(!viewMore)}}>{linkName}</span></p>
+      <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
     </div>
     <div className="game-card-footer">
       <div className="game-fan">{gameFansCounter(props.fans)}</div>

@@ -1,15 +1,19 @@
-
 .game-card {
+  margin: auto;
   font-family: "Manaspace";
   color: var(--sc-txt-color);
   background-color: var(--sc-bg-color);
+  width: 20rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  flex: 0 1 calc(25% - 1em);
+  text-align: center;
   padding: 0;
   border-radius: var(--sc-radius);
   border: var(--sc-border-type-ext) 5px var(--sc-line-color);
-  margin: 5px 0 5px 0;
+  margin-top: var(--sc-margin);
+  margin-bottom: var(--sc-margin);
+  /*flex: 0 1 calc(25% - 1em);  */
 }
 
 .game-card-header {
@@ -38,7 +42,7 @@
   position: absolute;
   top: 5px;
   left: 10px;
-  color: var(--sc-txt-color);
+  color: red;
   font-size: larger;
 }
 
@@ -46,7 +50,7 @@
   position: absolute;
   top: 5px;
   right: 10px;
-  color: var(--sc-txt-color);
+  color: yellow;
   font-size: larger;
 }
 
@@ -95,44 +99,87 @@
   margin: 0;
 }
 
-.game-fan {
-  color: var(--sc-txt-color);
-}
-
-.game-evaluator {
-  color: var(--sc-txt-color);
-}
-
 .modal-bg {
+  animation: Fade-in .5s ease-in-out;
   display: block;
   top: 0;
   left: 0;
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--sc-modal-bg-color);
   z-index: 2;
 }
 
 .modal {
-  background-color: #ccc;
-  font-family: Arial, sans-serif;
+  animation: Fade-in 1s ease-in-out;
   position: fixed;
-  height: 50vh;
-  width: 50vw;
-  top: 20vh;
+  height: 80%;
+  width: 60%;
+  top: 10vh;
   left: 50%;
+  border-radius: 2em;
+  border: double 5px var(--sc-line-color);
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   flex-direction: row;
+  text-align: center;
   z-index: 3;
+  font-family: "Manaspace";
+  color: var(--sc-txt-color);
+  background-color: var(--sc-bg-color);
+}
+
+.modal-img {
+  height: 50%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.modal-favorite {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  color: red;
+  font-size: 2.5rem;
+}
+
+.modal-feedback {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  color: yellow;
+  font-size: 2.5rem;
+}
+
+.modal-body {
+  height: 40%;
+  overflow: auto;
+}
+
+.modal-footer {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .show-button {
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: underline overline;
+  font-weight: normal;
+}
+
+.show-button:hover {
+  color: var(--sc-bg-color);
+  background-color: var(--sc-txt-color);
+  text-decoration: underline overline;
+  font-weight: bolder;
 }
