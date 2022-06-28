@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Cookies from 'js-cookie';
 import { API_URL } from '../../stores/api_url'
 import AdminUsersInfoCard from './AdminUsersInfoCard';
 import AdminGamesInfoCard from './AdminGamesInfoCard';
@@ -7,13 +8,11 @@ import AdminFavoritesInfoCard from './AdminFavoritesInfoCard';
 import AdminFeedbacksInfoCard from './AdminFeedbacksInfoCard';
 import AdminUsersList from './AdminUsersList';
 import AdminGameTypesList from './AdminGameTypesList';
-import { useAtom } from 'jotai';
-import { fullUserAtom } from '../../stores/cookies';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
 
-    const [myUser, setMyUser] = useAtom(fullUserAtom);
+    const [myUser, setMyUser] = useState(Cookies.get("fulluser").json());
     
     const [usersList, setUsersList] = useState([]);
     const [gamesList, setGamesList] = useState([]);
@@ -23,7 +22,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         // Fetching ALL users data
         fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
-        .then((response_user) => { return response_user.json() })
+        .then((response_user) => response_user.json())
         .then((data_user) => {
             setUsersList(data_user);
             console.log("usersList >>");

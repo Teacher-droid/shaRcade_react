@@ -37,17 +37,16 @@ const Signup = () => {
       body: JSON.stringify(data)
     })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       setAuthorization(response.headers.get('authorization'));
       Cookies.set('token', response.headers.get('authorization'));
-      console.log(authorizationAtom);
       return response.json();
     })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       setUser(response.user.id);
-      console.log(userAtom);
       Cookies.set('id', response.user.id);
+      Cookies.set('fulluser', response.user);
       response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
     })
   }

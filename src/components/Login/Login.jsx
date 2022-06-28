@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useAtom } from 'jotai';
-import { userAtom, authorizationAtom, fullUserAtom } from '../../stores/cookies';
+import { userAtom, authorizationAtom } from '../../stores/cookies';
 import { API_URL } from '../../stores/api_url';
 import Cookies from 'js-cookie';
 import Button from 'react-bootstrap/Button';
@@ -15,7 +15,6 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [user, setUser] = useAtom(userAtom);
   const [authorization, setAuthorization] = useAtom(authorizationAtom);
-  const [fullUser, setFullUser] = useAtom(fullUserAtom);
   
   function fetchData(e){
     
@@ -36,20 +35,17 @@ const Login = () => {
       body: JSON.stringify(data)
     })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       setAuthorization(response.headers.get('authorization'));
       Cookies.set('token', response.headers.get('authorization'));
-      console.log(authorization);
       return response.json();
     })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       setUser(response.user.id);
-      setFullUser(response.user);
-      console.log(user);
-      console.log(fullUser);
       Cookies.set('id', response.user.id);
-      // response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
+      Cookies.set('fulluser', response.user);
+      response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
     });
   }  
   
