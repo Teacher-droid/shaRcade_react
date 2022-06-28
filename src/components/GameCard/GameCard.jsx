@@ -69,13 +69,13 @@ function GameCard(props) {
   <div className="modal-feedback">{gameFeedbackIcons(props.evaluation)}</div>
   <div className="modal-body">
   <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
-  <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+  <p>{props.game.game_descr}<span className="modal-btn show-button" onClick={toggleDetails}>{linkName}</span></p>
 
   </div>
   <div className="modal-footer">
   <div className="game-fan">{gameFansCounter(props.fans)}</div>
   <div className="mobile-ready"></div>
-  <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
+  <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
   </div>
   </div>
   </div>
@@ -85,7 +85,7 @@ function GameCard(props) {
     <div className="game-card-header">
     <img className="game-card-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
     <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
-    <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
+    <div className="game-feedback">{gameEvalutionsCounter(props.evaluation)}</div>
     </div>
     <div className="game-card-body">
     <h3>{props.game.game_title}</h3>
@@ -93,7 +93,7 @@ function GameCard(props) {
     </div>
     <div className="game-card-footer">
     <div className="game-fan">{gameFansCounter(props.fans)}</div>
-    <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
+    <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
     </div>
     {viewMore && showDetails}
     </div>
