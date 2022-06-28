@@ -31,7 +31,7 @@ const AdminDashboard = () => {
             }
 
             if (!gamesLoaded) {
-                // Fetching ALL games datat
+                // Fetching ALL games data
                 fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
                 .then((response_game) => response_game.json())
                 .then((response_game) => {
