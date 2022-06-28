@@ -11,7 +11,7 @@ const AdminUsersList = (props) => {
 
     const noUserYetLine = (
       <tr>
-        <td colSpan={11}>No registered user yet</td>
+        <td colSpan={11}>-- No registered user yet --</td>
       </tr>
     );
   
@@ -31,8 +31,8 @@ const AdminUsersList = (props) => {
       </tr>
     });  
 
-    props.users ? setAdaptiveUserTableContent(myUsersLines) : setAdaptiveUserTableContent(noUserYetLine);
-  });
+    props.usersindex ? setAdaptiveUserTableContent(myUsersLines) : setAdaptiveUserTableContent(noUserYetLine);
+  }, [props.usersindex]);
 
   return (
     <div className='users-list-container'>

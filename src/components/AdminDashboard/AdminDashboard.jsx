@@ -15,28 +15,36 @@ const AdminDashboard = () => {
     const [gamesList, setGamesList] = useState([]);
     const [usersStillLoading, setUsersStillLoading] = useState(true);
     const [gamesStillLoading, setGamesStillLoading] = useState(true);
+    const [allLoaded, setAllLoaded] = useState(false);
 
     useEffect(() => {
-        // Fetching ALL users data
-        fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
-        .then((response_user) => response_user.json())
-        .then((response_user) => {
-            setUsersList(response_user);
-            console.log(usersList);
-            setUsersStillLoading(false);
-        })
-        .catch((error) => console.log(error));
 
-        // Fetching ALL games datat
-        fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
-        .then((response_game) => response_game.json())
-        .then((response_game) => {
-            setGamesList(response_game);
-            console.log(gamesList);
-            setGamesStillLoading(false);
-        })
-        .catch((error) => console.log(error));
-    });
+        if (!allLoaded) {
+            
+            // Fetching ALL users data
+            fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
+            .then((response_user) => response_user.json())
+            .then((response_user) => {
+                setUsersList(response_user);
+                console.log(usersList);
+                setUsersStillLoading(false);
+            })
+            .catch((error) => console.log(error));
+
+            // Fetching ALL games datat
+            fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
+            .then((response_game) => response_game.json())
+            .then((response_game) => {
+                setGamesList(response_game);
+                console.log(gamesList);
+                setGamesStillLoading(false);
+            })
+            .catch((error) => console.log(error));
+
+            setAllLoaded(!usersStillLoading && !gamesStillLoading);
+        }
+
+    },[allLoaded]);
 
     return (
         <div className='admin-dashboard-container'>
@@ -45,13 +53,13 @@ const AdminDashboard = () => {
             </div>
             <div className="admin-dashboard-info-cards-container">
                 <AdminUsersInfoCard/>
-                {usersStillLoading ? <AdminGamesInfoCard gamesinfo={gamesList}/> : "** Still loading **"}
+                {gamesStillLoading ? <AdminGamesInfoCard gamesinfo={gamesList}/> : "-- Still loading --"}
                 <AdminScoresInfoCard/>
                 <AdminFavoritesInfoCard/>
                 <AdminFeedbacksInfoCard/>
             </div>
             <div className="admin-dashboard-middle-container">
-                {usersStillLoading ? <AdminUsersList usersindex={usersList}/> : "** Still loading **"}
+                {usersStillLoading ? <AdminUsersList usersindex={usersList}/> : "-- Still loading --"}
                 <AdminGameTypesList/>
             </div>
         </div>
