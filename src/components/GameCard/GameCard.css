@@ -47,6 +47,10 @@
   font-size: larger;
 }
 
+.game-mobile-ready:hover{
+  cursor: help;
+}
+
 .game-feedback {
   position: absolute;
   top: 5px;

@@ -71,7 +71,7 @@ const GamesIndex = () => {
             }
             if (feedbacksCount !== 0) {averageRating = Math.round(feedbacksRatings / feedbacksCount)};
         })
-        return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} key={game.id}/>
+    return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} key={game.id}/>
 })
 
     return (
