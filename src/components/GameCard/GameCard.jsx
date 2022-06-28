@@ -16,7 +16,7 @@ function GameCard(props) {
   const gameMobileReadyIcon = (is_mobile_ready) => {
     // Returns phone full if "current game" mobile ready is true
     // Returns phone mepty, elseway
-    let my_mobileready_icon = is_mobile_ready ? <span title="This game can be played on both computers and touch devices."><FaTabletAlt/><FaKeyboard/></span> : <span title="this game can be played on a computer."><FaKeyboard/></span>;
+    let my_mobileready_icon = is_mobile_ready ? <span title="This game can be played on both computers and touch devices."><FaTabletAlt/>&nbsp;<FaKeyboard/></span> : <span title="this game can be played on a computer."><FaKeyboard/></span>;
     return my_mobileready_icon;
   }
 

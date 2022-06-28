@@ -64,6 +64,7 @@
   flex-direction: column;
   height: auto;
   padding: 0px 5px 0px 5px;
+  margin-bottom: auto;
 } 
 
 .game-card-body.h3 {
@@ -80,8 +81,8 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
-  height: 5%;
-  padding: 0px 10px 0px 10px;
+  height: 2em;
+  padding: .25em;
   border: 0;
   border-bottom-left-radius: var(--sc-radius);
   border-bottom-right-radius: var(--sc-radius);
