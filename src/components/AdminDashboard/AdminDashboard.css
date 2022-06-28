@@ -123,9 +123,10 @@
   background-color: inherit;
   color: inherit;
   border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+  border-radius: var(--sc-border-type-ext);
 }
 
-th:first-of-type {
+/* th:first-of-type {
   border-top-left-radius: 10px;
 }
 th:last-of-type {
@@ -136,7 +137,7 @@ tr:last-of-type td:first-of-type {
 }
 tr:last-of-type td:last-of-type {
   border-bottom-right-radius: 10px;
-}
+} */
 
 .users-list-container.th {
   font-family: "Karmatic Arcade";

@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useSetAtom } from "jotai";
-import {userAtom, authorizationAtom} from '../../stores/cookies';
+import { userAtom, authorizationAtom } from '../../stores/cookies';
 import { API_URL } from '../../stores/api_url';
 import Cookies from 'js-cookie';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import './Signup.css';
 
 const Signup = () => {
 
   const navigate = useNavigate();
   const setUser = useSetAtom(userAtom);
-  const [loading, setLoading] = useState(false)
-
+  const setAuthorization = useSetAtom(authorizationAtom);
   const [email, setEmail] = useState();
   const [nickname, setNickname] = useState();
   const [password, setPassword] = useState();
-  const setAuthorization = useSetAtom(authorizationAtom);
-
+  
   const submitData = (e) => {
-    setLoading(true);
+  
     e.preventDefault();
+  
     const data = {
       "user": {
         "email": email,
@@ -28,7 +28,8 @@ const Signup = () => {
         "nickname": nickname
       }
     };
-    fetch(`${API_URL}users.json`, {
+  
+    fetch(`${API_URL}users`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -36,16 +37,21 @@ const Signup = () => {
       body: JSON.stringify(data)
     })
     .then((response) => {
-      setAuthorization([...response.headers.get('authorization')].join(''));
-      Cookies.set('token', [...response.headers.get('authorization')].join(''));
-      return response.json()
+      console.log(response);
+      setAuthorization(response.headers.get('authorization'));
+      Cookies.set('token', response.headers.get('authorization'));
+      console.log(authorizationAtom);
+      return response.json();
     })
     .then((response) => {
+      console.log(response);
       setUser(response.user.id);
+      console.log(userAtom);
       Cookies.set('id', response.user.id);
-      navigate('/');
+      response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
     })
   }
+  
   return (
     <Form onSubmit={submitData}>
     <Form.Group className="mb-3" controlId="formBasicEmail">
