@@ -1,7 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-/* BEGIN JBV 24.06.2022 23:48 */
-/* Trying to insert these generic / reset rules at highest level in code hierarchy */
 @font-face {
   font-family: "Karmatic Arcade";
   src: url("./assets/fonts/karmatic_arcade.ttf");
@@ -24,8 +22,6 @@
   --sc-font-size-large: 18px;
   --sc-font-size-title: 24px;
 }
-
-/* END JBV 24.06.2022 23:48 */
 
 body {
   background-color: var(--sc-bg-color);
