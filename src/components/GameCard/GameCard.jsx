@@ -49,47 +49,55 @@ function GameCard(props) {
     return(<span><FaStar /> {my_eval_number}</span>);
   }
 
-const [viewMore, setViewMore] = useState(false);
-const toggleDetails = () => {setViewMore(!viewMore)};
-const linkName = viewMore ? 'View Less << ' : '...View More >> ';
-const imageLink = require('../../assets/images/games/' + props.game.image_url) ? require('../../assets/images/games/' + props.game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
+  const [viewMore, setViewMore] = useState(false);
+  const toggleDetails = (e) => {
+    if (e.target !== e.currentTarget) {
+      return false;
+    }
+    e.nativeEvent.stopImmediatePropagation();
+    setViewMore(!viewMore);
+  }
+  const linkName = viewMore ? '...View Less << ' : '...View More >> ';
+  const imageLink = require('../../assets/images/games/' + props.game.image_url) ? require('../../assets/images/games/' + props.game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
 
 
-const showDetails =
+  const showDetails =
   <div className="modal-bg" onClick={toggleDetails}>
-    <div className="game-card modal">
-      <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title} alt={"screenshot of "+props.game.game_title}/>
-      <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
-      <div className="modal-feedback">{gameFeedbackIcons(props.evaluation)}</div>
-      <div className="modal-body">
-        <h3>{props.game.game_title}</h3>
-        <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
-      </div>
-      <div className="modal-footer">
-        <div className="game-fan">{gameFansCounter(props.fans)}</div>
-        <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
-      </div>
-    </div>
+  <div className="game-card modal">
+  <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title} alt={"screenshot of "+props.game.game_title}/>
+  <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
+  <div className="modal-feedback">{gameFeedbackIcons(props.evaluation)}</div>
+  <div className="modal-body">
+  <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
+  <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+
+  </div>
+  <div className="modal-footer">
+  <div className="game-fan">{gameFansCounter(props.fans)}</div>
+  <div className="mobile-ready"></div>
+  <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
+  </div>
+  </div>
   </div>
 
-return (
-  <div className="game-card">
+  return (
+    <div className="game-card">
     <div className="game-card-header">
-      <img className="game-card-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
-      <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
-      <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
+    <img className="game-card-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
+    <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
+    <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
     </div>
     <div className="game-card-body">
-      <h3>{props.game.game_title}</h3>
-      <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+    <h3>{props.game.game_title}</h3>
+    <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
     </div>
     <div className="game-card-footer">
-      <div className="game-fan">{gameFansCounter(props.fans)}</div>
-      <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
+    <div className="game-fan">{gameFansCounter(props.fans)}</div>
+    <div className="game-evaluator">{gameEvalutionsCounter(props.feedbacks)}</div>
     </div>
     {viewMore && showDetails}
-  </div>
-  );
+    </div>
+    );
 }
 
 export default GameCard;
