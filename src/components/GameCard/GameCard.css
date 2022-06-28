@@ -109,13 +109,9 @@
 }
 
 .show-button {
-  cursor: zoom-in;
+  cursor: pointer;
   text-decoration: underline overline;
   font-weight: normal;
-}
-
-.modal-btn {
-  cursor: zoom-out;
 }
 
 .show-button:hover {
