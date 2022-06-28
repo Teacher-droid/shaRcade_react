@@ -15,11 +15,8 @@ const AdminDashboard = () => {
     const [gamesList, setGamesList] = useState([]);
     const [usersLoaded, setUsersLoaded] = useState(false);
     const [gamesLoaded, setGamesLoaded] = useState(false);
-    const [allLoaded, setAllLoaded] = useState(false);
 
     useEffect(() => {
-
-        if (!allLoaded) {
 
             if (!usersLoaded) {
                 // Fetching ALL users data
@@ -28,7 +25,7 @@ const AdminDashboard = () => {
                 .then((response_user) => {
                     setUsersList(response_user);
                     console.log(usersList);
-                    setUsersLoaded(usersList.length === 0);
+                    setUsersLoaded(usersList.length !== 0);
                 })
                 .catch((error) => console.log(error));
             }
@@ -40,15 +37,12 @@ const AdminDashboard = () => {
                 .then((response_game) => {
                     setGamesList(response_game);
                     console.log(gamesList);
-                    setGamesLoaded(gamesList.length === 0);
+                    setGamesLoaded(gamesList.length !== 0);
                 })
                 .catch((error) => console.log(error));
             }
 
-            setAllLoaded(!usersLoaded && !gamesLoaded);
-        }
-
-    },[allLoaded]);
+    },[usersLoaded, gamesLoaded]);
 
     return (
         <div className='admin-dashboard-container'>
@@ -57,13 +51,13 @@ const AdminDashboard = () => {
             </div>
             <div className="admin-dashboard-info-cards-container">
                 <AdminUsersInfoCard/>
-                {gamesStillLoading ? <AdminGamesInfoCard gamesinfo={gamesList}/> : "-- Still loading --"}
+                {gamesLoaded ? <AdminGamesInfoCard gamesinfo={gamesList}/> : "-- Still loading --"}
                 <AdminScoresInfoCard/>
                 <AdminFavoritesInfoCard/>
                 <AdminFeedbacksInfoCard/>
             </div>
             <div className="admin-dashboard-middle-container">
-                {usersStillLoading ? <AdminUsersList usersindex={usersList}/> : "-- Still loading --"}
+                {usersLoaded ? <AdminUsersList usersindex={usersList}/> : "-- Still loading --"}
                 <AdminGameTypesList/>
             </div>
         </div>

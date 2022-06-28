@@ -13,7 +13,7 @@ const HookCanva = () => {
             <div className="d-flex">
                 <div className="side1">
                     <h3>What can I expect as a player?</h3>
-                    <img src="https://images.squarespace-cdn.com/content/5ac589eb8ab722aa77be2eeb/1532023443220-Z4GF6TJG12BQSM2CSKUO/random_interactive_share.jpg?format=400w&content-type=image%2Fjpeg" alt="prototype" class="padding-right" />
+                    <img src="https://images.squarespace-cdn.com/content/5ac589eb8ab722aa77be2eeb/1532023443220-Z4GF6TJG12BQSM2CSKUO/random_interactive_share.jpg?format=400w&content-type=image%2Fjpeg" alt="prototype" className="padding-right" />
                     <p>Easily search new games by content, genres, ranks, etc.</p>
                     <p>Give marks and in-writing evaluations to promote your favorite games and editors.</p>
                     <p>Share your hi-score with your friends and... The world!</p>
@@ -21,7 +21,7 @@ const HookCanva = () => {
                 </div>
                 <div className="side2">
                     <h3>What can a coder/editor benefits from?</h3>
-                    <img src="https://images.squarespace-cdn.com/content/5ac589eb8ab722aa77be2eeb/1532023443220-Z4GF6TJG12BQSM2CSKUO/random_interactive_share.jpg?format=400w&content-type=image%2Fjpeg" alt="prototype" class="padding-right" />
+                    <img src="https://images.squarespace-cdn.com/content/5ac589eb8ab722aa77be2eeb/1532023443220-Z4GF6TJG12BQSM2CSKUO/random_interactive_share.jpg?format=400w&content-type=image%2Fjpeg" alt="prototype" className="padding-right" />
                     <p>Seamlessly register your game(s), making them visible and playable by the whole ShaRcade&reg; community!</p>
                     <p>Effortlessly promote your games, their upgrades and spin-off.</p>
                     <p>Build a long-terme solid community and after-sale relations with your games' fans</p>
