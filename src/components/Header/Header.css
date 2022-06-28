@@ -1,4 +1,5 @@
 .header-container {
+    background-color: var(--sc-bg-color);
     height: 20%;
     width: 100%;
 }

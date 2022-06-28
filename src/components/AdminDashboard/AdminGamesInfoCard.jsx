@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const AdminGamesInfoCard = () => {
+const AdminGamesInfoCard = (props) => {
 
   const [gamesCount, setGamesCount] = useState();
   const [gameTypesCount, setGameTypesCount] = useState();
@@ -10,11 +10,11 @@ const AdminGamesInfoCard = () => {
 
   useEffect(() => {
     // Initialiser les différents KPIs liées aux "Games" via des fetchs + calculs + set*Count
-    setGamesCount(666);
+    setGamesCount(props.gamesinfo.length);
     setGameTypesCount(28);
     setLastRegisteredGame(["SnaKouninef","2022/06/23"]);
     setScoresPerGame(8);
-  }, []);
+  }, [props.gamesinfo.length]);
 
   return (
     <div className="admin-info-card">

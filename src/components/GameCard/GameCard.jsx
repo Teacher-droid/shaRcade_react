@@ -52,11 +52,13 @@ function GameCard(props) {
 const [viewMore, setViewMore] = useState(false);
 const toggleDetails = () => {setViewMore(!viewMore)};
 const linkName = viewMore ? 'View Less << ' : '...View More >> ';
+const imageLink = require('../../assets/images/games/' + props.game.image_url) ? require('../../assets/images/games/' + props.game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
+
 
 const showDetails =
   <div className="modal-bg" onClick={toggleDetails}>
     <div className="game-card modal">
-      <img className="modal-img" src={require('../../assets/images/games/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>
+      <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title} alt={"screenshot of "+props.game.game_title}/>
       <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
       <div className="modal-feedback">{gameFeedbackIcons(props.evaluation)}</div>
       <div className="modal-body">
@@ -73,7 +75,7 @@ const showDetails =
 return (
   <div className="game-card">
     <div className="game-card-header">
-      <img className="game-card-img" src={require('../../assets/images/games/' + props.game.image_url)} alt={"screenshot of "+props.game.game_title}/>
+      <img className="game-card-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
       <div className="game-favorite">{gameFavoriteIcon(props.favorite)}</div>
       <div className="game-feedback">{gameFeedbackIcons(props.evaluation)}</div>
     </div>

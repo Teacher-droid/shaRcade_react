@@ -1,6 +1,4 @@
-/* JBV 24.06.2022 @ 23h16 : Utile sachant qu'on fait déjà des imports React Bootstrap ?? */
 @import 'bootstrap/dist/css/bootstrap.min.css';
-/* JBV 24.06.2022 @ 23h16 : Utile sachant qu'on fait déjà des imports React Bootstrap ?? */
 
 /* BEGIN JBV 24.06.2022 23:48 */
 /* Trying to insert these generic / reset rules at highest level in code hierarchy */
@@ -31,6 +29,10 @@
 }
 
 /* END JBV 24.06.2022 23:48 */
+
+body {
+  background-color: var(--sc-bg-color);
+}
 
 .App {
   text-align: center;
