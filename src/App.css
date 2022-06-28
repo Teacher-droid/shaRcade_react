@@ -30,16 +30,12 @@
 
 /* END JBV 24.06.2022 23:48 */
 
-body {
-  background-color: var(--sc-bg-color);
-}
-
 .App {
   text-align: center;
 }
 
 body {
-    background-color: var(--sc-bg-color);
+  background-color: var(--sc-bg-color);
 }
 
 @keyframes Fade-in {
