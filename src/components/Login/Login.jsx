@@ -44,7 +44,7 @@ const Login = () => {
       // console.log(response);
       setUser(response.user.id);
       Cookies.set('id', response.user.id);
-      Cookies.set('fulluser', response.user);
+      Cookies.set('fulluser', JSON.stringify(response.user));
       response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
     });
   }  

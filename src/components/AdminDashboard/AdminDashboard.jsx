@@ -12,7 +12,7 @@ import './AdminDashboard.css';
 
 const AdminDashboard = () => {
 
-    const [myUser, setMyUser] = useState(Cookies.get("fulluser").json());
+    const [myUser, setMyUser] = useState(JSON.parse(Cookies.get("fulluser")));
     
     const [usersList, setUsersList] = useState([]);
     const [gamesList, setGamesList] = useState([]);
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
     return (
         <div className='admin-dashboard-container'>
             <div className="admin-dashboard-welcome-banner">
-                <h1>Welcome to your ShaRcade Admin dashboard, {myUser.firstname}!</h1>
+                <h2>Welcome to your ShaRcade Admin dashboard, {myUser.firstname ? myUser.firstname : "Stranger"}!</h2>
             </div>
             <div className="admin-dashboard-info-cards-container">
                 <AdminUsersInfoCard/>
