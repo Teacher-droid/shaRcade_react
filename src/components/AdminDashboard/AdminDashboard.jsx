@@ -13,35 +13,39 @@ const AdminDashboard = () => {
 
     const [usersList, setUsersList] = useState([]);
     const [gamesList, setGamesList] = useState([]);
-    const [usersStillLoading, setUsersStillLoading] = useState(true);
-    const [gamesStillLoading, setGamesStillLoading] = useState(true);
+    const [usersLoaded, setUsersLoaded] = useState(false);
+    const [gamesLoaded, setGamesLoaded] = useState(false);
     const [allLoaded, setAllLoaded] = useState(false);
 
     useEffect(() => {
 
         if (!allLoaded) {
-            
-            // Fetching ALL users data
-            fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
-            .then((response_user) => response_user.json())
-            .then((response_user) => {
-                setUsersList(response_user);
-                console.log(usersList);
-                setUsersStillLoading(false);
-            })
-            .catch((error) => console.log(error));
 
-            // Fetching ALL games datat
-            fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
-            .then((response_game) => response_game.json())
-            .then((response_game) => {
-                setGamesList(response_game);
-                console.log(gamesList);
-                setGamesStillLoading(false);
-            })
-            .catch((error) => console.log(error));
+            if (!usersLoaded) {
+                // Fetching ALL users data
+                fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
+                .then((response_user) => response_user.json())
+                .then((response_user) => {
+                    setUsersList(response_user);
+                    console.log(usersList);
+                    setUsersLoaded(usersList.length === 0);
+                })
+                .catch((error) => console.log(error));
+            }
 
-            setAllLoaded(!usersStillLoading && !gamesStillLoading);
+            if (!gamesLoaded) {
+                // Fetching ALL games datat
+                fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
+                .then((response_game) => response_game.json())
+                .then((response_game) => {
+                    setGamesList(response_game);
+                    console.log(gamesList);
+                    setGamesLoaded(gamesList.length === 0);
+                })
+                .catch((error) => console.log(error));
+            }
+
+            setAllLoaded(!usersLoaded && !gamesLoaded);
         }
 
     },[allLoaded]);
