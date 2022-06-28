@@ -35,13 +35,11 @@ const Login = () => {
     body: JSON.stringify(data)
 })
     .then((response) => {
-      console.log([...response.headers.get('authorization')].join('').split(" ")[1])
       setAuthorization([...response.headers.get('authorization')].join(''));
-      Cookies.set('token', [...response.headers.get('authorization')].join(''))
+      Cookies.set('token', [...response.headers.get('authorization')].join(''));
       return response.json()
   })
     .then((response) => {
-      console.log(response)
       setUser(response.user.id);
       Cookies.set('id', response.user.id)
       navigate('/')

@@ -39,7 +39,7 @@ const Signup = () => {
     .then((response) => {
       setAuthorization([...response.headers.get('authorization')].join(''));
       Cookies.set('token', [...response.headers.get('authorization')].join(''));
-      return response.json()
+      return response.json();
     })
     .then((response) => {
       setUser(response.id);
