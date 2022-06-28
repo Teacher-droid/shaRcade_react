@@ -28,7 +28,7 @@ const Signup = () => {
         "nickname": nickname
       }
     };
-    fetch(`${API_URL}users`, {
+    fetch(`${API_URL}users.json`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

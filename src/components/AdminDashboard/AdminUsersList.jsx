@@ -41,14 +41,14 @@ const AdminUsersList = (props) => {
         <thead>
           <tr>
             <th>#</th>
-            <th>Role</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Nickname</th>
-            <th>Birthdate</th>
-            <th>Gender</th>
-            <th>E-mail</th>
-            <th colSpan={3}>Actions</th>
+            <th>ROLE</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>NICKNAME</th>
+            <th>BIRTHDATE</th>
+            <th>GENDER</th>
+            <th>E-MAIL</th>
+            <th colSpan={3}>ACTIONS</th>
           </tr>
         </thead>
         <tbody>

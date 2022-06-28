@@ -26,7 +26,7 @@ const Login = () => {
         }
     };
 
-    fetch(API_URL + 'users/sign_in', {
+    fetch(API_URL + 'users/sign_in.json', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

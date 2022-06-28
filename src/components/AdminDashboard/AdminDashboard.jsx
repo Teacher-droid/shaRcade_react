@@ -7,9 +7,13 @@ import AdminFavoritesInfoCard from './AdminFavoritesInfoCard';
 import AdminFeedbacksInfoCard from './AdminFeedbacksInfoCard';
 import AdminUsersList from './AdminUsersList';
 import AdminGameTypesList from './AdminGameTypesList';
+import { useAtom } from 'jotai';
+import {userAtom, authorizationAtom} from '../../stores/cookies';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
+
+    const [myUser, setMyUser] = useAtom(userAtom);
 
     const [usersList, setUsersList] = useState([]);
     const [gamesList, setGamesList] = useState([]);
@@ -46,6 +50,7 @@ const AdminDashboard = () => {
         <div className='admin-dashboard-container'>
             <div className="admin-dashboard-welcome-banner">
                 <h1>Welcome to your ShaRcade Admin dashboard!</h1>
+                <p>*{myUser}*</p>
             </div>
             <div className="admin-dashboard-info-cards-container">
                 <AdminUsersInfoCard/>
