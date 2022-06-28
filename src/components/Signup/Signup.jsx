@@ -41,8 +41,8 @@ const Signup = () => {
       return response.json()
     })
     .then((response) => {
-      setUser(response.id);
-      Cookies.set('id', response.id);
+      setUser(response.user.id);
+      Cookies.set('id', response.user.id);
       navigate('/');
     })
   }

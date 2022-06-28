@@ -26,7 +26,7 @@ const Login = () => {
         }
     };
 
-    fetch(API_URL + 'users/sign_in.json', {
+    fetch(API_URL + 'users/sign_in', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -34,13 +34,11 @@ const Login = () => {
     body: JSON.stringify(data)
 })
     .then((response) => {
-      console.log([...response.headers.get('authorization')].join('').split(" ")[1])
       setAuthorization([...response.headers.get('authorization')].join(''));
-      Cookies.set('token', [...response.headers.get('authorization')].join(''))
-      return response.json()
+      Cookies.set('token', [...response.headers.get('authorization')].join(''));
+      return response.json();
   })
     .then((response) => {
-      console.log(response)
       setUser(response.user.id);
       Cookies.set('id', response.user.id)
       navigate('/')
