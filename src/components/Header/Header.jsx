@@ -7,14 +7,57 @@ import './Header.css';
 const Header = () => {
 
     const [myUser, setMyUser] = useState();
+    const [menuDisplayHasChanged, setMenuDisplayHasChanged] = useState(false);
 
     useEffect(() => {
         if (Cookies.get('fulluser')) {
-            setMyUser(JSON.parse(Cookies.get("fulluser")))
+            setMyUser(JSON.parse(Cookies.get("fulluser")));
         }
     }, []);
 
-    /* JBV : To be continued tomorrow morning */
+    const adminDropDown = (
+            <NavDropdown title="Account" id="account-nav-dropdown">
+                <NavDropdown.Item href="/admindashboard">Admin Dashboard</NavDropdown.Item>
+                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            </NavDropdown>);
+
+    const editorDropDown = (
+            <NavDropdown title="Account" id="account-nav-dropdown">
+                <NavDropdown.Item href="/editordashboard">Editor Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            </NavDropdown> );
+
+    const playerDropDown = (
+            <NavDropdown title="Account" id="account-nav-dropdown">
+                <NavDropdown.Item href="/playerdashboard">Player Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            </NavDropdown> );
+
+    const connexionDropDown = ( 
+            <NavDropdown title="Connection" id="connection-nav-dropdown">
+                <NavDropdown.Item href="/login">Log In</NavDropdown.Item>
+                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+            </NavDropdown> );
+
+    const selectedDropDown = () => {
+        let menuSelected = connexionDropDown;
+        if (myUser) {
+            switch (myUser.role) {
+                case "admin":
+                    menuSelected = adminDropDown;
+                    break;
+                case "editor":
+                    menuSelected = editorDropDown;
+                    break;
+                default:
+                    menuSelected = playerDropDown;
+                    break;
+            }
+            
+        } 
+        setMenuDisplayHasChanged(!menuDisplayHasChanged);
+        return(menuSelected);
+    }
 
     return (
         <header className='header-container retro'>
@@ -40,14 +83,7 @@ const Header = () => {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                         <Nav>
-                            <NavDropdown title="Account" id="account-nav-dropdown">
-                                <NavDropdown.Item href="/admindashboard">Admin Dashboard</NavDropdown.Item>
-                                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
-                            </NavDropdown>
-                            <NavDropdown title="Connection" id="connection-nav-dropdown">
-                                <NavDropdown.Item href="/login">Log In</NavDropdown.Item>
-                                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
-                            </NavDropdown>
+                            {selectedDropDown()}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -71,22 +71,22 @@ function GameCard(props) {
 
 
   const showDetails =
-  <div className="modal-bg" onClick={toggleDetails}>
-    <div className="game-card modal">
-      <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title} alt={"screenshot of "+props.game.game_title}/>
-      <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
-      <div className="modal-feedback">{gameFeedbackIcons(props.feedbacks)}</div>
-      <div className="modal-body">
-        <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
-        <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
-      </div>
-      <div className="modal-footer game-card-footer">
-        <div className="game-fan">{gameFansCounter(props.fans)}</div>
-        <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}</div>
-        <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
+    <div className="modal-bg" onClick={toggleDetails}>
+      <div className="game-card modal">
+        <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
+        <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
+        <div className="modal-feedback">{gameFeedbackIcons(props.feedbacks)}</div>
+        <div className="modal-body">
+          <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
+          <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+        </div>
+        <div className="modal-footer game-card-footer">
+          <div className="game-fan">{gameFansCounter(props.fans)}</div>
+          <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}</div>
+          <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
+        </div>
       </div>
     </div>
-  </div>
 
   return (
     <div className="game-card">
