@@ -76,7 +76,6 @@ function GameCard(props) {
   const linkName = viewMore ? '...View Less << ' : '...View More >> ';
   const imageLink = require('../../assets/images/games/' + props.game.image_url) ? require('../../assets/images/games/' + props.game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
 
-
   const showDetails =
   <div className="modal-bg" onClick={toggleDetails}>
     <div className="game-card modal">

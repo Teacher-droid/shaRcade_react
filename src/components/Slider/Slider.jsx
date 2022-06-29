@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { API_URL } from '../../stores/api_url'
 import './Slider.css'
 import BtnSlider from './BtnSlider';
 import sliderImages from './sliderImages';
 
 export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
+  const [gameList, setGameList] = useState([]);
 
   const nextSlide = () => {
-    if (slideIndex !== sliderImages.length) {
+    if (slideIndex !== gameList.length) {
       setSlideIndex(slideIndex + 1)
     }
-    else if (slideIndex === sliderImages.length) {
+    else if (slideIndex === gameList.length) {
       setSlideIndex(1)
     }
   }
@@ -20,7 +22,7 @@ export default function Slider() {
       setSlideIndex(slideIndex - 1)
     }
     else if (slideIndex === 1) {
-      setSlideIndex(sliderImages.length)
+      setSlideIndex(gameList.length)
     }
   }
 
@@ -28,29 +30,47 @@ export default function Slider() {
     setSlideIndex(index)
   }
 
+  useEffect(() => {
+    fetch(API_URL + 'games', {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then((response) => response.json())
+    .then((response) => {
+      setGameList(response);
+    })
+    .catch((error) => console.log(error));
+  }, [])
+
+  const Images = gameList.map((game, index) => {
+    const imageLink = require('../../assets/images/games/' + game.image_url) ? require('../../assets/images/games/' + game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
+    return (
+      <div
+      key={game.id}
+      className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
+      >
+      <img src={imageLink}/>
+      </div>
+      )
+  })
+
   return (
     <div className="container-slider'">
-      {sliderImages.map((obj, index) => {
-        return (
-          <div
-          key={obj.id}
-          className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
-          >
-          <img src={process.env.PUBLIC_URL + `/Imgs/slide${index + 1}.jpg`}/>
-          </div>
-          )
-      })}
-      <BtnSlider moveSlide={nextSlide} direction={"next"} />
-      <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+    {Images}
+    <BtnSlider moveSlide={nextSlide} direction={"next"} />
+    <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
 
-      <div className="container-dots">
-                {Array.from({length: 4}).map((item, index) => (
-                    <div
-                    onClick={() => moveDot(index + 1)}
-                    className={slideIndex === index + 1 ? "dot active" : "dot"}
-                    ></div>
-                ))}
-            </div>
-        </div>
+    <div className="container-dots">
+    {Array.from({length: gameList.length}).map((item, index) => (
+      <div
+      onClick={() => moveDot(index + 1)}
+      className={slideIndex === index + 1 ? "dot active" : "dot"}
+      ></div>
+      ))}
+    </div>
+    </div>
     )
 }
