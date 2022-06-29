@@ -70,11 +70,11 @@ const Contact = () => {
                     <Container>
                         <div className="row text-center m-2 mb-4">
                             <div className="col-sm-12 col-lg-6 p-1">
-                                <p><a href=""><img className="contact-icons" alt='ShaRcade logo' src={LocationMark} /></a></p>
+                                <p><a href=""><img className="contact-icons" alt='location' src={LocationMark} /></a></p>
                                 <span className="lead">83, Boulevard Macdonald 75019 - Paris</span>
                             </div>
                             <div className="col-sm-12 col-lg-6 p-1">
-                                <p><a href=""><img className="contact-icons" alt='ShaRcade logo' src={MailCard} /></a></p>
+                                <p><a href=""><img className="contact-icons" alt='mail' src={MailCard} /></a></p>
                                 <p><a href="mailto:bonjour@thehackingproject.org?subject=Prise de contact via le site web ShaRcade&body=Nous serons ravis de répondre à toutes vos questions et réclamations dans les plus brefs délais !" className="lead">bonjour@thehackingproject.org</a></p>
                             </div>
                         </div>
