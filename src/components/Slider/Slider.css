@@ -8,12 +8,6 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 700px){
-  .container-slider {
-    margin: 100px 10px 0;
-  }
-}
-
 .slide {
   width: 100%;
   position: absolute;
@@ -35,6 +29,7 @@
   border-radius: 1rem;
   border: var(--sc-border-type-ext) 5px var(--sc-line-color);
   opacity: 1;
+  background-color: var(--sc-bg-color);
 }
 
 .btn-slide {
@@ -96,4 +91,10 @@
   background-color: var(--sc-bg-color);
   border: var(--sc-border-type-int) 3px var(--sc-line-color);
   opacity: 1;
+}
+
+@media screen and (max-width: 700px){
+  .container-slider {
+    margin: 100px 10px 0;
+  }
 }
