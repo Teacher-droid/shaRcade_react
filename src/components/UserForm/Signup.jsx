@@ -6,7 +6,7 @@ import { API_URL } from '../../stores/api_url';
 import Cookies from 'js-cookie';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './Signup.css';
+import './UserForm.css';
 
 const Signup = () => {
 
