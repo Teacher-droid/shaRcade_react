@@ -15,6 +15,7 @@
   margin-top: var(--sc-margin);
   margin-bottom: var(--sc-margin);
   /*flex: 0 1 calc(25% - 1em);  */
+  box-shadow: var(--sc-card-shadow);
 }
 
 .game-card-header {

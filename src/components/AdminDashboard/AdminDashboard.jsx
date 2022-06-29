@@ -14,10 +14,13 @@ import './AdminDashboard.css';
 const AdminDashboard = () => {
 
     let redirectUnauthorized = useNavigate();
+    
     const [myUser, setMyUser] = useState({});
     const [usersList, setUsersList] = useState([]);
     const [gamesList, setGamesList] = useState([]);
     const [gameTypesList, setGameTypesList] = useState([]);
+    
+    const [myUserLoading, setMyUserLoading] = useState(true);
     const [usersLoading, setUsersLoading] = useState(true);
     const [gamesLoading, setGamesLoading] = useState(true);
     const [gameTypesLoading, setGameTypesLoading] = useState(true);
@@ -76,7 +79,7 @@ const AdminDashboard = () => {
         fetch(API_URL + 'game_types', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
         .then((response_game_type) => response_game_type.json())
         .then((data_game_type) => {
-            setGamesList(data_game_type);
+            setGameTypesList(data_game_type);
             console.log("gameTypesList >>");
             console.log(gameTypesList);
             setGameTypesLoading(data_game_type.length <= 0);
@@ -85,20 +88,20 @@ const AdminDashboard = () => {
     },[gameTypesLoading]);
 
     return (
-        <section className='admin-dashboard-container'>
+        <section className="admin-dashboard-container">
             <section className="admin-dashboard-welcome-banner">
                 <h2>Welcome to your ShaRcade Admin dashboard, {myUser.nickname ? myUser.nickname : "Stranger"}!</h2>
             </section>
             <section className="admin-dashboard-info-cards-container">
-                <AdminUsersInfoCard/>
+                {usersLoading ? "-- Users info loading --" : <AdminUsersInfoCard usersinfo={usersList}/>}
                 {gamesLoading ? "-- Games info loading --" : <AdminGamesInfoCard gamesinfo={gamesList}/>}
                 <AdminScoresInfoCard/>
                 <AdminFavoritesInfoCard/>
                 <AdminFeedbacksInfoCard/>
             </section>
             <section className="admin-dashboard-middle-container">
-                {usersLoading ? "-- Users info loading --" : <AdminUsersList usersindex={usersList}/>}
-                {gameTypesLoading ? "-- Game Types info loading --" : <AdminGameTypesList gametypesindex={gameTypesList}/>}
+                {usersLoading ? "-- Users list loading --" : <AdminUsersList usersindex={usersList}/>}
+                {gameTypesLoading ? "-- Game types info loading --" : <AdminGameTypesList gametypesindex={gameTypesList}/>}
             </section>
         </section>
     )
