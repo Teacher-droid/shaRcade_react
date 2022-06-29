@@ -8,29 +8,11 @@ export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
   const [gameList, setGameList] = useState([]);
 
-  const nextSlide = () => {
-    if (slideIndex !== gameList.length) {
-      setSlideIndex(slideIndex + 1)
-    }
-    else if (slideIndex === gameList.length) {
-      setSlideIndex(1)
-    }
-  }
+  // const randomGames = [...gameList].sort(() => Math.random() - Math.random()).slice(0, numberImages);
+  const numberImages = 5;
+  const lastGames = [...gameList].slice(numberImages);
 
-  const prevSlide = () => {
-    if(slideIndex !== 1) {
-      setSlideIndex(slideIndex - 1)
-    }
-    else if (slideIndex === 1) {
-      setSlideIndex(gameList.length)
-    }
-  }
-
-  const moveDot = index => {
-    setSlideIndex(index)
-  }
-
-  useEffect(() => {
+    useEffect(() => {
     fetch(API_URL + 'games', {
       method: 'get',
       headers: {
@@ -45,9 +27,29 @@ export default function Slider() {
     .catch((error) => console.log(error));
   }, [])
 
-  // const selectedGames = [...gameList].sort(() => Math.random() - Math.random()).slice(0, 5);
+  const nextSlide = () => {
+    if (slideIndex !== numberImages) {
+      setSlideIndex(slideIndex + 1)
+    }
+    else if (slideIndex === numberImages) {
+      setSlideIndex(1)
+    }
+  }
 
-  const Images = gameList.map((game, index) => {
+  const prevSlide = () => {
+    if(slideIndex !== 1) {
+      setSlideIndex(slideIndex - 1)
+    }
+    else if (slideIndex === 1) {
+      setSlideIndex(numberImages)
+    }
+  }
+
+  const moveDot = index => {
+    setSlideIndex(index)
+  }
+
+  const Images = lastGames.map((game, index) => {
     const imageLink = require('../../assets/images/games/' + game.image_url) ? require('../../assets/images/games/' + game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
     return (
       <div
@@ -66,7 +68,7 @@ export default function Slider() {
     <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
 
     <div className="container-dots">
-    {Array.from({length: gameList.length}).map((item, index) => (
+    {Array.from({length: numberImages}).map((item, index) => (
       <div
       onClick={() => moveDot(index + 1)}
       className={slideIndex === index + 1 ? "dot active" : "dot"}
