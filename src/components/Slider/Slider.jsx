@@ -45,6 +45,8 @@ export default function Slider() {
     .catch((error) => console.log(error));
   }, [])
 
+  // const selectedGames = [...gameList].sort(() => Math.random() - Math.random()).slice(0, 5);
+
   const Images = gameList.map((game, index) => {
     const imageLink = require('../../assets/images/games/' + game.image_url) ? require('../../assets/images/games/' + game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
     return (
