@@ -80,7 +80,7 @@ function GameCard(props) {
         <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
         <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
-      <div className="modal-footer">
+      <div className="modal-footer game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
         <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}</div>
         <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
