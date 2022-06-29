@@ -116,16 +116,37 @@
 .users-list-container {
   background-color: inherit;
   color: inherit;
+  margin: 5px 0 5px 0;
 }
+
+.users-list-table {
+  background-color: inherit;
+  color: inherit;
+  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+  border-radius: var(--sc-border-type-ext);
+}
+
+/* th:first-of-type {
+  border-top-left-radius: 10px;
+}
+th:last-of-type {
+  border-top-right-radius: 10px;
+}
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+} */
 
 .users-list-container.th {
   font-family: "Karmatic Arcade";
   font-size:larger;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .users-list-container.td {
   font-family: "Manaspace";
-  font-size:small;
+  font-size: smaller;
   font-weight:lighter
 }

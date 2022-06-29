@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Cookies from 'js-cookie';
 import { API_URL } from '../../stores/api_url'
 import AdminUsersInfoCard from './AdminUsersInfoCard';
 import AdminGamesInfoCard from './AdminGamesInfoCard';
@@ -11,53 +12,53 @@ import './AdminDashboard.css';
 
 const AdminDashboard = () => {
 
+    const [myUser, setMyUser] = useState(JSON.parse(Cookies.get("fulluser")));
+    
     const [usersList, setUsersList] = useState([]);
     const [gamesList, setGamesList] = useState([]);
-    const [usersLoaded, setUsersLoaded] = useState(false);
-    const [gamesLoaded, setGamesLoaded] = useState(false);
+    const [usersLoading, setUsersLoading] = useState(true);
+    const [gamesLoading, setGamesLoading] = useState(true);
 
     useEffect(() => {
+        // Fetching ALL users data
+        fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
+        .then((response_user) => response_user.json())
+        .then((data_user) => {
+            setUsersList(data_user);
+            console.log("usersList >>");
+            console.log(usersList);
+            setUsersLoading(data_user.length <= 0);
+        })
+        .catch((error) => console.log(error));
+    },[usersLoading]);
 
-            if (!usersLoaded) {
-                // Fetching ALL users data
-                fetch(API_URL + 'users/actions', {method: 'get', headers: {'Content-Type': 'application/json','Accept': 'application/json'}})
-                .then((response_user) => response_user.json())
-                .then((response_user) => {
-                    setUsersList(response_user);
-                    console.log(usersList);
-                    setUsersLoaded(usersList.length !== 0);
-                })
-                .catch((error) => console.log(error));
-            }
-
-            if (!gamesLoaded) {
-                // Fetching ALL games datat
-                fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
-                .then((response_game) => response_game.json())
-                .then((response_game) => {
-                    setGamesList(response_game);
-                    console.log(gamesList);
-                    setGamesLoaded(gamesList.length !== 0);
-                })
-                .catch((error) => console.log(error));
-            }
-
-    },[usersLoaded, gamesLoaded]);
+    useEffect(() => {
+        // Fetching ALL games data
+        fetch(API_URL + 'games', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
+        .then((response_game) => response_game.json())
+        .then((data_game) => {
+            setGamesList(data_game);
+            console.log("gamesList >>");
+            console.log(gamesList);
+            setGamesLoading(data_game.length <= 0);
+        })
+        .catch((error) => console.log(error));
+    },[gamesLoading]);
 
     return (
         <div className='admin-dashboard-container'>
             <div className="admin-dashboard-welcome-banner">
-                <h1>Welcome to your ShaRcade Admin dashboard!</h1>
+                <h2>Welcome to your ShaRcade Admin dashboard, {myUser.firstname ? myUser.firstname : "Stranger"}!</h2>
             </div>
             <div className="admin-dashboard-info-cards-container">
                 <AdminUsersInfoCard/>
-                {gamesLoaded ? <AdminGamesInfoCard gamesinfo={gamesList}/> : "-- Still loading --"}
+                {gamesLoading ? "-- Games info loading --" : <AdminGamesInfoCard gamesinfo={gamesList}/>}
                 <AdminScoresInfoCard/>
                 <AdminFavoritesInfoCard/>
                 <AdminFeedbacksInfoCard/>
             </div>
             <div className="admin-dashboard-middle-container">
-                {usersLoaded ? <AdminUsersList usersindex={usersList}/> : "-- Still loading --"}
+                {usersLoading ? "-- Users info loading --" : <AdminUsersList usersindex={usersList}/>}
                 <AdminGameTypesList/>
             </div>
         </div>

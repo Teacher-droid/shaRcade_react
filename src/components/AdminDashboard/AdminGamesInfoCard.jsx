@@ -14,7 +14,7 @@ const AdminGamesInfoCard = (props) => {
     setGameTypesCount(28);
     setLastRegisteredGame(["SnaKouninef","2022/06/23"]);
     setScoresPerGame(8);
-  }, [props.gamesinfo.length]);
+  }, [props.gamesinfo]);
 
   return (
     <div className="admin-info-card">

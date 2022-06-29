@@ -10,41 +10,44 @@ import './UserForm.css';
 
 const Login = () => {
 
-    const navigate = useNavigate();
-
-    const [user, setUser] = useAtom(userAtom);
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    const [authorization, setAuthorization] = useAtom(authorizationAtom);
-
-    function fetchData(e){
-        e.preventDefault();
-
-        const data = {
-          "user" :{
-            "email": email,
-            "password": password
-        }
+  const navigate = useNavigate();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [user, setUser] = useAtom(userAtom);
+  const [authorization, setAuthorization] = useAtom(authorizationAtom);
+  
+  function fetchData(e){
+    
+    e.preventDefault();
+    
+    const data = {
+      "user" : {
+        "email": email,
+        "password": password
+      }
     };
-
+    
     fetch(API_URL + 'users/sign_in', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-})
+      },
+      body: JSON.stringify(data)
+    })
     .then((response) => {
-      setAuthorization([...response.headers.get('authorization')].join(''));
-      Cookies.set('token', [...response.headers.get('authorization')].join(''));
-      return response.json()
-  })
+      // console.log(response);
+      setAuthorization(response.headers.get('authorization'));
+      Cookies.set('token', response.headers.get('authorization'));
+      return response.json();
+    })
     .then((response) => {
+      // console.log(response);
       setUser(response.user.id);
-      Cookies.set('id', response.user.id)
-      navigate('/')
-  })
-}
+      Cookies.set('id', response.user.id);
+      Cookies.set('fulluser', JSON.stringify(response.user));
+      response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
+    });
+  }  
 
 return (
   <Form className="form" onSubmit={fetchData}>
@@ -52,7 +55,6 @@ return (
   <Form.Label className="label">Email address</Form.Label>
   <Form.Control className="field" type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
   </Form.Group>
-
   <Form.Group className="mb-3" controlId="formBasicPassword">
   <Form.Label className="label">Password</Form.Label>
   <Form.Control className="field" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
