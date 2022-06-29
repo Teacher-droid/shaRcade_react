@@ -1,85 +1,87 @@
 import React from 'react'
+import { Container, Form, } from 'react-bootstrap'
+import { FaRegEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import LocationMark from '../../assets/images/icons/location.png'
+import MailCard from '../../assets/images/icons/mail.png'
+import './Contact.css';
+
 
 const Contact = () => {
     return (
 
 
-        <section class="row justify-content-between mb-5 p-3 m-3">
+        <section className="row justify-content-between mb-5 p-3 m-3 retro">
 
-            <div class="container">
-                <div class="spacer">
-                    <div class="row justify-content-center">
-                        <div class="text-center">
-                            <h1 class="title font-bold">Nous Contacter</h1>
-                            <h6 class="subtitle">Contactez nous par mail ou via le formulaire de contact pour plus d'informations.</h6>
+            <Container>
+                <div className="spacer">
+                    <div className="row justify-content-center">
+                        <div className="text-center">
+                            <h1 className="title font-bold">Contact Us</h1>
+                            <h6 className="subtitle">Get in touch with us using the form bellow</h6>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10491.793210016685!2d2.3861548!3d48.8973224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42dbe434c3e93484!2sThe%20Hacking%20Project!5e0!3m2!1sfr!2sfr!4v1648162323383!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <Container>
+                <div className="row">
+                    <div className="col-md-7">
+                        <div dangerouslySetInnerHTML={{ __html: "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10491.793210016685!2d2.3861548!3d48.8973224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42dbe434c3e93484!2sThe%20Hacking%20Project!5e0!3m2!1sfr!2sfr!4v1648162323383!5m2!1sfr!2sfr' width='100%' height='450' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>" }} />
                     </div>
-                    <div class="col-md-5">
+                    <div className="col-md-5">
 
-                        <form action="<%= contact_form_path %>" method="post">
+                        <Form action="" method="">
                             <div>
-                                <input type="hidden" name="authenticity_token" value="">
-                                    <hidden_field_tag form_authenticity_token>
-                                        <div class="form-group mb-2">
-                                            <label class="form-label" for="first_name">Prénom :</label>
-                                            <input class="form-control" name="first_name" id="first_name" type="text" placeholder="Écrivez votre prénom" />
-                                        </div>
-                                        <div class="form-group mb-2">
-                                            <label class="form-label" for="last_name">Nom :</label>
-                                            <input class="form-control" name="last_name" id="last_name" type="text" placeholder="Écrivez votre nom" />
-                                        </div>
-                                        <div class="form-group mb-2">
-                                            <label class="form-label" for="email">Mail :</label>
-                                            <input class="form-control" name="email" id="email" type="text" placeholder="Écrivez votre adresse mail" />
-                                        </div>
-                                        <div class="form-group mb-2">
-                                            <label class="form-label" for="object">Objet :</label>
-                                            <input class="form-control" name="object" id="object" type="text" placeholder="Écrivez l'objet de votre message" />
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label class="form-label" for="message" >Votre message :</label>
-                                            <input class="form-control" name="message" id="message" type="text" placeholder="Écrivez votre message" />
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-outline-secondary">Envoyer</button>
-                                            <button type="reset" class="btn btn-outline-primary">Effacer</button>
-                                        </div>
-                                    </hidden_field_tag>
-                                </input>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">First-name: </label>
+                                    <input className="form-control" name="first_name" id="first_name" type="text" placeholder="Insert a valid first-name" />
+                                </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">Last-name: </label>
+                                    <input className="form-control" name="last_name" id="last_name" type="text" placeholder="Insert a valid last-name" />
+                                </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">E-mail: </label>
+                                    <input className="form-control" name="email" id="email" type="text" placeholder="Insert a valid e-mail" />
+                                </div>
+                                <div className="form-group mb-2">
+                                    <label className="form-label">Subject: </label>
+                                    <input className="form-control" name="subject" id="subject" type="text" placeholder="Add subject here" />
+                                </div>
+                                <div className="form-group mb-3">
+                                    <label className="form-label">Your message: </label>
+                                    <input className="form-control" name="message" id="message" type="text" placeholder="Type your message" />
+                                </div>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-outline-secondary solid">Send</button>
+                                    <button type="reset" className="btn btn-outline-primary solid">Cancel</button>
+                                </div>
                             </div>
-                        </form>
+                        </Form>
                     </div>
                 </div>
-            </div>
+            </Container >
 
-            <div class="container">
-                <div class="spacer">
-                    <div class="align-content-between p-4 bg-secondary" style="color:white">
-                        <h2 class="text-center">LearnIt!</h2>
+            <Container className="bg-contact">
+                <div className="spacer">
+                    <div className="align-content-between p-4">
+                        <h2 className="text-center">ShaRcade</h2>
                     </div>
-                    <div class="container">
-                        <div class="row text-center m-2 mb-4">
-                            <div class="col-sm-12 col-lg-6 p-1">
-                                <p><a href=""><i class="bi bi-geo-alt-fill fs-1" style="color:white"></i></a></p>
-                                <span class="lead">83, Boulevard Macdonald 75019 - Paris</span>
+                    <Container>
+                        <div className="row text-center m-2 mb-4">
+                            <div className="col-sm-12 col-lg-6 p-1">
+                                <p><a href=""><img className="contact-icons" alt='ShaRcade logo' src={LocationMark} /></a></p>
+                                <span className="lead">83, Boulevard Macdonald 75019 - Paris</span>
                             </div>
-                            <div class="col-sm-12 col-lg-6 p-1">
-                                <p><a href=""><i class="bi bi-envelope fs-1" style="color:white"></i></a></p>
-                                <p><a href="mailto:bonjour@thehackingproject.org?subject=Prise de contact via le site web LearnIt!&body=Nous serons ravis de répondre à toutes vos questions et réclamations dans les plus brefs délais !" class="lead">bonjour@thehackingproject.org</a></p>
+                            <div className="col-sm-12 col-lg-6 p-1">
+                                <p><a href=""><img className="contact-icons" alt='ShaRcade logo' src={MailCard} /></a></p>
+                                <p><a href="mailto:bonjour@thehackingproject.org?subject=Prise de contact via le site web ShaRcade&body=Nous serons ravis de répondre à toutes vos questions et réclamations dans les plus brefs délais !" className="lead">bonjour@thehackingproject.org</a></p>
                             </div>
                         </div>
-                    </div>
+                    </Container>
                 </div>
-            </div>
-        </section>
+            </Container>
+        </section >
 
     )
 }
