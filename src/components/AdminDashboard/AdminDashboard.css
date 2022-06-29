@@ -47,7 +47,7 @@
   flex-direction: column;
   padding: 0;
   border-radius: var(--sc-radius);
-  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+  border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
   margin: 3px;
 }
 
@@ -61,7 +61,7 @@
   border: 0;
   border-top-left-radius: var(--sc-radius);
   border-top-right-radius: var(--sc-radius);
-  border-bottom: var(--sc-border-type-int) 1px var(--sc-line-color);
+  border-bottom: var(--sc-border-type-int) 1px var(--sc-txt-color);
   margin: 0;
 }
 
@@ -84,7 +84,7 @@
   border: 1px;
   border-bottom-left-radius: 5px; /*var(--sc-radius);*/
   border-bottom-right-radius: 5px; /*var(--sc-radius);*/
-  border-top: var(--sc-border-type-int) 1px var(--sc-line-color);;
+  border-top: var(--sc-border-type-int) 1px var(--sc-txt-color);;
   margin: 0;
   color: var(--sc-txt-color);
   background-color: var(--sc-bg-color);
@@ -122,7 +122,7 @@
 .users-list-table {
   background-color: inherit;
   color: inherit;
-  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+  border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
   border-radius: var(--sc-border-type-ext);
 }
 

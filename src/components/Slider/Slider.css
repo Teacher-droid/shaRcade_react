@@ -27,7 +27,7 @@
   visibility: visible;
   position: relative;
   border-radius: 1rem;
-  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+  border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
   opacity: 1;
   background-color: var(--sc-bg-color);
 }
@@ -89,7 +89,7 @@
 
 .dot.active {
   background-color: var(--sc-bg-color);
-  border: var(--sc-border-type-int) 3px var(--sc-line-color);
+  border: var(--sc-border-type-int) 3px var(--sc-txt-color);
   opacity: 1;
 }
 
