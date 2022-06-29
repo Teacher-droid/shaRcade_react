@@ -17,26 +17,33 @@ const AdminDashboard = () => {
     const [myUser, setMyUser] = useState({});
     const [usersList, setUsersList] = useState([]);
     const [gamesList, setGamesList] = useState([]);
+    const [gameTypesList, setGameTypesList] = useState([]);
     const [usersLoading, setUsersLoading] = useState(true);
     const [gamesLoading, setGamesLoading] = useState(true);
+    const [gameTypesLoading, setGameTypesLoading] = useState(true);
 
-    // Managing User authorization / access to admin dashboard
+    // Verifying User existence
     useEffect(() => {
         if (Cookies.get("fulluser")) {
             setMyUser(JSON.parse(Cookies.get("fulluser")));
-            if (myUser.role !== "admin") {
-                /* "/" entry replacing the "/admindashboard" entry to avoid use of browser "Back" button */
-                console.log("Connected but no Admin role...");
-                // redirectUnauthorized('/', { replace: true });
-            } else {
-                console.log("Welcome to the Admin dashboard!");
-            }
+            console.log(myUser);
         } else {
             /* "/" entry replacing the "/admindashboard" entry to avoid use of browser "Back" button */
             console.log("You're not even connected... Come on!");
             // redirectUnauthorized('/', { replace: true });
         }
     },[]);
+
+    // Authorizing access to admin dashboard
+    useEffect (() => {
+        if (myUser.role !== "admin") {
+            /* "/" entry replacing the "/admindashboard" entry to avoid use of browser "Back" button */
+            console.log("Connected but no Admin role...");
+            // redirectUnauthorized('/', { replace: true });
+        } else {
+            console.log("Welcome to the Admin dashboard!");
+        }
+    }, []);
 
     // Fetching ALL users data
     useEffect(() => {
@@ -64,23 +71,36 @@ const AdminDashboard = () => {
         .catch((error) => console.log(error));
     },[gamesLoading]);
 
+    // Fetching ALL game types data
+    useEffect(() => {
+        fetch(API_URL + 'game_types', {method: 'get', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
+        .then((response_game_type) => response_game_type.json())
+        .then((data_game_type) => {
+            setGamesList(data_game_type);
+            console.log("gameTypesList >>");
+            console.log(gameTypesList);
+            setGameTypesLoading(data_game_type.length <= 0);
+        })
+        .catch((error) => console.log(error));
+    },[gameTypesLoading]);
+
     return (
-        <div className='admin-dashboard-container'>
-            <div className="admin-dashboard-welcome-banner">
+        <section className='admin-dashboard-container'>
+            <section className="admin-dashboard-welcome-banner">
                 <h2>Welcome to your ShaRcade Admin dashboard, {myUser.nickname ? myUser.nickname : "Stranger"}!</h2>
-            </div>
-            <div className="admin-dashboard-info-cards-container">
+            </section>
+            <section className="admin-dashboard-info-cards-container">
                 <AdminUsersInfoCard/>
                 {gamesLoading ? "-- Games info loading --" : <AdminGamesInfoCard gamesinfo={gamesList}/>}
                 <AdminScoresInfoCard/>
                 <AdminFavoritesInfoCard/>
                 <AdminFeedbacksInfoCard/>
-            </div>
-            <div className="admin-dashboard-middle-container">
+            </section>
+            <section className="admin-dashboard-middle-container">
                 {usersLoading ? "-- Users info loading --" : <AdminUsersList usersindex={usersList}/>}
-                <AdminGameTypesList/>
-            </div>
-        </div>
+                {gameTypesLoading ? "-- Game Types info loading --" : <AdminGameTypesList gametypesindex={gameTypesList}/>}
+            </section>
+        </section>
     )
 }
 

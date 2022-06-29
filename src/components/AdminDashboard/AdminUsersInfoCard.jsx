@@ -17,7 +17,7 @@ const AdminUsersInfoCard = () => {
   }, []);
 
   return (
-    <div className="admin-info-card">
+    <section className="admin-info-card">
       <div className="admin-info-card-header">
         <p>USERS</p>
       </div>
@@ -32,7 +32,7 @@ const AdminUsersInfoCard = () => {
       <div className="admin-info-card-footer">
         <Link className="admin-info-link" to="/users">&gt; Manage users &lt;</Link>
       </div>
-    </div>
+    </section>
   );
 }
 

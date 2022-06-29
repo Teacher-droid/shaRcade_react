@@ -17,7 +17,7 @@ const AdminGamesInfoCard = (props) => {
   }, [props.gamesinfo]);
 
   return (
-    <div className="admin-info-card">
+    <section className="admin-info-card">
       <div className="admin-info-card-header">
         <p>GAMES</p>
       </div>
@@ -38,7 +38,7 @@ const AdminGamesInfoCard = (props) => {
       <div className="admin-info-card-footer">
         <Link className="admin-info-link" to="/games">&gt; Manage games &lt;</Link>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -17,7 +17,7 @@ const AdminFavoritesInfoCard = () => {
   }, []);
   
   return (
-    <div className="admin-info-card">
+    <section className="admin-info-card">
       <div className="admin-info-card-header">
         <p>FAVORITES</p>
       </div>
@@ -38,7 +38,7 @@ const AdminFavoritesInfoCard = () => {
       <div className="admin-info-card-footer">
         <Link className="admin-info-link" to="/scores">&gt; Manage favorites &lt;</Link>
       </div>
-    </div>
+    </section>
   );
 }
 
