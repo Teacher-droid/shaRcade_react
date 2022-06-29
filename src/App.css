@@ -13,56 +13,41 @@
 :root {
   --sc-txt-color: rgb(51,255,51);
   --sc-bg-color: rgb(40,40,40);
+  --sc-modal-bg-color: rgba(40,40,40,0.5);
+  --sc-form-txt-color:  rgba(51,255,51, 0.5);
   --sc-line-color: rgb(51,255,51);
-  --sc-radius: 10px;
+  --sc-margin: .75rem;
+  --sc-radius: .75rem;
   --sc-border-type-ext: double;
   --sc-border-type-int: solid;
-  --sc-font-size: 14px;
-  --sc-font-size-small: 10px;
-  --sc-font-size-large: 18px;
-  --sc-font-size-title: 24px;
-}
-
-body {
-  background-color: var(--sc-bg-color);
+  --sc-font-size: 1rem;
+  --sc-font-size-small: .75rem;
+  --sc-font-size-large: 1.25rem;
+  --sc-font-size-title: 1.5rem;
 }
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--sc-bg-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes Fade-in {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
-
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes Fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
