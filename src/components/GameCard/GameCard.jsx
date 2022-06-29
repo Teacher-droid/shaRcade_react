@@ -17,9 +17,16 @@ function GameCard(props) {
     // Returns phone full if "current game" mobile ready is true
     // Returns phone mepty, elseway
     let my_mobileready_icon = is_mobile_ready ?
-    <span title="This game can be played on both computers and touch devices."><FaTabletAlt/>&nbsp;<FaKeyboard/></span>
-    : <span title="this game can be played on a computer."><FaKeyboard/></span>;
+    <span title={mobileReadyText}><FaTabletAlt/>&nbsp;<FaKeyboard/></span>
+    : <span title={mobileReadyText}><FaKeyboard/></span>;
     return my_mobileready_icon;
+  }
+
+  const mobileReadyText = (is_mobile_ready) => {
+    let my_mobileready_text = is_mobile_ready ?
+    "This game can be played on both computers and touch devices."
+    : "This game can be played on a computer.";
+    return my_mobileready_text
   }
 
   const gameFeedbackIcons = (my_avg_game_eval) => {
@@ -82,7 +89,7 @@ function GameCard(props) {
       </div>
       <div className="modal-footer game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
-        <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}</div>
+        <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}<span className="tooltiptext">{mobileReadyText(props.game.mobile_ready)}</span></div>
         <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
       </div>
     </div>
@@ -101,7 +108,7 @@ function GameCard(props) {
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
-        <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}</div>
+        <div className="game-mobile-ready" title={mobileReadyText(props.game.mobile_ready)}>{gameMobileReadyIcon(props.game.mobile_ready)}</div>
         <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
       </div>
       {viewMore && showDetails}
