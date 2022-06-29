@@ -6,15 +6,6 @@ import './Header.css';
 
 const Header = () => {
 
-    const [myUser, setMyUser] = useState();
-    const [menuDisplayHasChanged, setMenuDisplayHasChanged] = useState(false);
-
-    useEffect(() => {
-        if (Cookies.get('fulluser')) {
-            setMyUser(JSON.parse(Cookies.get("fulluser")));
-        }
-    }, []);
-
     const adminDropDown = (
             <NavDropdown title="Account" id="account-nav-dropdown">
                 <NavDropdown.Item href="/admindashboard">Admin Dashboard</NavDropdown.Item>
@@ -39,25 +30,36 @@ const Header = () => {
                 <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
             </NavDropdown> );
 
-    const selectedDropDown = () => {
-        let menuSelected = connexionDropDown;
+    const [myUser, setMyUser] = useState();
+    const [selectedDropDown, setSelectedDropDown] = useState(connexionDropDown);
+
+    useEffect (() => {
+        
         if (myUser) {
             switch (myUser.role) {
                 case "admin":
-                    menuSelected = adminDropDown;
+                    setSelectedDropDown(adminDropDown);
                     break;
                 case "editor":
-                    menuSelected = editorDropDown;
+                    setSelectedDropDown(editorDropDown);
                     break;
                 default:
-                    menuSelected = playerDropDown;
+                    setSelectedDropDown(playerDropDown);
                     break;
             }
-            
-        } 
-        setMenuDisplayHasChanged(!menuDisplayHasChanged);
-        return(menuSelected);
-    }
+        } else {
+            setSelectedDropDown(connexionDropDown);
+        }
+
+    }, [myUser]);
+
+    useEffect(() => {
+        
+        if (Cookies.get('fulluser')) {
+            setMyUser(JSON.parse(Cookies.get("fulluser")));
+        }
+
+    }, []);
 
     return (
         <header className='header-container retro'>
@@ -83,7 +85,7 @@ const Header = () => {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                         <Nav>
-                            {selectedDropDown()}
+                            {selectedDropDown}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
