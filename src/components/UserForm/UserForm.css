@@ -25,3 +25,9 @@
   border-radius: var(--sc-radius);
   margin-bottom: var(--sc-margin);
 }
+
+.submit-btn:hover {
+  background-color: var(--sc-bg-color)!important;
+  border: 1px solid var(--sc-txt-color);
+  color: var(--sc-txt-color);
+}

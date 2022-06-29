@@ -6,7 +6,7 @@ import { API_URL } from '../../stores/api_url';
 import Cookies from 'js-cookie';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './Login.css';
+import './UserForm.css';
 
 const Login = () => {
 
@@ -35,13 +35,11 @@ const Login = () => {
     body: JSON.stringify(data)
 })
     .then((response) => {
-      console.log([...response.headers.get('authorization')].join('').split(" ")[1])
       setAuthorization([...response.headers.get('authorization')].join(''));
-      Cookies.set('token', [...response.headers.get('authorization')].join(''))
+      Cookies.set('token', [...response.headers.get('authorization')].join(''));
       return response.json()
   })
     .then((response) => {
-      console.log(response)
       setUser(response.user.id);
       Cookies.set('id', response.user.id)
       navigate('/')

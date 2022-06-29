@@ -6,7 +6,7 @@ import { API_URL } from '../../stores/api_url';
 import Cookies from 'js-cookie';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './Signup.css'
+import './UserForm.css'
 
 const Signup = () => {
 
@@ -39,7 +39,7 @@ const Signup = () => {
     .then((response) => {
       setAuthorization([...response.headers.get('authorization')].join(''));
       Cookies.set('token', [...response.headers.get('authorization')].join(''));
-      return response.json()
+      return response.json();
     })
     .then((response) => {
       setUser(response.id);
