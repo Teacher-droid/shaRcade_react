@@ -47,12 +47,6 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-
-            <a href="./" target="_blank" className='read-article'>
-                Read the article 👉
-            </a>
-
-
         </section>
     )
 }
