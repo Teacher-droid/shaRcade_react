@@ -4,7 +4,7 @@ import { API_URL } from '../../stores/api_url';
 import Cookies from 'js-cookie';
 import './Logout.css';
 
-const Logout = () => {
+const Logout = (props) => {
 
     let redirectLogOut = useNavigate();
     const [myToken, setMyToken] = useState("");
@@ -38,6 +38,7 @@ const Logout = () => {
                     Cookies.remove("fulluser");
                     Cookies.remove("id");
                     Cookies.remove("token");
+                    props.switchlogin(false); /* Informing the world, the current user just logged out */
                     redirectLogOut('/');
                 } else {
                     // console.log("Response status is different from OK ;-)");

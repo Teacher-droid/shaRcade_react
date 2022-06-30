@@ -33,7 +33,7 @@ const AdminDashboard = () => {
         } else {
             /* "/" entry replacing the "/admindashboard" entry to avoid use of browser "Back" button */
             console.log("You're not even connected... Come on!");
-            // redirectUnauthorized('/', { replace: true });
+            redirectUnauthorized('/', { replace: true });
         }
     },[]);
 
@@ -90,7 +90,7 @@ const AdminDashboard = () => {
     return (
         <section className="admin-dashboard-container">
             <section className="admin-dashboard-welcome-banner">
-                <h2>Welcome to your ShaRcade Admin dashboard, {myUser.nickname ? myUser.nickname : "Stranger"}!</h2>
+                <h2>Welcome to your Admin dashboard "{myUser.nickname ? myUser.nickname : "Stranger"}"!</h2>
             </section>
             <section className="admin-dashboard-info-cards-container">
                 {usersLoading ? "-- Users info loading --" : <AdminUsersInfoCard usersinfo={usersList}/>}

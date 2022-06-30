@@ -4,7 +4,7 @@ import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from '
 import LogoTopDelireMegaGroove from '../../assets/images/logo/logo.png'
 import './Header.css';
 
-const Header = () => {
+const Header = (props) => {
 
     const adminDropDown = (
             <NavDropdown title="Account" id="account-nav-dropdown">
@@ -35,11 +35,13 @@ const Header = () => {
 
     useEffect(() => {
         
-        if (Cookies.get('fulluser')) {
-            setMyUser(JSON.parse(Cookies.get("fulluser")));
-        }
+        if (props.isloggedin) {
+            if (Cookies.get('fulluser')) {
+                setMyUser(JSON.parse(Cookies.get("fulluser")));
+            }
+        }   
 
-    }, []);
+    }, [props.isloggedin]);
 
     useEffect (() => {
         
@@ -59,7 +61,7 @@ const Header = () => {
             setSelectedDropDown(connexionDropDown);
         }
 
-    }, [myUser]);
+    }, [myUser, props.isloggedin]);
     
     return (
         <div className="test">
