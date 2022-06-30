@@ -5,7 +5,6 @@ import { useTheme } from './theme/useTheme';
 import 'bootstrap';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cookies from 'js-cookie';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import GamesIndex from './components/GamesIndex/GamesIndex';

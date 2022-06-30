@@ -46,7 +46,7 @@ const AdminDashboard = () => {
         } else {
             console.log("Welcome to the Admin dashboard!");
         }
-    }, []);
+    }, [myUser]);
 
     // Fetching ALL users data
     useEffect(() => {
