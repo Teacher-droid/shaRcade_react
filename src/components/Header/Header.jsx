@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Cookies from 'js-cookie';
+import { useAtom } from 'jotai';
+import { userAtom } from '../../stores/cookies';
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 import LogoTopDelireMegaGroove from '../../assets/images/logo/logo.png'
 import './Header.css';
@@ -30,20 +32,23 @@ const Header = () => {
                 <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
             </NavDropdown> );
 
+    const [myUserSession, setUserSession] = useAtom(userAtom);
     const [myUser, setMyUser] = useState();
     const [selectedDropDown, setSelectedDropDown] = useState(connexionDropDown);
 
     useEffect(() => {
         
-        if (Cookies.get('fulluser')) {
-            setMyUser(JSON.parse(Cookies.get("fulluser")));
-        }
+        if (myUserSession) {
+            if (Cookies.get('fulluser')) {
+                setMyUser(JSON.parse(Cookies.get("fulluser")));
+            }
+        }   
 
-    }, []);
+    }, [myUserSession]);
 
     useEffect (() => {
         
-        if (myUser) {
+        if (myUserSession && myUser) {
             switch (myUser.role) {
                 case "admin":
                     setSelectedDropDown(adminDropDown);
@@ -59,7 +64,7 @@ const Header = () => {
             setSelectedDropDown(connexionDropDown);
         }
 
-    }, [myUser]);
+    }, [myUserSession, myUser]);
     
     return (
         <div className="test">
@@ -76,7 +81,7 @@ const Header = () => {
                             <Nav.Link href="/about">About</Nav.Link>
                             <Nav.Link href="/contact">Contact</Nav.Link>
                         </Nav>
-                        <Form className="d-flex">
+                        <Form className="d-flex search-block-centering">
                             <FormControl
                                 type="search"
                                 placeholder="Search"

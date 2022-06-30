@@ -46,7 +46,8 @@ const Login = () => {
       Cookies.set('id', response.user.id);
       Cookies.set('fulluser', JSON.stringify(response.user));
       response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
-    });
+    })
+    .catch((error) => console.log(error));
   }  
 
 return (

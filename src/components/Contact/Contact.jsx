@@ -26,7 +26,7 @@ const Contact = () => {
             <Container>
                 <div className="row">
                     <div className="col-md-7">
-                        <div dangerouslySetInnerHTML={{ __html: "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10491.793210016685!2d2.3861548!3d48.8973224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42dbe434c3e93484!2sThe%20Hacking%20Project!5e0!3m2!1sfr!2sfr!4v1648162323383!5m2!1sfr!2sfr' width='100%' height='450' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>" }} />
+                        <div dangerouslySetInnerHTML={{ __html: "<iframe class='contact-map' src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10491.793210016685!2d2.3861548!3d48.8973224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42dbe434c3e93484!2sThe%20Hacking%20Project!5e0!3m2!1sfr!2sfr!4v1648162323383!5m2!1sfr!2sfr' width='100%' height='450' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>" }} />
                     </div>
                     <div className="col-md-5">
 
@@ -54,6 +54,7 @@ const Contact = () => {
                                 </div>
                                 <div className="form-group">
                                     <button type="submit" className="btn btn-outline-secondary solid">Send</button>
+                                    &nbsp;
                                     <button type="reset" className="btn btn-outline-primary solid">Cancel</button>
                                 </div>
                             </div>
