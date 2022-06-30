@@ -1,4 +1,6 @@
-/* Admin dashboard - General styling */
+/*******************/
+/* GENERAL STYLING */
+/*******************/
 
 .admin-dashboard-container {
   display: flex;
@@ -19,6 +21,7 @@
   justify-content: center;
   align-content: center;
   margin: 0;
+  margin-top: 5px;
 }
 
 .admin-dashboard-info-cards-container {
@@ -35,7 +38,9 @@
   margin: 0;
 }
 
-/* Admin dashboard - Users info card specific styling */
+/**************/
+/* INFO CARDS */
+/**************/
 
 .admin-info-card {
   font-family: "Manaspace";
@@ -49,6 +54,7 @@
   border-radius: var(--sc-radius);
   border: var(--sc-border-type-ext) 5px var(--sc-line-color);
   margin: 3px;
+  box-shadow: var(--sc-card-shadow);
 }
 
 .admin-info-card-header {
@@ -66,6 +72,7 @@
 }
 
 .admin-info-card-body {
+  font-size: var(--sc-font-size-small);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -111,12 +118,15 @@
   font-style: normal;
 }
 
-/* Users table */
+/***************/
+/* USERS TABLE */
+/***************/
 
 .users-list-container {
+  width: 70%;
   background-color: inherit;
   color: inherit;
-  margin: 5px 0 5px 0;
+  margin: 5px 5px 5px 0;
 }
 
 .users-list-table {
@@ -126,19 +136,6 @@
   border-radius: var(--sc-border-type-ext);
 }
 
-/* th:first-of-type {
-  border-top-left-radius: 10px;
-}
-th:last-of-type {
-  border-top-right-radius: 10px;
-}
-tr:last-of-type td:first-of-type {
-  border-bottom-left-radius: 10px;
-}
-tr:last-of-type td:last-of-type {
-  border-bottom-right-radius: 10px;
-} */
-
 .users-list-container.th {
   font-family: "Karmatic Arcade";
   font-size:larger;
@@ -146,6 +143,64 @@ tr:last-of-type td:last-of-type {
 }
 
 .users-list-container.td {
+  font-family: "Manaspace";
+  font-size: smaller;
+  font-weight:lighter
+}
+
+/************************/
+/* GAME TYPES ACCORDION */
+/************************/
+
+.game-types-list-container {
+  width: 30%;
+  background-color: var(--sc-bg-color);
+  color: var(--sc-txt-color);
+  margin: 5px 0 5px 5px;
+  border-radius: var(--sc-radius);
+}
+
+.game-types-list-accordion {
+  background-color: var(--sc-bg-color);
+  color: var(--sc-txt-color);
+  border-radius: var(--sc-radius)
+}
+
+.game-types-list-item {
+  background-color: var(--sc-bg-color);
+  color: var(--sc-txt-color);
+  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+}
+
+.game-types-list-item:first-of-type {
+  border-radius: var(--sc-radius) var(--sc-radius) 0 0;
+}
+
+.game-types-list-item:last-of-type {
+  border-radius: 0 0 var(--sc-radius) var(--sc-radius);
+}
+
+.accordion-button {
+  background-color: var(--sc-bg-color) !important;
+  color: var(--sc-txt-color)  !important;
+  font-family: "Karmatic Arcade";
+}
+
+.accordion-button:focus, .accordion-button:active {
+  box-shadow: none;
+}
+
+.accordion-button:first-of-type {
+  border-radius: var(--sc-radius) var(--sc-radius) 0 0;
+}
+
+.accordion-button:last-of-type {
+  border-radius: 0 0 var(--sc-radius) var(--sc-radius);
+}
+
+.game-types-list-body {
+  background-color: var(--sc-bg-color);
+  color: var(--sc-txt-color);
   font-family: "Manaspace";
   font-size: smaller;
   font-weight:lighter

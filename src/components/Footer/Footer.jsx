@@ -17,7 +17,7 @@ const Footer = () => {
                         <div className="social-media-wrap">
 
                             <small className="website-rights">
-                                &copy;  2022 Damian, Jean-Baptiste & Lois for THP Developer W'22
+                                &copy;  2022 Damian, Jean-Baptiste &amp; Lois for THP Developer W'22
                             </small>
 
                             <Link className="social-icon-link" to="/" target="_blank" aria-label="Facebook">
@@ -37,26 +37,23 @@ const Footer = () => {
                             </Link>
                         </div>
                     </section>
-
-
                 </div>
             </div>
             <Nav>
                 <NavDropdown title="Games" id="connection-nav-dropdown">
-                    <NavDropdown.Item href="/login">Submit Game</NavDropdown.Item>
+                    <NavDropdown.Item href="/signup">Submit Game</NavDropdown.Item>
                     <NavDropdown.Item href="/signup">Ambassadors</NavDropdown.Item>
-                    <NavDropdown.Item href="/signup">Studios</NavDropdown.Item>
+                    <NavDropdown.Item href="/signup">Game Studios</NavDropdown.Item>
                     <NavDropdown.Item href="/signup">Pro Gamers</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="About Us" id="account-nav-dropdown">
-                    <NavDropdown.Item href="/user">How it works</NavDropdown.Item>
-                    <NavDropdown.Item href="/logout">Testimonials</NavDropdown.Item>
-                    <NavDropdown.Item href="/logout">Careers</NavDropdown.Item>
-                    <NavDropdown.Item href="/logout">Investors</NavDropdown.Item>
-                    <NavDropdown.Item href="/logout">Terms of Service</NavDropdown.Item>
-
+                    <NavDropdown.Item href="/about">How it works</NavDropdown.Item>
+                    <NavDropdown.Item href="/about">Testimonials</NavDropdown.Item>
+                    <NavDropdown.Item href="/about">Careers</NavDropdown.Item>
+                    <NavDropdown.Item href="/about">Investors</NavDropdown.Item>
+                    <NavDropdown.Item href="/about">Terms of Service</NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown title="Contact Us" id="account-nav-dropdown">
+                <NavDropdown title="Contact Us" id="contact-nav-dropdown">
                     <NavDropdown.Item href="/https://github.com/LoisKOUNINEF">Lois' Github</NavDropdown.Item>
                     <NavDropdown.Item href="/https://github.com/Teacher-droid">Damian's Github</NavDropdown.Item>
                     <NavDropdown.Item href="/https://github.com/GibbZ-78t">JB's Github</NavDropdown.Item>

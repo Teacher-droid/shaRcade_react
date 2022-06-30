@@ -6,16 +6,61 @@ import './Header.css';
 
 const Header = () => {
 
+    const adminDropDown = (
+            <NavDropdown title="Account" id="account-nav-dropdown">
+                <NavDropdown.Item href="/admindashboard">Admin Dashboard</NavDropdown.Item>
+                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            </NavDropdown>);
+
+    const editorDropDown = (
+            <NavDropdown title="Account" id="account-nav-dropdown">
+                <NavDropdown.Item href="/editordashboard">Editor Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            </NavDropdown> );
+
+    const playerDropDown = (
+            <NavDropdown title="Account" id="account-nav-dropdown">
+                <NavDropdown.Item href="/playerdashboard">Player Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            </NavDropdown> );
+
+    const connexionDropDown = ( 
+            <NavDropdown title="Connection" id="connection-nav-dropdown">
+                <NavDropdown.Item href="/login">Log In</NavDropdown.Item>
+                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+            </NavDropdown> );
+
     const [myUser, setMyUser] = useState();
+    const [selectedDropDown, setSelectedDropDown] = useState(connexionDropDown);
 
     useEffect(() => {
+        
         if (Cookies.get('fulluser')) {
-            setMyUser(JSON.parse(Cookies.get("fulluser")))
+            setMyUser(JSON.parse(Cookies.get("fulluser")));
         }
+
     }, []);
 
-    /* JBV : To be continued tomorrow morning */
+    useEffect (() => {
+        
+        if (myUser) {
+            switch (myUser.role) {
+                case "admin":
+                    setSelectedDropDown(adminDropDown);
+                    break;
+                case "editor":
+                    setSelectedDropDown(editorDropDown);
+                    break;
+                default:
+                    setSelectedDropDown(playerDropDown);
+                    break;
+            }
+        } else {
+            setSelectedDropDown(connexionDropDown);
+        }
 
+    }, [myUser]);
+    
     return (
         <header className='header-container retro'>
             <Navbar>
@@ -40,14 +85,7 @@ const Header = () => {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                         <Nav>
-                            <NavDropdown title="Account" id="account-nav-dropdown">
-                                <NavDropdown.Item href="/admindashboard">Admin Dashboard</NavDropdown.Item>
-                                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
-                            </NavDropdown>
-                            <NavDropdown title="Connection" id="connection-nav-dropdown">
-                                <NavDropdown.Item href="/login">Log In</NavDropdown.Item>
-                                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
-                            </NavDropdown>
+                            {selectedDropDown}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
