@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Cookies from 'js-cookie';
+import { useAtom } from 'jotai';
+import { userAtom } from '../../stores/cookies';
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 import LogoTopDelireMegaGroove from '../../assets/images/logo/logo.png'
 import './Header.css';
 
-const Header = (props) => {
+const Header = () => {
 
     const adminDropDown = (
             <NavDropdown title="Account" id="account-nav-dropdown">
@@ -30,22 +32,23 @@ const Header = (props) => {
                 <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
             </NavDropdown> );
 
+    const [myUserSession, setUserSession] = useAtom(userAtom);
     const [myUser, setMyUser] = useState();
     const [selectedDropDown, setSelectedDropDown] = useState(connexionDropDown);
 
     useEffect(() => {
         
-        if (props.isloggedin) {
+        if (myUserSession) {
             if (Cookies.get('fulluser')) {
                 setMyUser(JSON.parse(Cookies.get("fulluser")));
             }
         }   
 
-    }, [props.isloggedin]);
+    }, [myUserSession]);
 
     useEffect (() => {
         
-        if (myUser) {
+        if (myUserSession && myUser) {
             switch (myUser.role) {
                 case "admin":
                     setSelectedDropDown(adminDropDown);
@@ -61,7 +64,7 @@ const Header = (props) => {
             setSelectedDropDown(connexionDropDown);
         }
 
-    }, [myUser, props.isloggedin]);
+    }, [myUserSession, myUser]);
     
     return (
         <div className="test">

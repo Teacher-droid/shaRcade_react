@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './UserForm.css';
 
-const Login = (props) => {
+const Login = () => {
 
   const navigate = useNavigate();
   const [email, setEmail] = useState();
@@ -45,9 +45,9 @@ const Login = (props) => {
       setUser(response.user.id);
       Cookies.set('id', response.user.id);
       Cookies.set('fulluser', JSON.stringify(response.user));
-      props.switchlogin(true); /* Informing the world, someone is connected! */
       response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
-    });
+    })
+    .catch((error) => console.log(error));
   }  
 
 return (
