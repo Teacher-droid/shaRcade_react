@@ -17,9 +17,16 @@ function GameCard(props) {
     // Returns phone full if "current game" mobile ready is true
     // Returns phone mepty, elseway
     let my_mobileready_icon = is_mobile_ready ?
-    <span title="This game can be played on both computers and touch devices."><FaTabletAlt/>&nbsp;<FaKeyboard/></span>
-    : <span title="this game can be played on a computer."><FaKeyboard/></span>;
+    <span title={mobileReadyText}><FaTabletAlt/>&nbsp;<FaKeyboard/></span>
+    : <span title={mobileReadyText}><FaKeyboard/></span>;
     return my_mobileready_icon;
+  }
+
+  const mobileReadyText = (is_mobile_ready) => {
+    let my_mobileready_text = is_mobile_ready ?
+    "This game can be played on both computers and touch devices."
+    : "This game can be played on a computer.";
+    return my_mobileready_text
   }
 
   const gameFeedbackIcons = (my_avg_game_eval) => {
@@ -69,23 +76,22 @@ function GameCard(props) {
   const linkName = viewMore ? '...View Less << ' : '...View More >> ';
   const imageLink = require('../../assets/images/games/' + props.game.image_url) ? require('../../assets/images/games/' + props.game.image_url) : require('../../assets/images/games/default_game_screenshot.png');
 
-
   const showDetails =
-    <div className="modal-bg" onClick={toggleDetails}>
-      <div className="game-card modal">
-        <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
-        <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
-        <div className="modal-feedback">{gameFeedbackIcons(props.feedbacks)}</div>
-        <div className="modal-body">
-          <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
-          <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
-        </div>
-        <div className="modal-footer game-card-footer">
-          <div className="game-fan">{gameFansCounter(props.fans)}</div>
-          <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}</div>
-          <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
-        </div>
+  <div className="modal-bg" onClick={toggleDetails}>
+    <div className="game-card modal">
+      <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title} alt={"screenshot of "+props.game.game_title}/>
+      <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
+      <div className="modal-feedback">{gameFeedbackIcons(props.feedbacks)}</div>
+      <div className="modal-body">
+        <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
+        <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
+      <div className="modal-footer game-card-footer">
+        <div className="game-fan">{gameFansCounter(props.fans)}</div>
+        <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}<span className="tooltiptext">{mobileReadyText(props.game.mobile_ready)}</span></div>
+        <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
+      </div>
+    </div>
     </div>
 
   return (
@@ -101,7 +107,7 @@ function GameCard(props) {
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
-        <div className="game-mobile-ready">{gameMobileReadyIcon(props.game.mobile_ready)}</div>
+        <div className="game-mobile-ready" title={mobileReadyText(props.game.mobile_ready)}>{gameMobileReadyIcon(props.game.mobile_ready)}</div>
         <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
       </div>
       {viewMore && showDetails}
