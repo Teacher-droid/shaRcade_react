@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyles } from './theme/GlobalStyles';
 import { useTheme } from './theme/useTheme';
 import 'bootstrap';
@@ -18,7 +18,13 @@ import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 import UserDashboard from './components/UserDashboard/UserDashboard';
 import EditorDashboard from './components/EditorDashboard/EditorDashboard';
 
+import ThemeSelector from './ThemeSelector';
+
+
+
 function App() {
+
+
 
   const { theme, themeLoaded } = useTheme();
   const [ selectedTheme, setSelectedTheme ] = useState(theme);
@@ -44,10 +50,10 @@ function App() {
         <Route path="/userdashboard" element={<UserDashboard/>} />
         <Route path="/editordashboard" element={<EditorDashboard/>} />
         <Route path="/admindashboard" element={<AdminDashboard/>} />
-
       </Routes>
       <Footer />
     </BrowserRouter>
+    <ThemeSelector setter={ setSelectedTheme } />
       </ThemeProvider>
     }
     </>
