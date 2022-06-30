@@ -36,7 +36,7 @@ const AdminUsersList = (props) => {
   }, [props.usersindex]);
 
   return (
-    <div className='users-list-container'>
+    <section className='users-list-container'>
       <Table striped bordered hover variant="dark" size="sm" className='users-list-table'>
         <thead>
           <tr>
@@ -55,7 +55,7 @@ const AdminUsersList = (props) => {
           {adaptiveUserTableContent}
         </tbody>
       </Table>
-    </div>
+    </section>
   );
 }
 

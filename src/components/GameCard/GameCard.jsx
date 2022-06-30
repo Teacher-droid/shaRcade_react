@@ -92,7 +92,6 @@ function GameCard(props) {
         <div className="game-evaluator">{gameFeedbackIcons(props.feedbacks)}</div>
       </div>
     </div>
-  </div>
 
   return (
     <div className="game-card">
