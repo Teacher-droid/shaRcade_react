@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookSquare, FaInstagramSquare, FaYoutubeSquare, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
-import { Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 import LogoTopDelireMegaGroove from '../../assets/images/logo/logo.png'
 import "./Footer.css";
 
@@ -15,9 +15,11 @@ const Footer = () => {
                     </div>
                     <section className="social-media">
                         <div className="social-media-wrap">
+
                             <small className="website-rights">
-                                &copy;  2022 Damian, Jean-Baptiste & Lois for THP Developer W'22
+                                &copy;  2022 Damian, Jean-Baptiste &amp; Lois for THP Developer W'22
                             </small>
+
                             <Link className="social-icon-link" to="/" target="_blank" aria-label="Facebook">
                                 <FaFacebookSquare />
                             </Link>
