@@ -13,7 +13,7 @@ export const useTheme = () => {
 
   useEffect(() =>{
     const localTheme = getFromLS('theme');
-    localTheme ? setTheme(localTheme) : setTheme(themes.data.hppc);
+    localTheme ? setTheme(localTheme) : setTheme(themes.data.msdos);
     setThemeLoaded(true);
   },[]);
 

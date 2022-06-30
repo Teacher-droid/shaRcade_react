@@ -11,8 +11,11 @@
 }
 
 :root {
-  --sc-modal-bg-color: rgba(40,40,40,0.5);
-  --sc-card-shadow: 8px 6px 12px rgba(51,255,51, 0.3);
+  --sc-opacity: 0.5;
+  --sc-modal-bg-color: rgba(40,40,40, var(--sc-opacity));
+  --sc-line-color-sub: 0,0,0;
+  --sc-line-color: rgb(var(--sc-line-color-sub));
+  --sc-card-shadow: 6px 4px 20px rgba(var(--sc-line-color-sub),var(--sc-opacity));
   --sc-margin: .75rem;
   --sc-radius: .75rem;
   --sc-border-type-ext: double;
