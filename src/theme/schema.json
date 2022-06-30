@@ -74,7 +74,7 @@
     },
     "hppc" : {
       "id": "T_007",
-      "name": "PC X86",
+      "name": "PC x86",
       "colors": {
         "body": "#bebebe",
         "text": "#000000",
