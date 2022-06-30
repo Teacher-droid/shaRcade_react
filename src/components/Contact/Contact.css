@@ -1,10 +1,13 @@
-.solid {
+.contact-btn {
     font-family: "Manaspace";
-    color: var(--sc-txt-color);
-    background-color: var(--sc-bg-color);
-    padding: 0;
+    color: var(--sc-bg-color);
+    background-color: var(--sc-txt-color);
+    padding: .3rem;
     border-radius: var(--sc-radius);
-    border: double 5px var(--sc-line-color);
+}
+
+.input {
+    font-weight: bolder;
 }
 
 .contact-map {
@@ -16,6 +19,7 @@
     height: 2rem;
 }
 
-.bg-contact {
-    background: rgb(41, 82, 154);
+.bg-contact a{
+    color: var(--sc-txt-color);
+    text-decoration: none;
 }

@@ -2,7 +2,7 @@
   "data" : {
     "apple" : {
       "id": "T_001",
-      "name": "Apple2",
+      "name": "Apple ][c",
       "colors": {
         "body": "#282828",
         "text": "#33ff33",
@@ -14,7 +14,7 @@
     },
     "cpc" : {
       "id": "T_002",
-      "name": "CPC404",
+      "name": "CPC 464",
       "colors": {
         "body": "#33ff33",
         "text": "#282828",
@@ -26,7 +26,7 @@
     },
     "amstrad" : {
       "id": "T_003",
-      "name": "amstrad",
+      "name": "CPC 6128",
       "colors": {
         "body": "#00006e",
         "text": "#f0f014",
@@ -50,7 +50,7 @@
     },
     "comodore" : {
       "id": "T_005",
-      "name": "Comodore64",
+      "name": "Commodore 64",
       "colors": {
         "body": "#4141e6",
         "text": "#a5a5ff",
@@ -62,7 +62,7 @@
     },
     "msdos" : {
       "id": "T_006",
-      "name": "MSDOS",
+      "name": "MS-Dos",
       "colors": {
         "body": "#000000",
         "text": "#bebebe",
@@ -74,25 +74,13 @@
     },
     "hppc" : {
       "id": "T_007",
-      "name": "PC386",
+      "name": "PC X86",
       "colors": {
         "body": "#bebebe",
         "text": "#000000",
         "button": {
           "text": "#bebebe",
           "background": "#000000"
-        }
-      }
-    },
-    "appl" : {
-      "id": "T_008",
-      "name": "appl",
-      "colors": {
-        "body": "#146464",
-        "text": "#14fafa",
-        "button": {
-          "text": "#146464",
-          "background": "#14fafa"
         }
       }
     }
