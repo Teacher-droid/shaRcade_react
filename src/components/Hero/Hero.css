@@ -1,6 +1,7 @@
 .hero-container {
   color: var(--sc-txt-color); 
   margin-bottom: var(--sc-margin);
+  cursor: default;
 }
 
 .hero-container h1 {

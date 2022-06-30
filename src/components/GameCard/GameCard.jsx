@@ -17,8 +17,8 @@ function GameCard(props) {
     // Returns phone full if "current game" mobile ready is true
     // Returns phone mepty, elseway
     let my_mobileready_icon = is_mobile_ready ?
-    <span title={mobileReadyText}><FaTabletAlt/>&nbsp;<FaKeyboard/></span>
-    : <span title={mobileReadyText}><FaKeyboard/></span>;
+    <span><FaTabletAlt/>&nbsp;<FaKeyboard/></span>
+    : <span><FaKeyboard/></span>;
     return my_mobileready_icon;
   }
 
@@ -83,7 +83,7 @@ function GameCard(props) {
       <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
       <div className="modal-feedback">{gameFeedbackIcons(props.feedbacks)}</div>
       <div className="modal-body">
-        <h3><a href={props.game.game_url} target="_blank">{props.game.game_title}</a></h3>
+        <h3><a href={props.game.game_url} target="_blank" rel="noreferrer">{props.game.game_title}</a></h3>
         <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
       <div className="modal-footer game-card-footer">

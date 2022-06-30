@@ -33,7 +33,7 @@ const Contact = () => {
                         <Form action="" method="">
                             <div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">First-name: </label>
+                                    <label className="form-label input">First-name: </label>
                                     <input className="form-control" name="first_name" id="first_name" type="text" placeholder="Insert a valid first-name" />
                                 </div>
                                 <div className="form-group mb-2">
@@ -53,9 +53,9 @@ const Contact = () => {
                                     <input className="form-control" name="message" id="message" type="text" placeholder="Type your message" />
                                 </div>
                                 <div className="form-group">
-                                    <button type="submit" className="btn btn-outline-secondary solid">Send</button>
+                                    <button type="submit" className="contact-btn">Send</button>
                                     &nbsp;
-                                    <button type="reset" className="btn btn-outline-primary solid">Cancel</button>
+                                    <button type="reset" className="contact-btn">Cancel</button>
                                 </div>
                             </div>
                         </Form>

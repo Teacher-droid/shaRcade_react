@@ -11,6 +11,7 @@
   align-content: center;
   padding: var(--sc-margin);
   margin-top: var(--sc-margin);
+  cursor: default;
 }
 /****************/
 /* FOOTER LINKS */
