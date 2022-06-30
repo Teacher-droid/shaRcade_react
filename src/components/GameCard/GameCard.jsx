@@ -83,7 +83,7 @@ function GameCard(props) {
       <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
       <div className="modal-feedback">{gameFeedbackIcons(props.feedbacks)}</div>
       <div className="modal-body">
-        <h3><a href={props.game.game_url} target="_blank" rel="noreferrer">{props.game.game_title}</a></h3>
+        <h3><a href={props.game.game_url} target="_blank" rel="noreferrer">{(props.game.game_title).normalize("NFD").replace(/\p{Diacritic}/gu, "")}</a></h3>
         <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
       <div className="modal-footer game-card-footer">
@@ -102,7 +102,7 @@ function GameCard(props) {
         <div className="game-feedback">{gameFeedbackIcons(props.feedbacks)}</div>
       </div>
       <div className="game-card-body">
-        <h3>{props.game.game_title}</h3>
+        <h3>{(props.game.game_title).normalize("NFD").replace(/\p{Diacritic}/gu, "")}</h3>
         <p>{props.game.game_descr.slice(0,99)}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
       <div className="game-card-footer">
