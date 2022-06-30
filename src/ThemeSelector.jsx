@@ -15,19 +15,26 @@ const ThemedButton = styled.button`
     border-radius: var(--sc-radius);
     margin-top: 0.25rem;
     cursor: pointer;
+    &:hover {
+        background-color: var(--sc-txt-color);
+        color: var(--sc-bg-color);
+    }
 `;
 
 const ToggleDiv = styled.div`
+    background-color: var(--sc-txt-color);
+    color: var(--sc-bg-color);
     font-family: "Manaspace";
     position: fixed;
     bottom: 5%;
     left: 2.5%;
-    opacity: 0.5;
-    background-color: var(--sc-txt-color);
-    color: var(--sc-bg-color);
+    opacity: 0.3;
     border-radius: var(--sc-radius);
-    border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
+    padding: .2rem;
     cursor:pointer;
+    &:hover {
+        opacity: 0.8;
+    }
 `;
 
 const Container = styled.ul`
