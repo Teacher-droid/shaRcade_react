@@ -1,6 +1,6 @@
 .footer-container {
   width: 100%;
-  background: var(--sc-bg-color) 100%);
+  background: var(--sc-bg-color);
   padding-top: 0.7rem;
   display: flex;
   flex-direction: row;
