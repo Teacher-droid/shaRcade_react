@@ -10,18 +10,24 @@
 
 .retro {
     font-family: "Manaspace";
-    background-color: var(--sc-bg-color);
     color: var(--sc-txt-color);
-    display: flex;
-    flex-direction: column;
+    background-color: var(--sc-bg-color);
     padding: 0;
     border-radius: var(--sc-radius);
-    border: double 5px var(--sc-txt-color);
+    border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+}
+
+.navbar {
+    background: none !important;
 }
 
 .nav-link {
     font-family: 'Manaspace', sans-serif;
     color: var(--sc-txt-color) !important;
+}
+
+.nav-item {
+    height: auto !important;
 }
 
 .search-btn {
