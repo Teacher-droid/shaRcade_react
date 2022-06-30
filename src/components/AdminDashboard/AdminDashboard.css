@@ -157,11 +157,13 @@
   background-color: var(--sc-bg-color);
   color: var(--sc-txt-color);
   margin: 5px 0 5px 5px;
+  border-radius: var(--sc-radius);
 }
 
 .game-types-list-accordion {
   background-color: var(--sc-bg-color);
   color: var(--sc-txt-color);
+  border-radius: var(--sc-radius)
 }
 
 .game-types-list-item {

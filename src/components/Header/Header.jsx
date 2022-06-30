@@ -33,6 +33,14 @@ const Header = () => {
     const [myUser, setMyUser] = useState();
     const [selectedDropDown, setSelectedDropDown] = useState(connexionDropDown);
 
+    useEffect(() => {
+        
+        if (Cookies.get('fulluser')) {
+            setMyUser(JSON.parse(Cookies.get("fulluser")));
+        }
+
+    }, []);
+
     useEffect (() => {
         
         if (myUser) {
@@ -52,15 +60,7 @@ const Header = () => {
         }
 
     }, [myUser]);
-
-    useEffect(() => {
-        
-        if (Cookies.get('fulluser')) {
-            setMyUser(JSON.parse(Cookies.get("fulluser")));
-        }
-
-    }, []);
-
+    
     return (
         <header className='header-container retro'>
             <Navbar>
