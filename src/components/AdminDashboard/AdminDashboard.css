@@ -184,18 +184,11 @@
   background-color: var(--sc-bg-color) !important;
   color: var(--sc-txt-color)  !important;
   font-family: "Karmatic Arcade";
+  border-radius: var(--sc-radius) !important;
 }
 
 .accordion-button:focus, .accordion-button:active {
   box-shadow: none;
-}
-
-.accordion-button:first-of-type {
-  border-radius: var(--sc-radius) var(--sc-radius) 0 0;
-}
-
-.accordion-button:last-of-type {
-  border-radius: 0 0 var(--sc-radius) var(--sc-radius);
 }
 
 .game-types-list-body {

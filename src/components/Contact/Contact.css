@@ -7,11 +7,13 @@
     border: double 5px var(--sc-line-color);
 }
 
+.contact-map {
+    border-radius: var(--sc-radius);
+  /* border: var(--sc-border-type-ext) 5px var(--sc-txt-color); */
+}
 
 .contact-icons {
-
     height: 2rem;
-
 }
 
 .bg-contact {

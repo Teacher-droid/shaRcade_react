@@ -5,6 +5,7 @@ import { useTheme } from './theme/useTheme';
 import 'bootstrap';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cookies from 'js-cookie';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import GamesIndex from './components/GamesIndex/GamesIndex';
@@ -40,7 +41,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout/>} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/userdashboard" element={<UserDashboard/>} />
         <Route path="/editordashboard" element={<EditorDashboard/>} />
         <Route path="/admindashboard" element={<AdminDashboard/>} />
