@@ -11,8 +11,6 @@
 }
 
 :root {
-  --sc-txt-color: rgb(51,255,51);
-  --sc-bg-color: rgb(40,40,40);
   --sc-modal-bg-color: rgba(40,40,40,0.5);
   --sc-margin: .75rem;
   --sc-radius: .75rem;

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from './theme/GlobalStyles';
+import { useTheme } from './theme/useTheme';
 import 'bootstrap';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -16,7 +19,17 @@ import UserDashboard from './components/UserDashboard/UserDashboard';
 import EditorDashboard from './components/EditorDashboard/EditorDashboard';
 
 function App() {
+
+  const { theme, themeLoaded } = useTheme();
+  const [ selectedTheme, setSelectedTheme ] = useState(theme);
+
+  useEffect(() => {
+    setSelectedTheme(theme);
+   }, []);
+
   return (
+<ThemeProvider theme={ selectedTheme }>
+        <GlobalStyles/>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -30,14 +43,10 @@ function App() {
         <Route path="/userdashboard" element={<UserDashboard/>} />
         <Route path="/editordashboard" element={<EditorDashboard/>} />
         <Route path="/admindashboard" element={<AdminDashboard/>} />
-        {/*  
-        <Route path="/addgame" element={<NewGame />} /> 
-        <Route path="/updategame/:gameId" element={<UpdateGame/>} /> 
-        <Route path="/deletegame/:gameId" element={<DeleteGame/>} /> 
-        */}
       </Routes>
       <Footer />
     </BrowserRouter>
+      </ThemeProvider>
   );
 }
 
