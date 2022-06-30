@@ -8,32 +8,41 @@
     height: 6rem;
 }
 
-@font-face {
-    font-family: "Karmatic Arcade";
-    src: url("../../assets/fonts/karmatic_arcade.ttf");
-}
-
-@font-face {
-    font-family: "Manaspace";
-    src: url("../../assets/fonts/mana_space.ttf");
-}
-
 .retro {
     font-family: "Manaspace";
     color: var(--sc-txt-color);
     background-color: var(--sc-bg-color);
-    display: flex;
-    flex-direction: column;
     padding: 0;
     border-radius: var(--sc-radius);
-    border: double 5px var(--sc-line-color);
+    border: var(--sc-border-type-ext) 5px var(--sc-line-color);
 }
 
-.dg {
-    color: rgb(51, 255, 51);
+.navbar {
+    background: none !important;
 }
 
 .nav-link {
     font-family: 'Manaspace', sans-serif;
-    color: rgb(51, 255, 51) !important;
+    color: var(--sc-txt-color) !important;
+}
+
+.nav-item {
+    height: auto !important;
+}
+
+.search-btn {
+    background-color: var(--sc-bg-color);
+    color: var(--sc-txt-color);
+    opacity: .5;
+}
+
+.search-btn:hover {
+    background-color: var(--sc-txt-color);
+    color: var(--sc-bg-color);
+    opacity: 1;
+}
+
+a:hover {
+  font-weight: bolder;
+  transition: 0.3s ease-out;
 }

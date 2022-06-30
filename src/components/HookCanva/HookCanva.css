@@ -3,7 +3,7 @@
     color: var(--sc-txt-color);
     font-family: "Manaspace";
     border-radius: var(--sc-radius);
-    border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+    border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
     margin: 5px 0 5px 0;
 }
 
@@ -30,4 +30,12 @@
 
 .padding-top2 {
     padding-top: 2em;
+}
+
+@media screen and (max-width: 900px){
+    .d-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

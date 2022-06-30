@@ -62,6 +62,7 @@ const Header = () => {
     }, [myUser]);
     
     return (
+        <div className="test">
         <header className='header-container retro'>
             <Navbar>
                 <Container>
@@ -82,7 +83,7 @@ const Header = () => {
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-success">Search</Button>
+                            <Button className="search-btn" variant="outline-success">Search</Button>
                         </Form>
                         <Nav>
                             {selectedDropDown}
@@ -91,6 +92,7 @@ const Header = () => {
                 </Container>
             </Navbar>
         </header>
+        </div>
     )
 }
 
