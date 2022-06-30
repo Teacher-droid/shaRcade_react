@@ -83,6 +83,18 @@
           "background": "#000000"
         }
       }
+    },
+    "appl" : {
+      "id": "T_008",
+      "name": "appl",
+      "colors": {
+        "body": "#146464",
+        "text": "#14fafa",
+        "button": {
+          "text": "#146464",
+          "background": "#14fafa"
+        }
+      }
     }
   }
 }
