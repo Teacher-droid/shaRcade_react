@@ -5,7 +5,7 @@ import { useTheme } from './theme/useTheme';
 import { getFromLS } from './utils/storage';
 
 const ThemedButton = styled.button`
-    animation: Fade-in 1s ease-in-out;
+    animation: Fade-in-smooth 1s ease-in-out;
     font-family: Manaspace;
     background-color: var(--sc-bg-color);
     color: var(--sc-txt-color);
@@ -15,9 +15,11 @@ const ThemedButton = styled.button`
     border-radius: var(--sc-radius);
     margin-top: 0.25rem;
     cursor: pointer;
+    opacity: 0.85;
     &:hover {
         background-color: var(--sc-txt-color);
         color: var(--sc-bg-color);
+        opacity: 1;
     }
 `;
 
