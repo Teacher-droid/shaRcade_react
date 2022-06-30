@@ -7,8 +7,8 @@ import { getFromLS } from './utils/storage';
 const ThemedButton = styled.button`
     animation: Fade-in 1s ease-in-out;
     font-family: Manaspace;
-    background-color: var(--sc-txt-color);
-    color: var(--sc-bg-color);
+    background-color: var(--sc-bg-color);
+    color: var(--sc-txt-color);
     display: flex;
     padding: 1rem;
     font-size: 1rem;
@@ -80,16 +80,13 @@ export default (props) => {
 
     const [viewMore, setViewMore] = useState(false);
     const toggleDetails = (e) => {
-        if (e.target !== e.currentTarget) {
-        return false;
-    }
-    e.nativeEvent.stopImmediatePropagation();
+
     setViewMore(!viewMore);
   }
 
     return (
         <div>
-            <Container>
+            <Container onClick={toggleDetails}>
             <ToggleDiv onClick={toggleDetails}>Retro Themes</ToggleDiv>
             {viewMore &&
                 themes.length > 0 &&
