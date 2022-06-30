@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { API_URL } from '../../stores/api_url'
 import './Slider.css'
 import BtnSlider from './BtnSlider';
-import sliderImages from './sliderImages';
 
 export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
   const [gameList, setGameList] = useState([]);
 
-  // const randomGames = [...gameList].sort(() => Math.random() - Math.random()).slice(0, numberImages);
   const numberImages = 5;
   const lastGames = [...gameList].slice(numberImages);
+  // const randomGames = [...gameList].sort(() => Math.random() - Math.random()).slice(0, numberImages);
 
     useEffect(() => {
     fetch(API_URL + 'games', {
@@ -56,7 +55,7 @@ export default function Slider() {
       key={game.id}
       className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
       >
-      <img src={imageLink}/>
+      <img src={imageLink} alt={game.name}/>
       </div>
       )
   })
