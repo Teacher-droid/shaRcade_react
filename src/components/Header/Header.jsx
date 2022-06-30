@@ -37,7 +37,7 @@ const Header = () => {
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-success">Search</Button>
+                            <Button className="search-btn" variant="outline-success">Search</Button>
                         </Form>
                         <Nav>
                             <NavDropdown title="Account" id="account-nav-dropdown">
