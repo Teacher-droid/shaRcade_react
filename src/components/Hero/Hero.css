@@ -1,3 +1,8 @@
 .hero-container {
   color: var(--sc-txt-color); 
+  margin-bottom: var(--sc-margin);
+}
+
+.hero-container h1 {
+  padding-top: var(--sc-margin);
 }

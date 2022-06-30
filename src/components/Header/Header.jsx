@@ -76,7 +76,7 @@ const Header = () => {
                             <Nav.Link href="/about">About</Nav.Link>
                             <Nav.Link href="/contact">Contact</Nav.Link>
                         </Nav>
-                        <Form className="d-flex">
+                        <Form className="d-flex search-block-centering">
                             <FormControl
                                 type="search"
                                 placeholder="Search"

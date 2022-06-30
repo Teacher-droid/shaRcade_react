@@ -2,6 +2,7 @@
     background-color: var(--sc-bg-color);
     height: 20%;
     width: 100%;
+    margin-bottom: var(--sc-margin);
 }
 
 .header-logo {
@@ -17,17 +18,13 @@
     border: var(--sc-border-type-ext) 5px var(--sc-line-color);
 }
 
-.navbar {
-    background: none !important;
-}
-
 .nav-link {
     font-family: 'Manaspace', sans-serif;
     color: var(--sc-txt-color) !important;
 }
 
-.nav-item {
-    height: auto !important;
+.search-block-centering {
+    margin-right: 10rem;
 }
 
 .search-btn {
