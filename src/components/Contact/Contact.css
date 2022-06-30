@@ -1,0 +1,19 @@
+.solid {
+    font-family: "Manaspace";
+    color: var(--sc-txt-color);
+    background-color: var(--sc-bg-color);
+    padding: 0;
+    border-radius: var(--sc-radius);
+    border: double 5px var(--sc-line-color);
+}
+
+
+.contact-icons {
+
+    height: 2rem;
+
+}
+
+.bg-contact {
+    background: rgb(41, 82, 154);
+}
