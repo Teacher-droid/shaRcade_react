@@ -5,36 +5,39 @@ import { useTheme } from './theme/useTheme';
 import { getFromLS } from './utils/storage';
 
 const ThemedButton = styled.button`
-    border: 0;
+    animation: Fade-in 1s ease-in-out;
     font-family: Manaspace;
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 14px;
-    border-radius: 4px;
-    margin-top: 5px;
-    width: 100%;
+    background-color: var(--sc-txt-color);
+    color: var(--sc-bg-color);
+    display: flex;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: var(--sc-radius);
+    margin-top: 0.25rem;
     cursor: pointer;
 `;
 
-const Wrapper = styled.li`
-    padding: 48px;
-    text-align: center;
-    border-radius: 4px;
-    border: 1px solid #000;
-    list-style: none;
+const ToggleDiv = styled.div`
+    font-family: "Manaspace";
+    position: fixed;
+    bottom: 5%;
+    left: 2.5%;
+    opacity: 0.5;
+    background-color: var(--sc-txt-color);
+    color: var(--sc-bg-color);
+    border-radius: var(--sc-radius);
+    border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
+    cursor:pointer;
 `;
 
 const Container = styled.ul`
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 3rem;
-    padding: 10px;
-`;
-
-const Header = styled.h2`
-    display: flex;
-    justify-content: space-around;
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 8%;
+    left: 0;
 `;
 
 export default (props) => {
@@ -75,10 +78,20 @@ export default (props) => {
         )
     }
 
+    const [viewMore, setViewMore] = useState(false);
+    const toggleDetails = (e) => {
+        if (e.target !== e.currentTarget) {
+        return false;
+    }
+    e.nativeEvent.stopImmediatePropagation();
+    setViewMore(!viewMore);
+  }
+
     return (
         <div>
             <Container>
-            {
+            <ToggleDiv onClick={toggleDetails}>Retro Themes</ToggleDiv>
+            {viewMore &&
                 themes.length > 0 &&
                     themes.map(theme =>(
                         <ThemeCard theme={data[theme]} key={data[theme].id} />
