@@ -25,10 +25,11 @@ function App() {
 
   useEffect(() => {
     setSelectedTheme(theme);
-   }, []);
+   }, [themeLoaded]);
 
   return (
-<ThemeProvider theme={ selectedTheme }>
+    <>
+    { themeLoaded && <ThemeProvider theme={ selectedTheme }>
         <GlobalStyles/>
     <BrowserRouter>
       <Header />
@@ -43,10 +44,13 @@ function App() {
         <Route path="/userdashboard" element={<UserDashboard/>} />
         <Route path="/editordashboard" element={<EditorDashboard/>} />
         <Route path="/admindashboard" element={<AdminDashboard/>} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
       </ThemeProvider>
+    }
+    </>
   );
 }
 
