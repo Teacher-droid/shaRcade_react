@@ -53,8 +53,16 @@
   padding: 0;
   border-radius: var(--sc-radius);
   border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
-  margin: 3px;
+  margin: 5px;
   box-shadow: var(--sc-card-shadow);
+}
+
+.admin-info-card:first-of-type {
+  margin: 5px 5px 5px 0;
+}
+
+.admin-info-card:last-of-type {
+  margin: 5px 0 5px 5px;
 }
 
 .admin-info-card-header {

@@ -5,7 +5,6 @@ import { useTheme } from './theme/useTheme';
 import 'bootstrap';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cookies from 'js-cookie';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import GamesIndex from './components/GamesIndex/GamesIndex';
@@ -16,7 +15,7 @@ import Signup from './components/UserForm/Signup';
 import Logout from './components/Logout/Logout';
 import Footer from './components/Footer/Footer';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
-import UserDashboard from './components/UserDashboard/UserDashboard';
+import PlayerDashboard from './components/PlayerDashboard/PlayerDashboard';
 import EditorDashboard from './components/EditorDashboard/EditorDashboard';
 
 import ThemeSelector from './ThemeSelector';
@@ -48,7 +47,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/userdashboard" element={<UserDashboard/>} />
+        <Route path="/playerdashboard" element={<PlayerDashboard/>} />
         <Route path="/editordashboard" element={<EditorDashboard/>} />
         <Route path="/admindashboard" element={<AdminDashboard/>} />
       </Routes>

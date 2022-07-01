@@ -35,7 +35,7 @@ const Login = () => {
       body: JSON.stringify(data)
     })
     .then((response) => {
-      // console.log(response);
+      //console.log(response);
       setAuthorization(response.headers.get('authorization'));
       Cookies.set('token', response.headers.get('authorization'));
       return response.json();
@@ -45,25 +45,27 @@ const Login = () => {
       setUser(response.user.id);
       Cookies.set('id', response.user.id);
       Cookies.set('fulluser', JSON.stringify(response.user));
-      response.user.role === "admin" ? navigate('/admindashboard') : navigate('/');
+      response.user.role === "admin" ? navigate('/admindashboard') : response.user.role === "editor" ? navigate("/editordashboard") : response.user.role === "player" ? navigate("/playerdashboard") : navigate('/');
     })
     .catch((error) => console.log(error));
   }  
 
-return (
-  <Form className="form" onSubmit={fetchData}>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-  <Form.Label className="label">Email address</Form.Label>
-  <Form.Control className="field" type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-  <Form.Label className="label">Password</Form.Label>
-  <Form.Control className="field" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-  </Form.Group>
-  <Button className="submit-btn" variant="primary" type="submit">
-  Submit
-  </Button>
-  </Form>
+  return (
+    <div className='login-container'>
+      <Form className="form" onSubmit={fetchData}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label className="label">Email address</Form.Label>
+          <Form.Control className="field" type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label className="label">Password</Form.Label>
+          <Form.Control className="field" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+        </Form.Group>
+        <Button className="submit-btn" variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
   );
 }
 

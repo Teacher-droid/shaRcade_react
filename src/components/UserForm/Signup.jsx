@@ -53,24 +53,26 @@ const Signup = () => {
   }
   
   return (
-    <Form className="form" onSubmit={submitData}>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label className="label">Email address</Form.Label>
-    <Form.Control className="field" type="text" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicNickname">
-    <Form.Label className="label">Nickname</Form.Label>
-    <Form.Control className="field" type="nickname" placeholder="Nickname" onChange={(e) => setNickname(e.target.value)}/>
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label className="label">Password</Form.Label>
-    <Form.Control className="field" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-    </Form.Group>
-    <Button className="submit-btn" variant="primary" type="submit">
-    Submit
-    </Button>
-    </Form>
-    );
+    <div className='login-container'>
+      <Form className="form" onSubmit={submitData}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label className="label">Email address</Form.Label>
+          <Form.Control className="field" type="text" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicNickname">
+          <Form.Label className="label">Nickname</Form.Label>
+          <Form.Control className="field" type="nickname" placeholder="Nickname" onChange={(e) => setNickname(e.target.value)}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label className="label">Password</Form.Label>
+          <Form.Control className="field" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+        </Form.Group>
+        <Button className="submit-btn" variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
+  );
 }
 
 export default Signup;
