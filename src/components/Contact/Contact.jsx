@@ -37,19 +37,19 @@ const Contact = () => {
                                     <input className="form-control" name="first_name" id="first_name" type="text" placeholder="Insert a valid first-name" />
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">Last-name: </label>
+                                    <label className="form-label input">Last-name: </label>
                                     <input className="form-control" name="last_name" id="last_name" type="text" placeholder="Insert a valid last-name" />
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">E-mail: </label>
+                                    <label className="form-label input">E-mail: </label>
                                     <input className="form-control" name="email" id="email" type="text" placeholder="Insert a valid e-mail" />
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label className="form-label">Subject: </label>
+                                    <label className="form-label input">Subject: </label>
                                     <input className="form-control" name="subject" id="subject" type="text" placeholder="Add subject here" />
                                 </div>
                                 <div className="form-group mb-3">
-                                    <label className="form-label">Your message: </label>
+                                    <label className="form-label input">Your message: </label>
                                     <input className="form-control" name="message" id="message" type="text" placeholder="Type your message" />
                                 </div>
                                 <div className="form-group">

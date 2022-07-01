@@ -34,6 +34,23 @@ body {
   background-color: var(--sc-bg-color);
 }
 
+::-webkit-scrollbar {
+  width: .75em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sc-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sc-txt-color);
+  border-radius: var(--sc-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 1px solid var(--sc-bg-color);
+}
+
 @keyframes Fade-in {
   from {
     opacity: 0;
@@ -43,11 +60,11 @@ body {
   }
 }
 
-@keyframes Fade-out {
+@keyframes Fade-in-smooth {
   from {
-    opacity: 1;
+    opacity: 0;
   }
   to {
-    opacity: 0;
+    opacity: 0.8;
   }
 }
