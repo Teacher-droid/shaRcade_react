@@ -48,7 +48,7 @@
   font-size: larger;
 }
 
-.game-mobile-ready{
+.game-mobile-ready, .game-type{
   cursor: help;
 }
 
