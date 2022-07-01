@@ -55,25 +55,28 @@ export default function Slider() {
       key={game.id}
       className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
       >
-      <img src={imageLink} alt={game.name}/>
+        <img src={imageLink} alt={game.name}/>
       </div>
       )
   })
 
   return (
     <div className="container-slider">
-    {Images}
-    <BtnSlider moveSlide={nextSlide} direction={"next"} />
-    <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
-
-    <div className="container-dots">
-    {Array.from({length: numberImages}).map((item, index) => (
-      <div
-      onClick={() => moveDot(index + 1)}
-      className={slideIndex === index + 1 ? "dot active" : "dot"}
-      ></div>
-      ))}
-    </div>
-    </div>
-    )
+      {Images}
+      <div className="slider-elements-container">
+        <div className="slider-elements">
+          <BtnSlider moveSlide={nextSlide} direction={"next"} />
+          <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+          <div className="container-dots">
+            {Array.from({length: numberImages}).map((item, index) => (
+              <div
+              onClick={() => moveDot(index + 1)}
+              className={slideIndex === index + 1 ? "dot active" : "dot"}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+  </div>
+  )
 }

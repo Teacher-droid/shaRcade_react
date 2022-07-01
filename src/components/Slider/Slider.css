@@ -34,6 +34,18 @@
   height: 25rem;
 }
 
+.slider-elements-container {
+  position: absolute;
+  width: 100%;
+  height: 25rem;
+}
+
+.slider-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-slide {
   width: 3.5rem;
   height: 3.5rem;
@@ -46,6 +58,7 @@
   align-items: center;
   cursor: pointer;
   opacity: 0.3;
+  top: 50%;
 }
 
 .btn-slide:hover {
@@ -61,22 +74,16 @@
 }
 
 .prev {
-  top: 55%;
-  left: 2rem;
-  transform: translateY(-55%);
+  left: 5%;
 }
 
 .next {
-  top: 55%;
-  right: 2rem;
-  transform: translateY(-55%);
+  right: 5%;
 }
 
 .container-dots {
   position: absolute;
-  bottom: 22%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 5%;
   display: flex;
 }
 
