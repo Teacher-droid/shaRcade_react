@@ -5,7 +5,7 @@ import { useTheme } from './theme/useTheme';
 import { getFromLS } from './utils/storage';
 
 const ThemedButton = styled.button`
-    animation: Fade-in-smooth 1s ease-in-out;
+    animation: Fade-in-smooth .5s ease-in-out;
     font-family: Manaspace;
     background-color: var(--sc-bg-color);
     color: var(--sc-txt-color);
