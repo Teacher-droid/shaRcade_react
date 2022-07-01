@@ -17,7 +17,7 @@ const Contact = () => {
                     <div className="row justify-content-center">
                         <div className="text-center">
                             <h1 className="title font-bold">Contact Us</h1>
-                            <h6 className="subtitle">Get in touch with us using the form bellow</h6>
+                            <h6 className="subtitle">Get in touch with us using the form below</h6>
                         </div>
                     </div>
                 </div>

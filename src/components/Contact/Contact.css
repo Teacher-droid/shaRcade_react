@@ -15,5 +15,5 @@
 }
 
 .bg-contact {
-    background: rgb(41, 82, 154);
+    /*    background: var(--sc-line-color); */
 }

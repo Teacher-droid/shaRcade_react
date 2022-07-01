@@ -27,8 +27,8 @@ const About = () => {
                     <div className="row">
                         <div className="col-md-7 pl-3">
                             <div className="card-body p-3">
-                                <h1 className="title">How it's work</h1>
-                                <p className="card-text">By signing in on ShaRcade you become a member of our community and get access to a huge amount of retro oriented games and indie made by other members and classified by category. Games can be edited by their owner to ensure  permanent update. Each member also has access to his personal DashBoard, which summarizes his created, favorite, followed and completed games.
+                                <h1 className="title">How it works</h1>
+                                <p className="card-text">By signing in on ShaRcade you become a member of our community and get access to a huge amount of retro oriented games and indie made by other members and classified by category. Games can be edited by their owner as well. Each member also has access to his personal DashBoard, which summarizes his created, favorite, followed and completed games.
                                     <br />Members can also review and suggest means of improvement.</p>
                             </div>
                         </div>
@@ -57,12 +57,12 @@ const About = () => {
                                 <div className="">
                                     <ul className="list-inline">
                                         <li className="list-inline-item">
-                                            <a href="https://github.com/WilfriedPaillot">
+                                            <a href="/https://github.com/LoisKOUNINEF">
                                                 <FaGithubSquare />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
-                                            <a href="https://www.linkedin.com/in/wilfried-paillot/">
+                                            <a href="">
                                                 <FaLinkedin />
                                             </a>
                                         </li>
@@ -86,12 +86,12 @@ const About = () => {
                                     <div className="">
                                         <ul className="list-inline">
                                             <li className="list-inline-item">
-                                                <a href="https://github.com/YAROS31">
+                                                <a href="/https://github.com/GibbZ-78t">
                                                     <FaGithubSquare />
                                                 </a>
                                             </li>
                                             <li className="list-inline-item">
-                                                <a href="https://www.linkedin.com/in/yassinerochd/">
+                                                <a href="">
                                                     <FaLinkedin />
                                                 </a>
                                             </li>
@@ -102,8 +102,8 @@ const About = () => {
 
                                     <div className="pt-3">
                                         <h5 className="title font-medium">Jean-Baptiste Vidal</h5>
-                                        <h6 className="subtitle"><b>The Pacifier</b></h6>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolorum quam? Optio quae id, sunt odit obcaecati earum, explicabo laudantium aspernatur voluptatum ipsa itaque sequi iure magnam consequuntur! Nesciunt, excepturi, dolor sit amet consectetur adipisicing elit Nisi, dolorum quam.</p>
+                                        <h6 className="subtitle"><b>he Amstrad Mastermind</b></h6>
+                                        <p>He fell into coding<br />when he was a little kid (❤️CPC 6128❤️). Since then, he hasn't grown much and had to do a 15 year "no code" 💉 desyntox' 💔. Since a few weeks, THPix, the peer-learning druid has allowed him to take a few more swigs of prog', The Librarian found him 1 or 2 cool doc sites on Ruby Guides and, so far, apart from a few scaffoldings that are a bit too wild, all is well...</p>
                                     </div>
                                 </div>
                             </div>
@@ -116,12 +116,12 @@ const About = () => {
                                     <div className="">
                                         <ul className="list-inline">
                                             <li className="list-inline-item">
-                                                <a href="https://github.com/Vix00">
+                                                <a href="/https://github.com/Teacher-droid">
                                                     <FaGithubSquare />
                                                 </a>
                                             </li>
                                             <li className="list-inline-item">
-                                                <a href="https://www.linkedin.com/in/victoria-fely-050587105/">
+                                                <a href="">
                                                     <FaLinkedin />
                                                 </a>
                                             </li>
@@ -151,7 +151,7 @@ const About = () => {
                                                 </a>
                                             </li>
                                             <li className="list-inline-item">
-                                                <a href="https://www.linkedin.com/in/jeanbaptistevidal/">
+                                                <a href="/https://github.com/zaratan">
                                                     <FaLinkedin />
                                                 </a>
                                             </li>

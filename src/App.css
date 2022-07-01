@@ -13,11 +13,14 @@
 }
 
 :root {
-  --sc-txt-color: rgb(51,255,51);
-  --sc-bg-color: rgb(40,40,40);
-  --sc-modal-bg-color: rgba(40,40,40,0.5);
-  --sc-form-txt-color:  rgba(51,255,51, 0.5);
-  --sc-line-color: rgb(51,255,51);
+  --sc-txt-color: rgb(51, 255, 51);
+  --sc-bg-color: rgb(40, 40, 40);
+  --sc-opacity: 0.5;
+  --sc-modal-bg-color: rgba(40, 40, 40, var(--sc-opacity));
+  --sc-form-txt-color: rgba(51, 255, 51, var(--sc-opacity));
+  --sc-line-color-sub: 51, 255, 51;
+  --sc-line-color: rgb(var(--sc-line-color-sub));
+  --sc-card-shadow: 6px 4px 20px rgba(var(--sc-line-color-sub), var(--sc-opacity));
   --sc-margin: .75rem;
   --sc-radius: .75rem;
   --sc-border-type-ext: double;
@@ -39,13 +42,14 @@ body {
 }
 
 body {
-    background-color: var(--sc-bg-color);
+  background-color: var(--sc-bg-color);
 }
 
 @keyframes Fade-in {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -55,6 +59,7 @@ body {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
