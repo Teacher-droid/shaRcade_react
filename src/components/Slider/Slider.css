@@ -58,7 +58,7 @@
   align-items: center;
   cursor: pointer;
   opacity: 0.3;
-  top: 50%;
+  top: 40%;
 }
 
 .btn-slide:hover {
@@ -74,11 +74,11 @@
 }
 
 .prev {
-  left: 5%;
+  left: 2%;
 }
 
 .next {
-  right: 5%;
+  right: 2%;
 }
 
 .container-dots {
