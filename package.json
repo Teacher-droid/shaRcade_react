@@ -1,4 +1,5 @@
 {
+  "homepage": "https://teacher-droid.github.io/shaRcade_react",
   "name": "sharcade_react",
   "version": "0.1.0",
   "private": true,
@@ -40,6 +41,8 @@
     "webfontloader": "^1.6.28"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "PORT=3001 WATCHPACK_POLLING=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -62,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
