@@ -20,11 +20,7 @@ import EditorDashboard from './components/EditorDashboard/EditorDashboard';
 
 import ThemeSelector from './ThemeSelector';
 
-
-
 function App() {
-
-
 
   const { theme, themeLoaded } = useTheme();
   const [ selectedTheme, setSelectedTheme ] = useState(theme);
@@ -37,23 +33,23 @@ function App() {
     <>
     { themeLoaded && <ThemeProvider theme={ selectedTheme }>
         <GlobalStyles/>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/games" element={<GamesIndex />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/playerdashboard" element={<PlayerDashboard/>} />
-        <Route path="/editordashboard" element={<EditorDashboard/>} />
-        <Route path="/admindashboard" element={<AdminDashboard/>} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-    <ThemeSelector setter={ setSelectedTheme } />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/games" element={<GamesIndex />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/playerdashboard" element={<PlayerDashboard/>} />
+            <Route path="/editordashboard" element={<EditorDashboard/>} />
+            <Route path="/admindashboard" element={<AdminDashboard/>} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+        <ThemeSelector setter={ setSelectedTheme } />
       </ThemeProvider>
     }
     </>
