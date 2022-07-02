@@ -9,7 +9,7 @@ const NewGame = () => {
     const [gameTitle, setGameTitle] = useState();
     const [gameUrl, setGameUrl] = useState();
     const [gameDescription, setGameDescription] = useState();
-    const [gameType, setGameType] = useState();
+    const [gameType, setGameType] = useState(1);
     const [imageUrl, setImageUrl] = useState();
     const [mobileReady, setMobileReady] = useState(false);
     
@@ -32,7 +32,7 @@ const NewGame = () => {
             "game_url": gameUrl,
             "game_descr": gameDescription,
             "game_type_id": gameType,
-            "mobile_ready": false,
+            "mobile_ready": mobileReady,
             "image_url": imageUrl
         }
     };
@@ -63,12 +63,12 @@ return (
     <Form.Label className="label">Game description</Form.Label>
     <Form.Control className="field" type="textarea" placeholder="Describe your game" onChange={(e) => setGameDescription(e.target.value)} />
     </Form.Group>
-    <Form.Group className="mb-3" controlId="formSubmitGame">
-    <Form.Label className="label">Game type (from 1 to 10)</Form.Label>
+{/*    <Form.Group className="mb-3" controlId="formSubmitGame">
+    <Form.Label className="label">Game type</Form.Label>
     <Form.Control className="field" type="integer" placeholder="Select a category for your game" onChange={(e) => setGameType(e.target.value)} />
-    </Form.Group>
+    </Form.Group>*/}
     <Form.Group className="mb-3" controlId="formSubmitGame">
-    <Form.Label className="label">Game screenshot name (e.g. 'mariobros.jpg')</Form.Label>
+    <Form.Label className="label">Game image URL</Form.Label>
     <Form.Control className="field" type="input" placeholder="Set an image for your game" onChange={(e) => setImageUrl(e.target.value)} />
     </Form.Group>
 {/*    <Form.Group className="mb-3" controlId="formSubmitGame">
