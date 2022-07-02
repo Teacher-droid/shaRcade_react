@@ -12,6 +12,12 @@ const GamesIndex = () => {
     const [gameTypesList, setGameTypesList] = useState([]);
     const [scoresList, setScoresList] = useState([]);
 
+    const [gamesLoading, setGamesLoading] = useState(true);
+    const [gameTypesLoading, setGameTypesLoading] = useState(true);
+    const [scoresLoading, setScoresLoading] = useState(true);
+    const [favoritesLoading, setFavoritesLoading] = useState(true);
+    const [feedbacksLoading, setFeedbacksLoading] = useState(true);
+
     const user = Cookies.get("fulluser") ? JSON.parse(Cookies.get("fulluser")) : "";
 
     useEffect(() => {
@@ -25,9 +31,10 @@ const GamesIndex = () => {
         .then((response) => response.json())
         .then((response) => {
             setGameList(response);
+            setGamesLoading(response.length <= 0);
         })
         .catch((error) => console.log(error));
-    }, []);
+    }, [gamesLoading]);
 
     useEffect(() => {
         fetch(API_URL + 'favorites', {
@@ -40,9 +47,10 @@ const GamesIndex = () => {
         .then((response) => response.json())
         .then((response) => {
             setFavorites(response);
+            setFavoritesLoading(response.length <= 0);
         })
         .catch((error) => console.log(error));
-    }, []);
+    }, [favoritesLoading]);
 
     useEffect(() => {
         fetch(API_URL + 'feedbacks', {
@@ -55,9 +63,10 @@ const GamesIndex = () => {
         .then((response) => response.json())
         .then((response) => {
             setFeedbacks(response);
+            setFeedbacksLoading(response.length <= 0);
         })
         .catch((error) => console.log(error));
-    }, []);
+    }, [feedbacksLoading]);
 
     useEffect(() => {
         fetch(`${API_URL}game_types`, {
@@ -70,9 +79,10 @@ const GamesIndex = () => {
         .then((response) => response.json())
         .then((response) => {
             setGameTypesList(response);
+            setGameTypesLoading(response.length <= 0);
         })
         .catch((error) => console.log(error));
-    },[]);
+    },[gameTypesLoading]);
 
     useEffect(() => {
         fetch(`${API_URL}scores`, {
@@ -85,9 +95,10 @@ const GamesIndex = () => {
         .then((response) => response.json())
         .then((response) => {
             setScoresList(response);
+            setScoresLoading(response.length <= 0);
         })
         .catch((error) => console.log(error));
-    },[]);
+    },[scoresLoading]);
 
 
     const gameCards = gameList.map(game => {
@@ -143,7 +154,7 @@ const GamesIndex = () => {
 
     return (
         <div className="game-list">
-        {gameCards}
+        {gamesLoading || gameTypesLoading || scoresLoading || favoritesLoading || feedbacksLoading ? "-- Games info loading --" : gameCards}
         </div>
         )
 }
