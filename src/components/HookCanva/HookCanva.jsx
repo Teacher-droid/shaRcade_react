@@ -26,7 +26,7 @@ const HookCanva = () => {
                     <img className="padding-right hook-size" alt="prototype" src={EditorBio} />
                     <p>Seamlessly register your game(s), making them visible and playable by the whole ShaRcade&reg; community!</p>
                     <p>Effortlessly promote your games, their upgrades and spin-off.</p>
-                    <p>Build a long-terme solid community and after-sale relations with your games' fans</p>
+                    <p>Build a long-terme solid community and after-sale relations with your  games' fans</p>
                 </div>
             </div>
         </section>
