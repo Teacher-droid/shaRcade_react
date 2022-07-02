@@ -7,15 +7,11 @@ import { FaHeart, FaRegHeart, FaRegStar, FaStarHalf, FaStar, FaKeyboard, FaTable
 function GameCard(props) {
 
   const gameFavoriteIcon = (is_favorite) => {
-    // Returns 💖 (heart full) if "current user" favorites includes "props.game"
-    // Returns 🤍 (empty heart), elseway
     let my_favorite_icon = is_favorite ? <span><FaHeart/></span> : <span><FaRegHeart/></span>;
     return my_favorite_icon;
   }
 
   const gameMobileReadyIcon = (is_mobile_ready) => {
-    // Returns phone full if "current game" mobile ready is true
-    // Returns phone mepty, elseway
     let my_mobileready_icon = is_mobile_ready ?
     <span><FaTabletAlt/>&nbsp;<FaKeyboard/></span>
     : <span><FaKeyboard/></span>;
@@ -80,7 +76,8 @@ function GameCard(props) {
       <div className="modal-body">
         <h3><a href={props.game.game_url} target="_blank" rel="noreferrer">{props.game.game_title.normalize("NFD").replace(/\p{Diacritic}/gu, "")}</a></h3>
         <h6 className="game-type" title={props.gametype.game_type_descr}>{props.gametype.game_type_title}</h6>
-        <p>{props.game.game_descr.normalize("NFD").replace(/\p{Diacritic}/gu, "")}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+        <p>{props.gametype.game_type_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+        <p>Last Score for this game : <strong>{props.lastscore}</strong></p>
       </div>
       <div className="modal-footer game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>
@@ -100,7 +97,7 @@ function GameCard(props) {
       <div className="game-card-body">
         <h3>{props.game.game_title.normalize("NFD").replace(/\p{Diacritic}/gu, "")}</h3>
         <h6>{props.gametype.game_type_title}</h6>
-        <p>{props.game.game_descr.slice(0,99).normalize("NFD").replace(/\p{Diacritic}/gu, "")}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+        <p>{props.gametype.game_type_descr.slice(0,99).normalize("NFD").replace(/\p{Diacritic}/gu, "")}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>

@@ -37,13 +37,11 @@ const Signup = () => {
       body: JSON.stringify(data)
     })
     .then((response) => {
-      // console.log(response);
       setAuthorization(response.headers.get('authorization'));
       Cookies.set('token', response.headers.get('authorization'));
       return response.json();
     })
     .then((response) => {
-      // console.log(response);
       setUser(response.user.id);
       Cookies.set('id', response.user.id);
       Cookies.set('fulluser', JSON.stringify(response.user));
