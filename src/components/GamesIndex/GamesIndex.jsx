@@ -10,6 +10,7 @@ const GamesIndex = () => {
     const [favorites, setFavorites] = useState([]);
     const [feedbacks, setFeedbacks] = useState([]);
     const [gameTypesList, setGameTypesList] = useState([]);
+    const [scoresList, setScoresList] = useState([]);
 
     const user = Cookies.get("fulluser") ? JSON.parse(Cookies.get("fulluser")) : "";
 
@@ -26,7 +27,7 @@ const GamesIndex = () => {
             setGameList(response);
         })
         .catch((error) => console.log(error));
-    }, [])
+    }, []);
 
     useEffect(() => {
         fetch(API_URL + 'favorites', {
@@ -41,7 +42,7 @@ const GamesIndex = () => {
             setFavorites(response);
         })
         .catch((error) => console.log(error));
-    }, [])
+    }, []);
 
     useEffect(() => {
         fetch(API_URL + 'feedbacks', {
@@ -56,7 +57,7 @@ const GamesIndex = () => {
             setFeedbacks(response);
         })
         .catch((error) => console.log(error));
-    }, [])
+    }, []);
 
     useEffect(() => {
         fetch(`${API_URL}game_types`, {
@@ -66,9 +67,24 @@ const GamesIndex = () => {
                 'Accept': 'application/json',
             }
         })
-        .then((response_game_type) => response_game_type.json())
-        .then((data_game_type) => {
-            setGameTypesList(data_game_type);
+        .then((response) => response.json())
+        .then((response) => {
+            setGameTypesList(response);
+        })
+        .catch((error) => console.log(error));
+    },[]);
+
+    useEffect(() => {
+        fetch(`${API_URL}scores`, {
+            method: 'get',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            }
+        })
+        .then((response) => response.json())
+        .then((response) => {
+            setScoresList(response);
         })
         .catch((error) => console.log(error));
     },[]);
@@ -79,12 +95,12 @@ const GamesIndex = () => {
         let is_favorite = false;
         favorites.map(favorite => {
             if (favorite.game_id === game.id) {
-                favoritesCount++
+                favoritesCount++;
                 if (favorite.user_id === user.id) {
                     is_favorite = true;
                 }
             }
-            return is_favorite
+            return is_favorite;
         })
 
         let feedbacksCount = 0;
@@ -106,12 +122,22 @@ const GamesIndex = () => {
         let gameType;
         gameTypesList.map(gametype => {
             if (gametype.id === game.game_type_id) {
-                gameType = gametype
-                return gameType
+                gameType = gametype;
+                return gameType;
             }
         })
 
-        return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} favorite={is_favorite} evaluation={userRating} gametype={gameType} key={game.id}/>
+        let scores = [];
+        let lastScore;
+        scoresList.map(score => {
+            if (score.game_id === game.id) {
+                scores.push(score.score);
+                lastScore = [...scores].at(-1);
+                return lastScore;
+            }
+        })
+
+        return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} favorite={is_favorite} evaluation={userRating} gametype={gameType} lastscore={lastScore} key={game.id}/>
     })
 
     return (
