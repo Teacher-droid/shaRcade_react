@@ -7,3 +7,8 @@
 .hero-container h1 {
   padding-top: var(--sc-margin);
 }
+
+a {
+  text-decoration: none;
+  color: var(--sc-txt-color);
+}
