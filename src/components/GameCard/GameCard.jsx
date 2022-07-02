@@ -60,12 +60,6 @@ function GameCard(props) {
     return(<span><FaHeart /> {my_fan_number}</span>);
   }
 
-  const gameEvalutionsCounter = (my_eval_number) => {
-    // Returns the number of fans for this game, followed by a 💖 icon]**
-    return(<span><FaStar /> {my_eval_number}</span>);
-  }
-
-
   const [viewMore, setViewMore] = useState(false);
   const toggleDetails = (e) => {
     if (e.target !== e.currentTarget) {

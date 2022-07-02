@@ -77,7 +77,7 @@ const GamesIndex = () => {
 
         let favoritesCount = 0;
         let is_favorite = false;
-        favorites.forEach(favorite => {
+        favorites.map(favorite => {
             if (favorite.game_id === game.id) {
                 favoritesCount++
                 if (favorite.user_id === user.id) {
@@ -91,7 +91,7 @@ const GamesIndex = () => {
         let feedbacksRatings = 0;
         let averageRating = 0;
         let userRating = 0;
-        feedbacks.forEach(feedback => {
+        feedbacks.map(feedback => {
             if (feedback.game_id === game.id) {
                 feedbacksRatings += feedback.rating
                 feedbacksCount++
@@ -103,7 +103,7 @@ const GamesIndex = () => {
             return userRating;
         })
 
-        let gameType
+        let gameType;
         gameTypesList.map(gametype => {
             if (gametype.id === game.game_type_id) {
                 gameType = gametype
