@@ -67,7 +67,6 @@ const Header = () => {
     }, [myUserSession, myUser]);
     
     return (
-        <div className="test">
         <header className='header-container retro'>
             <Navbar>
                 <Container>
@@ -97,7 +96,6 @@ const Header = () => {
                 </Container>
             </Navbar>
         </header>
-        </div>
     )
 }
 

@@ -48,7 +48,7 @@
   font-size: larger;
 }
 
-.game-mobile-ready{
+.game-mobile-ready, .game-type{
   cursor: help;
 }
 
@@ -197,8 +197,8 @@
 .game-mobile-ready .tooltiptext {
   bottom: 50%;
   visibility: hidden;
-  background-color: var(--sc-bg-color);
-  color: var(--sc-txt-color);
+  background-color: var(--sc-txt-color);
+  color: var(--sc-bg-color);
   border-radius: var(--sc-radius);
   border: var(--sc-border-type-int) 2px var(--sc-txt-color);
   text-align: center;

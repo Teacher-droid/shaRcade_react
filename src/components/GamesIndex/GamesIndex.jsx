@@ -9,6 +9,8 @@ const GamesIndex = () => {
     const [gameList, setGameList] = useState([]);
     const [favorites, setFavorites] = useState([]);
     const [feedbacks, setFeedbacks] = useState([]);
+    const [gameTypesList, setGameTypesList] = useState([]);
+
     const user = Cookies.get("fulluser") ? JSON.parse(Cookies.get("fulluser")) : "";
 
     useEffect(() => {
@@ -56,10 +58,26 @@ const GamesIndex = () => {
         .catch((error) => console.log(error));
     }, [])
 
+    useEffect(() => {
+        fetch(`${API_URL}game_types`, {
+            method: 'get',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            }
+        })
+        .then((response_game_type) => response_game_type.json())
+        .then((data_game_type) => {
+            setGameTypesList(data_game_type);
+        })
+        .catch((error) => console.log(error));
+    },[]);
+
     const gameCards = gameList.map(game => {
+
         let favoritesCount = 0;
         let is_favorite = false;
-        favorites.forEach(favorite => {
+        favorites.map(favorite => {
             if (favorite.game_id === game.id) {
                 favoritesCount++
                 if (favorite.user_id === user.id) {
@@ -68,11 +86,12 @@ const GamesIndex = () => {
             }
             return is_favorite
         })
+
         let feedbacksCount = 0;
         let feedbacksRatings = 0;
         let averageRating = 0;
         let userRating = 0;
-        feedbacks.forEach(feedback => {
+        feedbacks.map(feedback => {
             if (feedback.game_id === game.id) {
                 feedbacksRatings += feedback.rating
                 feedbacksCount++
@@ -84,12 +103,20 @@ const GamesIndex = () => {
             return userRating;
         })
 
-    return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} favorite={is_favorite} evaluation={userRating} key={game.id}/>
-})
+        let gameType;
+        gameTypesList.map(gametype => {
+            if (gametype.id === game.game_type_id) {
+                gameType = gametype
+                return gameType
+            }
+        })
+
+        return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} favorite={is_favorite} evaluation={userRating} gametype={gameType} key={game.id}/>
+    })
 
     return (
         <div className="game-list">
-        {gameCards}
+            {gameCards}
         </div>
         )
 }
