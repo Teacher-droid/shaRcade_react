@@ -1,0 +1,46 @@
+.new-game-form-container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: var(--sc-txt-color);
+  text-align: center;
+  padding: var(--sc-margin);
+  border: var(--sc-border-type-ext) 5px var(--sc-line-color);
+  border-radius: var(--sc-radius);
+}
+
+.field {
+  background-color: var(--sc-bg-color);
+  color: var(--sc-txt-color);
+  border: 1px solid var(--sc-txt-color);
+  border-radius: var(--sc-radius);
+}
+
+.field::placeholder {
+  color: var(--sc-txt-color);
+}
+
+.submit-btn {
+  background-color: var(--sc-txt-color);
+  color: var(--sc-bg-color);
+  border: 1px solid var(--sc-bg-color);
+  border-radius: var(--sc-radius);
+  margin-bottom: var(--sc-margin);
+}
+
+.submit-btn:hover {
+  background-color: var(--sc-bg-color) !important;
+  border: 1px solid var(--sc-txt-color);
+  color: var(--sc-txt-color);
+}

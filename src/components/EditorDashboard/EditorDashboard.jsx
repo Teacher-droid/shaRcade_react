@@ -1,9 +1,12 @@
 import React from 'react';
+import NewGame from '../NewGame/NewGame';
 import './EditorDashboard.css';
 
 const EditorDashboard = () => {
     return (
-        <div>Editor Dashboard</div>
+        <div>
+            <NewGame/>
+        </div>
     )
 }
 
