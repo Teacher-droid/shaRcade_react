@@ -2,15 +2,24 @@
     cursor: default;
 }
 
-.about-img {
+.about-img1 {
     width: 30rem;
+    margin-top: 2rem;
 }
+
+.about-img2 {
+    width: 30rem;
+    margin-top: 1rem;
+}
+
 
 .team-img {
     width: 18rem;
     height: 18rem;
     border-radius: var(--sc-radius);
 }
+
+
 
 .team-github-linkedin-logo {
     color: var(--sc-txt-color);

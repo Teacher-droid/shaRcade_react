@@ -11,11 +11,11 @@ const About = () => {
                 <div className="container p-5">
                     <div className="row">
                         <div className="col-md-5 p-4">
-                            <img className="about-img" alt='about' src="https://i.imgur.com/HyFFQbG.png" />
+                            <img className="about-img1" alt='about' src="https://i.imgur.com/HyFFQbG.png" />
                         </div>
                         <div className="col-md-7 pl-3">
                             <div className="card-body p-5">
-                                <h1 className="title">What is ShaRcade?</h1>
+                                <h1 className="title alignment">What is ShaRcade?</h1>
                                 <p className="card-text">THE social platform to centralize video games,<br />casual and  party games scores !
                                     Our goal is to offer a friendly platform for players to exchange their best scores and a space for programmers and small publishers to showcase their video-game achievements.
                                     <br />To do so, publishers/coders can register and record their games; in exchange, they are provided with an API key to allow each of their creations to connect to our API and record the scores of players who wish to do so, whether they are members of ShaRcade or not.
@@ -27,13 +27,13 @@ const About = () => {
                     <div className="row">
                         <div className="col-md-7 pl-3">
                             <div className="card-body p-3">
-                                <h1 className="title">How does ShaRcade works?</h1>
+                                <h1 className="title alignment">How does ShaRcade works?</h1>
                                 <p className="card-text">By signing in on ShaRcade you become a member of our community and get access to a huge amount of retro oriented games and indie made by other members and classified by category. Games can be edited by their owner to ensure  permanent update. Each member also has access to his personal DashBoard, which summarizes his created, favorite, followed and completed games.
                                     <br />Members can also review and suggest means of improvement.</p>
                             </div>
                         </div>
                         <div className="col-md-5">
-                            <img className="about-img" alt='how' src="https://i.imgur.com/oyhETZS.png" />
+                            <img className="about-img2" alt='how' src="https://i.imgur.com/oyhETZS.png" />
 
                         </div>
                     </div>
@@ -56,12 +56,12 @@ const About = () => {
                                 <div className="">
                                     <ul className="list-inline">
                                         <li className="list-inline-item">
-                                            <a className="team-github-linkedin-logo" href="https://github.com/WilfriedPaillot">
+                                            <a className="team-github-linkedin-logo" href="https://github.com/LoisKOUNINEF">
                                                 <FaGithubSquare />
                                             </a>
                                         </li>
                                         <li className="list-inline-item">
-                                            <a className="team-github-linkedin-logo" href="https://www.linkedin.com/in/wilfried-paillot/">
+                                            <a className="team-github-linkedin-logo" href="https://www.linkedin.com/in/lo%C3%AFs-kouninef-b1651122a/">
                                                 <FaLinkedin />
                                             </a>
                                         </li>
@@ -72,7 +72,7 @@ const About = () => {
                                 <div className="pt-3">
                                     <h5 className="title font-medium">Lois Kouninef</h5>
                                     <h6 className="subtitle"><b>The Codinator</b></h6>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolorum quam? Optio quae id, sunt odit obcaecati earum, explicabo laudantium aspernatur voluptatum ipsa itaque sequi iure magnam consequuntur! Nesciunt, excepturi, dolor sit amet consectetur adipisicing elit Nisi, dolorum quam.</p>
+                                    <p>Young talented game designer, suddenly had a flash of genius during one of his many games of Doom Eternal, why not put in service a platform where players will be able to register their names with their score like ol' times and this score could be admired by the other players who will compete in joy and kindness!</p>
                                 </div>
                             </div>
                         </div>
@@ -112,12 +112,12 @@ const About = () => {
                                     <div className="">
                                         <ul className="list-inline">
                                             <li className="list-inline-item">
-                                                <a className="team-github-linkedin-logo" href="https://github.com/Vix00">
+                                                <a className="team-github-linkedin-logo" href="https://github.com/Teacher-droid">
                                                     <FaGithubSquare />
                                                 </a>
                                             </li>
                                             <li className="list-inline-item">
-                                                <a className="team-github-linkedin-logo" href="https://www.linkedin.com/in/victoria-fely-050587105/">
+                                                <a className="team-github-linkedin-logo" href="https://www.linkedin.com/in/teacher-a-1a266a1b5/">
                                                     <FaLinkedin />
                                                 </a>
                                             </li>
@@ -129,7 +129,7 @@ const About = () => {
                                     <div className="pt-3">
                                         <h5 className="title font-medium">Damian Pierre-Louis</h5>
                                         <h6 className="subtitle"><b>The IT Eater</b></h6>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolorum quam? Optio quae id, sunt odit obcaecati earum, explicabo laudantium aspernatur voluptatum ipsa itaque sequi iure magnam consequuntur! Nesciunt, excepturi, dolor sit amet consectetur adipisicing elit Nisi, dolorum quam.</p>
+                                        <p> Budding inventor 🔧, subscriber of Geekanoids magazine, here he is, aboard the ship, full of nice pirates wandering the waves of the great DataBase waiting the day he'll finally be able to orbiting his satellite 🛰 and be the first man to write a line of code on the Moon.</p>
                                     </div>
                                 </div>
                             </div>
@@ -142,12 +142,12 @@ const About = () => {
                                     <div className="">
                                         <ul className="list-inline">
                                             <li className="list-inline-item">
-                                                <a className="team-github-linkedin-logo" href="https://github.com/GibbZ-78">
+                                                <a className="team-github-linkedin-logo" href="https://github.com/zaratan">
                                                     <FaGithubSquare />
                                                 </a>
                                             </li>
                                             <li className="list-inline-item">
-                                                <a className="team-github-linkedin-logo" href="https://www.linkedin.com/in/jeanbaptistevidal/">
+                                                <a className="team-github-linkedin-logo" href="https://zaratan.fr">
                                                     <FaLinkedin />
                                                 </a>
                                             </li>
@@ -158,7 +158,7 @@ const About = () => {
                                     <div className="pt-3">
                                         <h5 className="title font-medium">Zaratan</h5>
                                         <h6 className="subtitle"><b>The Zaratan</b></h6>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolorum quam? Optio quae id, sunt odit obcaecati earum, explicabo laudantium aspernatur voluptatum ipsa itaque sequi iure magnam consequuntur! Nesciunt, excepturi, dolor sit amet consectetur adipisicing elit Nisi, dolorum quam.</p>
+                                        <p>Developer, playful, sys admin, climber and cook in his spare time. Always curious about everything. He likes to share his new discoveries with others.</p>
                                     </div>
                                 </div>
                             </div>
