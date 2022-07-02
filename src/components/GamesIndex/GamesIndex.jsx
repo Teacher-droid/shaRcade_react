@@ -89,18 +89,19 @@ const GamesIndex = () => {
         .catch((error) => console.log(error));
     },[]);
 
+
     const gameCards = gameList.map(game => {
 
         let favoritesCount = 0;
-        let is_favorite = false;
+        let isFavorite = false;
         favorites.map(favorite => {
             if (favorite.game_id === game.id) {
                 favoritesCount++;
                 if (favorite.user_id === user.id) {
-                    is_favorite = true;
+                    isFavorite = true;
                 }
             }
-            return is_favorite;
+            return isFavorite;
         })
 
         let feedbacksCount = 0;
@@ -123,8 +124,8 @@ const GamesIndex = () => {
         gameTypesList.map(gametype => {
             if (gametype.id === game.game_type_id) {
                 gameType = gametype;
-                return gameType;
             }
+            return gameType;
         })
 
         let scores = [];
@@ -133,16 +134,16 @@ const GamesIndex = () => {
             if (score.game_id === game.id) {
                 scores.push(score.score);
                 lastScore = [...scores].at(-1);
-                return lastScore;
             }
+            return lastScore;
         })
 
-        return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} favorite={is_favorite} evaluation={userRating} gametype={gameType} lastscore={lastScore} key={game.id}/>
+        return <GameCard game={game} fans={favoritesCount} feedbacks={averageRating} favorite={isFavorite} evaluation={userRating} gametype={gameType} lastscore={lastScore} key={game.id}/>
     })
 
     return (
         <div className="game-list">
-            {gameCards}
+        {gameCards}
         </div>
         )
 }

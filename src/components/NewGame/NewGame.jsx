@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import Cookies from 'js-cookie';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { API_URL } from '../../stores/api_url'
+import { API_URL } from '../../stores/api_url';
 import './NewGame.css';
 
 const NewGame = () => {
@@ -13,7 +12,6 @@ const NewGame = () => {
     const [gameType, setGameType] = useState();
     const [imageUrl, setImageUrl] = useState();
     const [mobileReady, setMobileReady] = useState(false);
-    const [checked, setChecked] = useState(false);
     
     // REMINDER - Game Physical Data Model
     // id: integer
@@ -75,7 +73,7 @@ return (
     </Form.Group>
 {/*    <Form.Group className="mb-3" controlId="formSubmitGame">
     <Form.Label className="label">Playable on mobile ?</Form.Label>
-    <Form.Control className="field" type="checkbox" checked={checked} onChange={(e) => setChecked(e.target.checked)} placeholder="Is your game playable on mobile ?" onChange={(e) => setMobileReady(!mobileReady)} />
+    <Form.Control className="field" type="checkbox" placeholder="Is your game playable on mobile ?" onChange={(e) => setMobileReady(!mobileReady)} />
     </Form.Group>*/}
     <Button className="submit-btn" variant="primary" type="submit">
     Submit
