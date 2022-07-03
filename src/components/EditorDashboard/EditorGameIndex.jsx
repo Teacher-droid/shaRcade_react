@@ -48,7 +48,7 @@ const EditorGameIndex = () => {
             let apikey = "";
             keysList.map(key => {
                 if (key.game_id === game.id && key.user_id === user.id) {
-                    apikey = key.api_key;
+                    apikey = key;
                 }
                 return apikey;
             })
