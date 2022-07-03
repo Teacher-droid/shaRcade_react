@@ -76,7 +76,7 @@ function GameCard(props) {
       <div className="modal-body">
         <h3><a href={props.game.game_url} target="_blank" rel="noreferrer">{props.game.game_title.normalize("NFD").replace(/\p{Diacritic}/gu, "")}</a></h3>
         <h6 className="game-type" title={props.gametype.game_type_descr}>{props.gametype.game_type_title}</h6>
-        <p>{props.gametype.game_type_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+        <p>{props.game.game_descr}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
         <p>Last Score for this game : <strong>{props.lastscore}</strong></p>
       </div>
       <div className="modal-footer game-card-footer">
@@ -97,7 +97,7 @@ function GameCard(props) {
       <div className="game-card-body">
         <h3>{props.game.game_title.normalize("NFD").replace(/\p{Diacritic}/gu, "")}</h3>
         <h6>{props.gametype.game_type_title}</h6>
-        <p>{props.gametype.game_type_descr.slice(0,99).normalize("NFD").replace(/\p{Diacritic}/gu, "")}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
+        <p>{props.game.game_descr.slice(0,99).normalize("NFD").replace(/\p{Diacritic}/gu, "")}<span className="show-button" onClick={toggleDetails}>{linkName}</span></p>
       </div>
       <div className="game-card-footer">
         <div className="game-fan">{gameFansCounter(props.fans)}</div>

@@ -11,7 +11,7 @@ const NewGame = () => {
     const [gameDescription, setGameDescription] = useState();
     const [gameType, setGameType] = useState(1);
     const [imageUrl, setImageUrl] = useState();
-    const [mobileReady, setMobileReady] = useState();
+    const [mobileReady, setMobileReady] = useState(false);
 
     // REMINDER - Game Physical Data Model
     // id: integer
