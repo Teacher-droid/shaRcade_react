@@ -14,7 +14,6 @@
   border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
   margin-top: var(--sc-margin);
   margin-bottom: var(--sc-margin);
-  /*flex: 0 1 calc(25% - 1em);  */
   box-shadow: var(--sc-card-shadow);
 }
 
@@ -34,6 +33,8 @@
 
 .game-card-img {
   width: 100%;
+  object-fit: cover;
+  overflow: hidden;
   border: 0;
   border-top-left-radius: var(--sc-radius);
   border-top-right-radius: var(--sc-radius);
