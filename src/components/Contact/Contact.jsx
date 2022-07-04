@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Form, } from 'react-bootstrap'
-import { FaRegEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import LocationMark from '../../assets/images/icons/location.png'
 import MailCard from '../../assets/images/icons/mail.png'
 import './Contact.css';
