@@ -1,5 +1,29 @@
 .editor-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  justify-content: space-around;
+  width: 100%;
   margin: auto;
 }
+
+.editor-game-card {
+  font-family: 'Manaspace';
+  width: 30%;
+  text-align: center;
+  background-color: var(--sc-bg-color);
+  color: var(--sc-txt-color);
+  padding: var(--sc-margin);
+  margin: var(--sc-margin);
+  border-radius: var(--sc-radius);
+  border: var(--sc-border-type-ext) 5px var(--sc-txt-color);
+  cursor: default;
+  }
+
+  .apikey {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: larger;
+    cursor: text;
+  }
