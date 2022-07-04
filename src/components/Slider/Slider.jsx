@@ -11,7 +11,7 @@ export default function Slider() {
   const lastGames = [...gameList].slice(numberImages);
   // const randomGames = [...gameList].sort(() => Math.random() - Math.random()).slice(0, numberImages);
 
-    useEffect(() => {
+  useEffect(() => {
     fetch(API_URL + 'games', {
       method: 'get',
       headers: {

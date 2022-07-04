@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Form, } from 'react-bootstrap'
-import { FaRegEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import LocationMark from '../../assets/images/icons/location.png'
 import MailCard from '../../assets/images/icons/mail.png'
 import './Contact.css';
@@ -17,7 +16,7 @@ const Contact = () => {
                     <div className="row justify-content-center">
                         <div className="text-center">
                             <h1 className="title font-bold">Contact Us</h1>
-                            <h6 className="subtitle">Get in touch with us using the form bellow</h6>
+                            <h6 className="subtitle">Get in touch with us using the form below</h6>
                         </div>
                     </div>
                 </div>
