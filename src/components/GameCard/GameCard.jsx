@@ -70,7 +70,7 @@ function GameCard(props) {
   const showDetails =
   <div className="modal-bg" onClick={toggleDetails}>
     <div className="game-card modal">
-      <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title} alt={"screenshot of "+props.game.game_title}/>
+      <img className="modal-img" src={imageLink} alt={"screenshot of "+props.game.game_title}/>
       <div className="modal-favorite">{gameFavoriteIcon(props.favorite)}</div>
       <div className="modal-feedback">{gameFeedbackIcons(props.evaluation)}</div>
       <div className="modal-body">
