@@ -1,9 +1,9 @@
 function EditorGameCard(props) {
 
   return (
-    <div>
-      <h6>{props.game.game_title}</h6>
-      <p>APIKey : {props.apikey.api_key}.</p>
+    <div className="editor-game-card">
+      <h4>{props.game.game_title.normalize("NFD").replace(/[\u0300-\u036f]/g, "")}</h4>
+      <p>APIKey : <span className="apikey">{props.apikey.api_key}</span></p>
     </div>
    );
 
