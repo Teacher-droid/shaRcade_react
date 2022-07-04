@@ -8,7 +8,14 @@
   padding-top: var(--sc-margin);
 }
 
-a {
+.hero-container a {
   text-decoration: none;
   color: var(--sc-txt-color);
+  padding: var(--sc-margin);
+}
+
+.hero-container a:hover {
+  border-radius: var(--sc-radius);
+  background-color: var(--sc-txt-color);
+  color: var(--sc-bg-color);
 }
